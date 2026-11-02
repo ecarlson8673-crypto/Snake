@@ -1,0 +1,13 @@
+my plan
+1. create opening page
+2. create field
+3. create snake
+4. make fild bigger than screen, not all of field shown
+5. add food
+6. add bots (3 different types)
+    - random
+    - always goes for food
+    - mix
+    - more?
+    - how many of each?
+7. anything else
