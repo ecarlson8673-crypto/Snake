@@ -5,14 +5,16 @@ button {
     border-radius: 25px;
     background-color: rgb(200, 200, 200);
     border-width: 10px;
+    border-color: rgb(0, 0, 0);
 }
 button:active {
     background-color: rgb(175, 175, 175);
+    border-color: rgb(0, 0, 0);
 }
 
 /* title */
 #snakeTitle {
-    position: absolute;
+    position: fixed;
     left: calc(50% - 175px);
     width: 350px;
     height: 100px;
@@ -23,7 +25,7 @@ button:active {
     border-style: solid;
 }
 #titleBack {
-    position: absolute;
+    position: fixed;
     left: 0px;
     top: 0px;
     width: 100%;
@@ -32,7 +34,7 @@ button:active {
 }
 #originalTitle {
     position: absolute;
-    top: 175px;
+    top: 160px;
 }
 
 /* style for snake */

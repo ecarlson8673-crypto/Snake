@@ -13,7 +13,7 @@ function initializeOriginal() {
         } else {
             div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
         }
-        document.getElementById("snakeContainer").appendChild(div);
+        document.getElementById("originalContainer").appendChild(div);
     }
 }
 
