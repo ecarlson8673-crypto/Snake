@@ -4,7 +4,7 @@ function initializeOriginal() {
     clearOptions();
 
     // create the field
-    for (let i = 0; i > originalFieldWidth * originalFieldHeight; i++) {
+    for (let i = 0; i < originalFieldWidth * originalFieldHeight; i++) {
         let div = document.createElement("div");
         div.classList.add("fieldSquare");
         div.id = `original${i}`;
