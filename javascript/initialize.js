@@ -7,6 +7,7 @@ function initializeSnake() {
     for (let i = 0; i > snakeFieldWidth * snakeFieldHeight; i++) {
         let div = document.createElement("div");
         div.classList.add("fieldSquare");
+        div.id = `snake${i}`;
         if (i == 0) {
             div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
         } else {
