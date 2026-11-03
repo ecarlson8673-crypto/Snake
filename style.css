@@ -5,3 +5,17 @@ button {
     border-radius: 25px;
     background-color: rgb(200, 200, 200);
 }
+button:active {
+    background-color: rgb(150, 150, 150);
+}
+
+/* style for snake */
+.fieldSquare {
+    width: 50px;
+    height: 50px;
+}
+#snakeContainer {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
