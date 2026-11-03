@@ -1,12 +1,13 @@
 body {
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(150, 150, 150);
 }
 button {
     border-radius: 25px;
     background-color: rgb(200, 200, 200);
+    border-width: 10px;
 }
 button:active {
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(175, 175, 175);
 }
 
 /* title */
@@ -16,7 +17,12 @@ button:active {
     width: 200px;
     height: 50px;
     text-align: center;
+    background-color: rgb();
+    border-width: 10px;
+    border-radius: 25px;
+    border-style: solid;
 }
+
 /* style for snake */
 .fieldSquare {
     width: 50px;
