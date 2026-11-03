@@ -13,14 +13,22 @@ button:active {
 /* title */
 #snakeTitle {
     position: absolute;
-    left: calc(50% - 100px);
-    width: 200px;
+    left: calc(50% - 150px);
+    width: 300px;
     height: 50px;
     text-align: center;
-    background-color: rgb();
+    background-color: rgb(150, 150, 150);
     border-width: 10px;
     border-radius: 25px;
     border-style: solid;
+}
+#titleBack {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+    background-color: rgb(125, 125, 125);
 }
 
 /* style for snake */
