@@ -1,5 +1,5 @@
 // function for snake game
-function playSnake() {
+function playOriginal() {
     document.addEventListener("keydown", moveSnake);
     function moveSnake(event) {
         let key = event.key;

@@ -1,5 +1,5 @@
 // initialization for different games
-function initializeSnake() {
+function initializeOriginal() {
     // clear screen
     clearOptions();
 

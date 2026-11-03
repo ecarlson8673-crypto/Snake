@@ -6,16 +6,19 @@
     <body>
         <!-- the title to be displayed at the beginning and removed once started -->
         <div id="titles">
-            <button id="snakeTitle" onclick="initializeSnake()"><pre>
+            <div id="snakeTitle"><pre>
   _______  ___   _     __    _  __ _____ 
  /  ____/ |   \ | |   /  \  | |/ / ||    
  \____ \  | |\ \| |  / __ | | \ \  ||==  
  /_____/  |_| \___| /_|  _| |_|\_\ ||___ 
-            </pre></button>
+            </pre></div>
+            <button id="originalTitle" onclick="initializeOriginal()">
+
+            </button>
         </div>
         <!-- snake element go here -->
-         <div id="snakeElements">
-            <div id="snakeContainer"></div>
+         <div id="originalElements">
+            <div id="originalContainer"></div>
          </div>
     </body>
     <script>
