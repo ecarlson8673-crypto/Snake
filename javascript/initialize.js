@@ -8,7 +8,7 @@ function initializeOriginal() {
         let div = document.createElement("div");
         div.classList.add("fieldSquare");
         div.id = `original${i}`;
-        if (i == 0) {
+        if (i % 2 == 0) {
             div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
         } else {
             div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
