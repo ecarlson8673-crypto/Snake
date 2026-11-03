@@ -44,6 +44,8 @@ button:active {
 }
 #originalContainer {
     position: absolute;
+    left: calc(50% - 250px);
+    top: calc(50% - 250px);
     display: flex;
     flex-wrap: wrap;
     width: 500px;
