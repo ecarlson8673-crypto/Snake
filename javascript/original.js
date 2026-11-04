@@ -105,7 +105,23 @@ function playOriginal() {
         }
 
         // check if snake hit wall
-
+        if (durection == "ArrowRight") {
+            if (head - 1 % originalFieldWidth == 0) {
+                return true;
+            }
+        } else if (durection == "ArrowLeft") {
+            if (head + 1 % originalFieldWidth + 1 == 0) {
+                return true;
+            }
+        } else if (durection == "ArrowUp") {
+            if (head < 0) {
+                return true;
+            }
+        } else if (durection == "ArrowDown") {
+            if (head > originalFieldWidth * originalFieldHeight) {
+                return true;
+            }
+        }
         // if did not die return false
         return false;
     }
