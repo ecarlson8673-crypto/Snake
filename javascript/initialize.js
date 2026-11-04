@@ -66,7 +66,7 @@ function initializeMulti() {
 
     // set up the field for multi
     for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
-        let div = document.createElement(div);
+        let div = document.createElement("div");
         div.classList.add("multiFieldSquare");
         div.id = `multi${i}`;
         if (i % 2 == 0) {
