@@ -37,9 +37,13 @@ button:active {
     height: 150px;
     background-color: rgb(125, 125, 125);
 }
+#spacer {
+    height: 170px;
+    width: 1px;
+}
 #originalTitle {
-    position: absolute;
-    top: 160px;
+    /*position: absolute;
+    top: 160px;*/
 }
 
 /* style for snake */
