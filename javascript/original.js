@@ -50,6 +50,11 @@ function playOriginal() {
 
         // check if snake ate food
         eat();
+
+        // check if snake die
+        if (die() == true) {
+            document.getElementById("message").innerHTML = "You lost";
+        }
     }
 
     // move the body of the snake
@@ -69,7 +74,10 @@ function playOriginal() {
     function eat() {
         for (let i = 0; i < foodNumber; i++) {
             if (head == foodPosition[i]) {
+                // increase the length of body
                 body.splice(0, 0, body[0]);
+
+                // check if food is in body or not
                 let foodInBody = false;
                 do {
                     for (let j = 0; j < body.length; j++) {
@@ -82,5 +90,21 @@ function playOriginal() {
                 } while (foodInBody == false);
             }
         }
+    }
+
+    // function to check if snake dies
+    function die() {
+        // check if snake hit itself
+        for (let i = 0; i < body.length; i++) {
+            if (body[i] == head) {
+                // die
+                return true;
+            }
+        }
+
+        // check if snake hit wall
+
+        // if did not die return false
+        return false;
     }
 }
