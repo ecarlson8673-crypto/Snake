@@ -13,7 +13,7 @@ function playOriginal() {
 
         // set durection for snake to go
         document.getElementById("ex").innerHTML = pastDurection + ", " + key;
-        if (key.includes("Arrow") == true && pastDurection == key) {
+        if (key.includes("Arrow") == true && String(pastDurection) != String(key)) {
             durection = key;
         }
 
