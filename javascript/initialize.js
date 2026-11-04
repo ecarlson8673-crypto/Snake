@@ -103,7 +103,7 @@ function resetMulti() {
 
     // set position of food
 
-    playMulti();
+    //playMulti();
 }
 
 function again() {
