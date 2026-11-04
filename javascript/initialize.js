@@ -62,6 +62,8 @@ function initializeMulti() {
     // clear screen
     clearOptions();
 
+    game = "multi";
+
     // set up the field for multi
     for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
         let div = document.createElement(div);
@@ -100,11 +102,15 @@ function resetMulti() {
     // change color of field for head and body
 
     // set position of food
+
+    playMulti();
 }
 
 function again() {
     if (game == "original") {
         resetOriginal();
+    } else if (game == "multi") {
+        resetMulti();
     }
 }
 
