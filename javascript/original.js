@@ -37,6 +37,6 @@ function playOriginal() {
         document.getElementById(`original${body[0]}`).style.backgroundColor = fieldColor[body[0]];
         body.splice(0, 1);
         body[body.length] = head;
-        document.getElementById(`original${body[body.length]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+        document.getElementById(`original${body[body.length - 1]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     }
 }
