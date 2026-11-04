@@ -26,6 +26,13 @@ button:active {
     text-align: center;
     font-size: 50px;
 }
+#again {
+    position: absolute;
+    left: calc(50% - 25px);
+    top: calc(25% + 60px);
+    z-index: 50;
+    display: none;
+}
 
 /* title */
 #snakeTitle {

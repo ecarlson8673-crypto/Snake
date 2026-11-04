@@ -12,10 +12,8 @@ function playOriginal() {
         let key = event.key;
 
         // set durection for snake to go
-        if (key.includes("Arrow") == true) {
-            if (pastDurection != key) {
-                durection = key;
-            }
+        if (key.includes("Arrow") == true && pastDurection != key) {
+            durection = key;
         }
 
         // pause button
@@ -70,6 +68,7 @@ function playOriginal() {
         if (die() == true) {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(originalInterval);
+            document.getElementById("again").style.display = "";
         }
 
         // change the past value of the durection
