@@ -42,33 +42,38 @@
 
         // define global varables
 
-        // what game is being played
-        var game = "";
-
-        // for snake
-        // size of field
-        var originalFieldWidth = 21;
-        var originalFieldHeight = 21;
-
         // position of head and body
         var head;
         var body;
 
+        // the original color of the field
+        var fieldColor = [];
+
+        // what game is being played
+        var game = "";
+
         // the durection the snake is moving, options R, L, U, D
         var durection = "ArrowRight";
-        // the last durection the snake was going
-        var pastDurection = "ArrowRight";
 
         // amount of time inbetween frames for snake moving
         var time = 250;
-
-        // the original color of the field
-        var fieldColor = [];
 
         // the position of the food
         var foodPosition = [];
         // number of food
         var foodNumber = 1;
+
+        // for ORIGINAL
+        // size of field
+        var originalFieldWidth = 21;
+        var originalFieldHeight = 21;
+
+        // the last durection the snake was going
+        var pastDurection = "ArrowRight";
+
+        // for MULTI
+        var multiFieldWidth = 15;
+        var multiFieldHeight = 15;
     </script>
     <script src="javascript/initialize.js"></script>
     <script src="javascript/original.js"></script>

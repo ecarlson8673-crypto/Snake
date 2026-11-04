@@ -8,7 +8,7 @@ function initializeOriginal() {
     // create the field
     for (let i = 0; i < originalFieldWidth * originalFieldHeight; i++) {
         let div = document.createElement("div");
-        div.classList.add("fieldSquare");
+        div.classList.add("originalFieldSquare");
         div.id = `original${i}`;
         if (i % 2 == 0) {
             div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
@@ -62,6 +62,13 @@ function initializeMulti() {
     // clear screen
     clearOptions();
 
+    for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
+        let div = document.createElement(div);
+        div.classList.add("multiFieldSquare");
+        div.id = `multi${i}`;
+        document.getElementById("originalContainer").appendChild(div);
+    }
+    
     document.getElementById("message").innerHTML = "This game is under construction";
 }
 
