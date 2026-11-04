@@ -55,6 +55,16 @@ function resetOriginal() {
     playOriginal();
 }
 
+
+
+
+function initializeMulti() {
+    // clear screen
+    clearOptions();
+
+    document.getElementById("message").innerHTML = "This game is under construction";
+}
+
 function again() {
     if (game == "original") {
         resetOriginal();
