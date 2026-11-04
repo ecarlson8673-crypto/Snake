@@ -12,7 +12,9 @@ function playOriginal() {
         let key = event.key;
 
         // set durection for snake to go
-        durection = key;
+        if (key.includes("Arrow") == true) {
+            durection = key;
+        }
 
         // pause button
         if (key == " ") {
@@ -45,6 +47,9 @@ function playOriginal() {
             document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
             head = head + originalFieldWidth;
         }
+
+        // check if snake ate food
+        eat();
     }
 
     // move the body of the snake
@@ -58,5 +63,14 @@ function playOriginal() {
         body.splice(0, 1);
         body[body.length] = head;
         document.getElementById(`original${body[body.length - 1]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    }
+
+    // check if snake has eaten food
+    function eat() {
+        for (let i = 0; i < foodNumber; i++) {
+            if (head == foodPosition[i]) {
+                body.splice(0, 0, body[0]);
+            }
+        }
     }
 }
