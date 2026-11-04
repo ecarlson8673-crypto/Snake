@@ -35,6 +35,7 @@ function resetOriginal() {
     // reset position variables
     head = 220;
     body = [217, 218, 219];
+    durection = "ArrowRight";
 
     // set up snake
     document.getElementById(`original${220}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;

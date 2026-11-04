@@ -68,7 +68,6 @@ function playOriginal() {
         if (die() == true) {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(originalInterval);
-            document.getElementById("again").style.display = "none";
             document.getElementById("again").style.display = "";
         }
 

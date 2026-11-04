@@ -31,7 +31,6 @@ button:active {
     left: calc(50% - 25px);
     top: calc(25% + 60px);
     z-index: 50;
-    display: none;
 }
 
 /* title */
