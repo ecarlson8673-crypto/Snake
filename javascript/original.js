@@ -126,7 +126,7 @@ function playOriginal() {
                 return true;
             }
         } else if (durection == "ArrowLeft") {
-            if ((head) % (originalFieldWidth - 1) == 0) {
+            if ((head) % (originalFieldWidth) == 0) {
                 return true;
             }
         } else if (durection == "ArrowUp") {
