@@ -1,5 +1,10 @@
 // function for snake game
 function playOriginal() {
+    // variable to hold move interval
+    let originalInterval;
+    // wether paused or not
+    let pause = false;
+
     // check if a key is pressed
     document.addEventListener("keydown", keyChange);
     function keyChange(event) {
@@ -8,10 +13,20 @@ function playOriginal() {
 
         // set durection for snake to go
         durection = key;
+
+        // pause button
+        if (key == " ") {
+            if (pause == false) {
+                clearInterval(originalInterval);
+            } else {
+                originalInterval = setInterval(moveOriginal, time);
+            }
+            pause = !pause;
+        }
     }
 
     // move the snake
-    setInterval(moveOriginal, time);
+    originalInterval = setInterval(moveOriginal, time);
     function moveOriginal() {
         // move body
         moveBodyOriginal();
