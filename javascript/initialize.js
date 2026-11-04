@@ -3,6 +3,8 @@ function initializeOriginal() {
     // clear screen
     clearOptions();
 
+    game = "Original";
+
     // create the field
     for (let i = 0; i < originalFieldWidth * originalFieldHeight; i++) {
         let div = document.createElement("div");
@@ -17,6 +19,19 @@ function initializeOriginal() {
         }
         document.getElementById("originalContainer").appendChild(div);
     }
+
+    // finish set up
+    resetOriginal();
+}
+
+function resetOriginal() {
+    // clear screen if already have played
+    for (let i = 0; i < originalFieldWidth * originalFieldHeight; i++) {
+        document.getElementById(`original${i}`).style.backgroundColor = fieldColor[i];
+    }
+    // reset message and play again button
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("again").style.display = "none";
 
     // set up snake
     document.getElementById(`original${220}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
@@ -34,6 +49,12 @@ function initializeOriginal() {
     
     // be able to move the snake
     playOriginal();
+}
+
+function again() {
+    if (game == "original") {
+        resetOriginal();
+    }
 }
 
 // function to clear screen after user chooses a game
