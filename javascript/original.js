@@ -59,6 +59,11 @@ function playOriginal() {
         // check if snake ate food
         eat();
 
+        // check for win
+        if (win() == true) {
+            document.getElementById("message").innerHTML = "You won";
+        }
+
         // check if snake die
         if (die() == true) {
             document.getElementById("message").innerHTML = "You lost";
@@ -131,6 +136,14 @@ function playOriginal() {
             }
         }
         // if did not die return false
+        return false;
+    }
+
+    // win if snake is as long as big as field
+    function win() {
+        if (body.length - 1 == originalFieldWidth * originalFieldHeight) {
+            return true;
+        }
         return false;
     }
 }
