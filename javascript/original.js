@@ -12,12 +12,6 @@ function playOriginal() {
         let key = event.key;
 
         // set durection for snake to go
-        if (pastDurection != key) {
-            document.getElementById("ex").innerHTML = "true";
-        } else {
-            document.getElementById("ex").innerHTML = "false";
-        }
-
         if (key.includes("Arrow") == true) {
             if (pastDurection != key) {
                 durection = key;
@@ -92,7 +86,9 @@ function playOriginal() {
         document.getElementById(`original${body[0]}`).style.backgroundColor = fieldColor[body[0]];
         body.splice(0, 1);
         body[body.length] = head;
-        document.getElementById(`original${body[body.length - 1]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+        if (head >= 0 && head < originalFieldWidth * originalFieldHeight) {
+            document.getElementById(`original${body[body.length - 1]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+        }
     }
 
     // check if snake has eaten food
