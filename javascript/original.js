@@ -12,7 +12,7 @@ function playOriginal() {
         let key = event.key;
 
         // set durection for snake to go
-        if (key.includes("Arrow") == true) {
+        if (key.includes("Arrow") == true && pastDurection != key) {
             durection = key;
         }
 
@@ -69,6 +69,9 @@ function playOriginal() {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(originalInterval);
         }
+
+        // change the past value of the durection
+        pastDurection = durection;
     }
 
     // move the body of the snake
@@ -119,11 +122,11 @@ function playOriginal() {
 
         // check if snake hit wall
         if (durection == "ArrowRight") {
-            if ((head - 1) % originalFieldWidth == 0  && head != 1) {
+            if ((head) % originalFieldWidth == 0  && head != 1) {
                 return true;
             }
         } else if (durection == "ArrowLeft") {
-            if ((head + 1) % (originalFieldWidth + 1) == 0) {
+            if ((head) % (originalFieldWidth + 1) == 0) {
                 return true;
             }
         } else if (durection == "ArrowUp") {
