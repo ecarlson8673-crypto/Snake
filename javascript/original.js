@@ -140,13 +140,13 @@ function playOriginal() {
         } else if (durection == "ArrowUp") {
             if (head < 0) {
                 // reset field color of where head is
-                document.getElementById(`original${head}`).style.backgroundColor = fieldColor[head];
+                document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = fieldColor[head];
                 return true;
             }
         } else if (durection == "ArrowDown") {
             if (head > originalFieldWidth * originalFieldHeight) {
                 // reset field color of where head is
-                document.getElementById(`original${head}`).style.backgroundColor = fieldColor[head];
+                document.getElementById(`original${head - originalFieldWidth}`).style.backgroundColor = fieldColor[head];
                 return true;
             }
         }
