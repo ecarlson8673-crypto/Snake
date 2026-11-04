@@ -35,16 +35,24 @@ function playOriginal() {
 
         // move snake head based on arrows
         if (durection == "ArrowRight") {
-            document.getElementById(`original${head + 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            if (head + 1 < originalFieldWidth * originalFieldHeight) {
+                document.getElementById(`original${head + 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            }
             head = head + 1;
         } else if (durection == "ArrowLeft") {
-            document.getElementById(`original${head - 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            if (head - 1 >= 0) {
+                document.getElementById(`original${head - 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            }
             head = head - 1;
         } else if (durection == "ArrowUp") {
-            document.getElementById(`original${head - originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            if (head - originalFieldWidth >= 0) {
+                document.getElementById(`original${head - originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            }
             head = head - originalFieldWidth;
         } else if (durection == "ArrowDown") {
-            document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            if (head + originalFieldWidth < originalFieldWidth * originalFieldHeight) {
+                document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            }
             head = head + originalFieldWidth;
         }
 
@@ -114,11 +122,11 @@ function playOriginal() {
                 return true;
             }
         } else if (durection == "ArrowUp") {
-            if (head - originalFieldWidth < 0) {
+            if (head < 0) {
                 return true;
             }
         } else if (durection == "ArrowDown") {
-            if (head +  originalFieldWidth > originalFieldWidth * originalFieldHeight) {
+            if (head > originalFieldWidth * originalFieldHeight) {
                 return true;
             }
         }
