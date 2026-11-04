@@ -10,8 +10,10 @@ function initializeOriginal() {
         div.id = `original${i}`;
         if (i % 2 == 0) {
             div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+            fieldColor[i] = `rgb(${0}, ${200}, ${0})`;
         } else {
             div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+            fieldColor[i] = `rgb(${0}, ${255}, ${0})`;
         }
         document.getElementById("originalContainer").appendChild(div);
     }

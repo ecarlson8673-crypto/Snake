@@ -28,4 +28,12 @@ function playOriginal() {
             head = head + originalFieldWidth;
         }
     }
+
+    // move the body of the snake
+    function moveBodyOriginal() {
+        document.getElementById(`original${body[0]}`).style.backgroundColor = fieldColor[body[0]];
+        body.splice(0, 1);
+        body[body.length()] = head;
+        document.getElementById(`original${body[0]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    }
 }
