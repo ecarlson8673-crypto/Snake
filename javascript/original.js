@@ -81,12 +81,18 @@ function playOriginal() {
                 let foodInBody = false;
                 do {
                     foodPosition[i] = Math.floor(Math.random() * ((originalFieldWidth * originalFieldHeight) - 1));
+                    let foodInBodyThisTime = false;
                     for (let j = 0; j < body.length; j++) {
                         if (foodPosition[i] == body[j]) {
-                            foodInBody = true;
+                            foodInBodyThisTime = true;
                         }
                     }
-                } while (foodInBody == false);
+                    if (foodInBodyThisTime == true) {
+                        foodInBody = false;
+                    } else {
+                        foodInBody = true;
+                    }
+                } while (foodInBody == true);
                 document.getElementById(`original${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
             }
         }
