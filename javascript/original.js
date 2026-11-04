@@ -70,8 +70,16 @@ function playOriginal() {
         for (let i = 0; i < foodNumber; i++) {
             if (head == foodPosition[i]) {
                 body.splice(0, 0, body[0]);
-                foodPosition[i] = Math.floor(Math.random() * ((originalFieldWidth * originalFieldHeight) - 1));
-                document.getElementById(`original${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
+                let foodInBody = false;
+                do {
+                    for (let j = 0; j < body.length; j++) {
+                        if (foodPosition[i] == body[j]) {
+                            foodInBody = true;
+                        }
+                    }
+                    foodPosition[i] = Math.floor(Math.random() * ((originalFieldWidth * originalFieldHeight) - 1));
+                    document.getElementById(`original${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
+                } while (foodInBody == false);
             }
         }
     }
