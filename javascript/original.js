@@ -12,6 +12,7 @@ function playOriginal() {
         let key = event.key;
 
         // set durection for snake to go
+        document.getElementById("ex").innerHTML = pastDurection + ", " + key;
         if (key.includes("Arrow") == true && pastDurection != key) {
             durection = key;
         }
@@ -69,12 +70,11 @@ function playOriginal() {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(originalInterval);
             // reset field color of where head is
-            document.getElementById(`original${head}`) = fieldColor[head];
+            document.getElementById(`original${head}`).style.backgroundColor = fieldColor[head];
         }
 
         // change the past value of the durection
         pastDurection = durection;
-        document.getElementById("ex").innerHTML = pastDurection;
     }
 
     // move the body of the snake
