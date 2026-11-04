@@ -62,14 +62,44 @@ function initializeMulti() {
     // clear screen
     clearOptions();
 
+    // set up the field for multi
     for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
         let div = document.createElement(div);
         div.classList.add("multiFieldSquare");
         div.id = `multi${i}`;
+        if (i % 2 == 0) {
+            div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+            fieldColor[i] = `rgb(${0}, ${200}, ${0})`;
+        } else {
+            div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+            fieldColor[i] = `rgb(${0}, ${255}, ${0})`;
+        }
         document.getElementById("originalContainer").appendChild(div);
     }
     
+    resetMulti();
+
+    // warn user game is not done
     document.getElementById("message").innerHTML = "This game is under construction";
+}
+
+// reset the multi game
+function resetMulti() {
+    // reset to play again
+    for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
+        document.getElementById(`multi${i}`).style.backgroundColor = fieldColor[i];
+    }
+    // reset message
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("again").style.display = "none";
+    // reset position
+    head = 0;
+    body = [];
+    durection = "ArrowRight";
+
+    // change color of field for head and body
+
+    // set position of food
 }
 
 function again() {
