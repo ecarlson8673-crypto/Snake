@@ -54,6 +54,7 @@ function playOriginal() {
         // check if snake die
         if (die() == true) {
             document.getElementById("message").innerHTML = "You lost";
+            clearInterval(originalInterval);
         }
     }
 

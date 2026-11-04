@@ -17,6 +17,16 @@ button:active {
     border-style: solid;
 }
 
+#message {
+    position: absolute;
+    left: 0px;
+    top: 25%;
+    z-index: 50;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+
 /* title */
 #snakeTitle {
     position: fixed;
@@ -39,12 +49,8 @@ button:active {
     background-color: rgb(125, 125, 125);
 }
 #spacer {
-    height: 165px;
+    height: 160px;
     width: 1px;
-}
-#originalTitle {
-    /*position: absolute;
-    top: 160px;*/
 }
 
 /* style for snake */
