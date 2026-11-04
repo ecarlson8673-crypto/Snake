@@ -3,7 +3,7 @@ function initializeOriginal() {
     // clear screen
     clearOptions();
 
-    game = "Original";
+    game = "original";
 
     // create the field
     for (let i = 0; i < originalFieldWidth * originalFieldHeight; i++) {
