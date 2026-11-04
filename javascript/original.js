@@ -13,22 +13,21 @@ function playOriginal() {
     // move the snake
     setInterval(moveOriginal, time);
     function moveOriginal() {
-        // move snake based on arrows
+        // move body
+        moveBodyOriginal();
+
+        // move snake head based on arrows
         if (durection == "ArrowRight") {
             document.getElementById(`original${head + 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
-            moveBodyOriginal()
             head = head + 1;
         } else if (durection == "ArrowLeft") {
             document.getElementById(`original${head - 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
-            moveBodyOriginal()
             head = head - 1;
         } else if (durection == "ArrowUp") {
             document.getElementById(`original${head - originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
-            moveBodyOriginal()
             head = head - originalFieldWidth;
         } else if (durection == "ArrowDown") {
             document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
-            moveBodyOriginal()
             head = head + originalFieldWidth;
         }
     }
