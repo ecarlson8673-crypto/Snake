@@ -80,14 +80,14 @@ function playOriginal() {
                 // check if food is in body or not
                 let foodInBody = false;
                 do {
+                    foodPosition[i] = Math.floor(Math.random() * ((originalFieldWidth * originalFieldHeight) - 1));
                     for (let j = 0; j < body.length; j++) {
                         if (foodPosition[i] == body[j]) {
                             foodInBody = true;
                         }
                     }
-                    foodPosition[i] = Math.floor(Math.random() * ((originalFieldWidth * originalFieldHeight) - 1));
-                    document.getElementById(`original${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
                 } while (foodInBody == false);
+                document.getElementById(`original${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
             }
         }
     }
