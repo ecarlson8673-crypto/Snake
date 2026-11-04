@@ -49,6 +49,11 @@ function playOriginal() {
 
     // move the body of the snake
     function moveBodyOriginal() {
+        // if paused do not move
+        if (pause == true) {
+            return;
+        }
+        // else move
         document.getElementById(`original${body[0]}`).style.backgroundColor = fieldColor[body[0]];
         body.splice(0, 1);
         body[body.length] = head;
