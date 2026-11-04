@@ -5,7 +5,6 @@ function playOriginal() {
     function keyChange(event) {
         // get the key that was pressed
         let key = event.key;
-        document.getElementById("ex").innerHTML = key;
 
         // set durection for snake to go
         durection = key;
@@ -17,12 +16,16 @@ function playOriginal() {
         // move snake based on arrows
         if (durection == "ArrowRight") {
             document.getElementById(`original${head + 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            head = head + 1;
         } else if (durection == "ArrowLeft") {
             document.getElementById(`original${head - 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            head = head - 1;
         } else if (durection == "ArrowUp") {
             document.getElementById(`original${head - originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            head = head - originalFieldWidth;
         } else if (durection == "ArrowDown") {
             document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+            head = head + originalFieldWidth;
         }
     }
 }
