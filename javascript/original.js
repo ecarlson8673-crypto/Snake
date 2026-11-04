@@ -12,9 +12,16 @@ function playOriginal() {
         let key = event.key;
 
         // set durection for snake to go
-        document.getElementById("ex").innerHTML = pastDurection + ", " + key;
-        if (key.includes("Arrow") == true && String(pastDurection) != String(key)) {
-            durection = key;
+        if (pastDurection != key) {
+            document.getElementById("ex").innerHTML = "true";
+        } else {
+            document.getElementById("ex").innerHTML = "false";
+        }
+
+        if (key.includes("Arrow") == true) {
+            if (pastDurection != key) {
+                durection = key;
+            }
         }
 
         // pause button
