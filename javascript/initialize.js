@@ -26,7 +26,7 @@ function initializeOriginal() {
     document.getElementById(`original${217}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
 
     // the position of the food to start
-    let position = Math.random() * 200;
+    let position = Math.floor(Math.random() * 200);
     foodPosition[0] = position;
     document.getElementById(`original${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
     
