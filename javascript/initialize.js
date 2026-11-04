@@ -32,6 +32,9 @@ function resetOriginal() {
     // reset message and play again button
     document.getElementById("message").innerHTML = "";
     document.getElementById("again").style.display = "none";
+    // reset position variables
+    head = 220;
+    body = [217, 218, 219];
 
     // set up snake
     document.getElementById(`original${220}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
