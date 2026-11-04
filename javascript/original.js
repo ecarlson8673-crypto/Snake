@@ -72,6 +72,7 @@ function playOriginal() {
 
         // change the past value of the durection
         pastDurection = durection;
+        document.getElementById("ex").innerHTML = pastDurection;
     }
 
     // move the body of the snake
