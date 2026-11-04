@@ -15,6 +15,14 @@ function initializeOriginal() {
         }
         document.getElementById("originalContainer").appendChild(div);
     }
+
+    // set up snake
+    document.getElementById(`original${220}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+    // body
+    document.getElementById(`original${219}`).style.backgroundColor = `rgb(${0}, ${0}, ${200})`;
+    document.getElementById(`original${218}`).style.backgroundColor = `rgb(${0}, ${0}, ${200})`;
+    document.getElementById(`original${217}`).style.backgroundColor = `rgb(${0}, ${0}, ${200})`;
+    playOriginal();
 }
 
 // function to clear screen after user chooses a game
