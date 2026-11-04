@@ -24,6 +24,11 @@ function initializeOriginal() {
     document.getElementById(`original${219}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     document.getElementById(`original${218}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     document.getElementById(`original${217}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+
+    // the position of the food to start
+    let position = Math.random() * 200;
+    foodPosition[0] = position;
+    document.getElementById(`original${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
     
     // be able to move the snake
     playOriginal();
