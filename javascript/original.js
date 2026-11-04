@@ -119,11 +119,11 @@ function playOriginal() {
 
         // check if snake hit wall
         if (durection == "ArrowRight") {
-            if (head + 1 % originalFieldWidth == 0 && head != 1) {
+            if ((head + 1) % originalFieldWidth == 0) {
                 return true;
             }
         } else if (durection == "ArrowLeft") {
-            if (head - 1 % originalFieldWidth + 1 == 0) {
+            if ((head - 1) % (originalFieldWidth + 1) == 0  && head != 1) {
                 return true;
             }
         } else if (durection == "ArrowUp") {
