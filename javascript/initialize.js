@@ -117,4 +117,6 @@ function again() {
 // function to clear screen after user chooses a game
 function clearOptions() {
     document.getElementById("titles").style.display = "none";
+    document.getElementById("originalTitle").style.display = "none";
+    document.getElementById("multiTitle").style.display = "none";
 }
