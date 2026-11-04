@@ -68,6 +68,8 @@ function playOriginal() {
         if (die() == true) {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(originalInterval);
+            // reset field color of where head is
+            document.getElementById(`original${head}`) = fieldColor[head];
         }
 
         // change the past value of the durection
@@ -127,7 +129,7 @@ function playOriginal() {
                 return true;
             }
         } else if (durection == "ArrowLeft") {
-            if ((head - 1) % (originalFieldWidth) == 0) {
+            if ((head + 1) % originalFieldWidth == 0) {
                 return true;
             }
         } else if (durection == "ArrowUp") {
