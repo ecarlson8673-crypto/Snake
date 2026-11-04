@@ -28,9 +28,9 @@ button:active {
 }
 #again {
     position: absolute;
-    left: calc(50% - 35px);
-    top: calc(25% + 60px);
-    font-size: 50px;
+    left: calc(50% - 75px);
+    top: calc(25% + 65px);
+    font-size: 25px;
     z-index: 50;
 }
 
