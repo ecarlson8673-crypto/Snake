@@ -68,8 +68,8 @@ button:active {
 }
 /* style for multi */
 .multiFieldSquare {
-    width: 35px;
-    height: 35px;
+    width: 75px;
+    height: 75px;
 }
 
 #originalContainer {
