@@ -100,11 +100,11 @@ function resetMulti() {
     durection = "ArrowRight";
 
     // change color of field for head and body
-    document.getElementById(`multi${49}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+    document.getElementById(`multi${60}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
 
-    document.getElementById(`multi${48}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
-    document.getElementById(`multi${47}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
-    document.getElementById(`multi${46}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    document.getElementById(`multi${59}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    document.getElementById(`multi${58}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    document.getElementById(`multi${57}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     // set position of food
 
     //playMulti();
