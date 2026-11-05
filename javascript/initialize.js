@@ -71,10 +71,10 @@ function initializeMulti() {
         div.id = `multi${i}`;
         if (i % 2 == 0) {
             div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
-            fieldColor[i] = `rgb(${0}, ${200}, ${0})`;
+            field1[i] = `rgb(${0}, ${200}, ${0})`;
         } else {
             div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
-            fieldColor[i] = `rgb(${0}, ${255}, ${0})`;
+            field1[i] = `rgb(${0}, ${255}, ${0})`;
         }
         document.getElementById("multiContainer").appendChild(div);
     }
@@ -82,25 +82,29 @@ function initializeMulti() {
     resetMulti();
 
     // warn user game is not done
-    document.getElementById("message").innerHTML = "This game is under construction";
+    document.getElementById("message").innerHTML = "This game is under construction<br>Some functions may not work";
 }
 
 // reset the multi game
 function resetMulti() {
     // reset to play again
     for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
-        document.getElementById(`multi${i}`).style.backgroundColor = fieldColor[i];
+        document.getElementById(`multi${i}`).style.backgroundColor = field1[i];
     }
     // reset message
     document.getElementById("message").innerHTML = "";
     document.getElementById("again").style.display = "none";
     // reset position
-    head = 0;
-    body = [];
+    head = 49;
+    body = [46, 47, 48];
     durection = "ArrowRight";
 
     // change color of field for head and body
+    document.getElementById(`multi${49}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
 
+    document.getElementById(`multi${48}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    document.getElementById(`multi${47}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    document.getElementById(`multi${46}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     // set position of food
 
     //playMulti();
