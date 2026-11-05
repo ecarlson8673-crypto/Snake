@@ -28,7 +28,7 @@ function playOriginal() {
                 originalInterval = setInterval(moveOriginal, time);
                 document.getElementById("message").innerHTML = "";
                 document.getElementById("settings").style.display = "none";
-                document.getElementById("settingOptions").style.display = "none";
+                document.getElementById("settingsOptions").style.display = "none";
             }
             pause = !pause;
         }
