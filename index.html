@@ -9,11 +9,12 @@
         <button id="again" onclick="again()">Play again</button>
         <button id="settings" onclick="settings()">Settings</button>
         <div id="settingsOptions">
+            <div id="settingsMessage">Press Space to Continue</div>
             <div id="forOriginal">
-
+will be original settings
             </div>
             <div id="forMulti">
-                
+will be multi settings
             </div>
         </div>
         <!-- the title to be displayed at the beginning and removed once started -->
@@ -55,6 +56,8 @@
         document.getElementById("again").style.display = "none";
         document.getElementById("settings").style.display = "none";
         document.getElementById("settingsOptions").style.display = "none";
+        document.getElementById("forOriginal").style.display = "none";
+        document.getElementById("forMulti").style.display = "none";
 
         // define global varables
 
