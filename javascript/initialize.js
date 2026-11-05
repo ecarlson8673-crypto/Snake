@@ -105,9 +105,11 @@ function resetMulti() {
     document.getElementById(`multi${59}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     document.getElementById(`multi${58}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     document.getElementById(`multi${57}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
-    // set position of food
+    
+    // set position of food relative to larger field
+    foodPosition = [];
 
-    //playMulti();
+    playMulti();
 }
 
 function again() {
