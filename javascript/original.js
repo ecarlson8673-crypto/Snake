@@ -13,7 +13,9 @@ function playOriginal() {
 
         // set durection for snake to go
         if (key.includes("Arrow") == true && pastDurection != key) {
-            durection = key;
+            if (pastDurection == "ArrowRight" && key != "ArrowLeft" || pastDurection == "ArrowLeft" && key != "ArrowRight" || pastDurection == "ArrowUp" && key != "ArrowDown" || pastDurection == "ArrowDown" && key != "ArrowUp") {
+                durection = key;
+            }
         }
 
         // pause button
