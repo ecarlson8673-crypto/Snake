@@ -5,7 +5,7 @@ function playOriginal() {
     // wether paused or not
     let pause = false;
     // if snake is dead
-    let die = false;
+    let dead = false;
 
     // check if a key is pressed
     document.addEventListener("keydown", keyChange);
@@ -21,7 +21,7 @@ function playOriginal() {
         }
 
         // pause button
-        if (key == " " && die == false) {
+        if (key == " " && dead == false) {
             if (pause == false) {
                 clearInterval(originalInterval);
                 document.getElementById("message").innerHTML = "Paused";
@@ -75,7 +75,7 @@ function playOriginal() {
 
         // check if snake die
         if (die() == true) {
-            die = true;
+            dead = true;
             clearInterval(originalInterval);
             document.getElementById("message").innerHTML = "You lost";
             document.getElementById("again").style.display = "";
