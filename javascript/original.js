@@ -90,7 +90,7 @@ function playOriginal() {
         }
         // else move
         document.getElementById(`original${body[0]}`).style.backgroundColor = fieldColor[body[0]];
-        //body = body.splice(0, 1);
+        body.splice(0, 1);
         body[body.length] = head;
         if (head >= 0 && head < originalFieldWidth * originalFieldHeight) {
             document.getElementById(`original${body[body.length - 1]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
