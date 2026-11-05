@@ -76,7 +76,7 @@ function initializeMulti() {
             div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
             fieldColor[i] = `rgb(${0}, ${255}, ${0})`;
         }
-        document.getElementById("originalContainer").appendChild(div);
+        document.getElementById("multiContainer").appendChild(div);
     }
     
     resetMulti();

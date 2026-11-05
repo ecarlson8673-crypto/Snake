@@ -61,17 +61,11 @@ button:active {
     width: 1px;
 }
 
-/* style for snake */
+/* style for original */
 .originalFieldSquare {
     width: 25px;
     height: 25px;
 }
-/* style for multi */
-.multiFieldSquare {
-    width: 75px;
-    height: 75px;
-}
-
 #originalContainer {
     position: absolute;
     left: calc(50% - 262.5px);
@@ -80,4 +74,19 @@ button:active {
     flex-wrap: wrap;
     width: 525px;
     height: 525px;
+}
+
+/* style for multi */
+.multiFieldSquare {
+    width: 45px;
+    height: 45px;
+}
+#multiContainer {
+    position: absolute;
+    left: calc(50% - 247.5px);
+    top: calc(50% - 247.5px);
+    display: flex;
+    flex-wrap: wrap;
+    width: 495px;
+    height: 495px;
 }
