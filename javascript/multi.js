@@ -49,27 +49,27 @@ function playMulti() {
         // move body
         if (durection == "ArrowRight") {
             body = body.splice(0, 1);
-            for (let i = 0; i < body.length; i++) {
+            /*for (let i = 0; i < body.length; i++) {
                 body[i] = body[i] - 1;
-            }
+            }*/
             body[body.length] = head - 1;
         } else if (durection == "ArrowLeft") {
             body = body.splice(0, 1);
-            for (let i = 0; i < body.length; i++) {
+            /*for (let i = 0; i < body.length; i++) {
                 body[i] = body[i] + 1;
-            }
+            }*/
             body[body.length] = head + 1;
         } else if (durection == "ArrowUp") {
             body = body.splice(0, 1);
-            for (let i = 0; i < body.length; i++) {
+            /*for (let i = 0; i < body.length; i++) {
                 body[i] = body[i] + multiFieldWidth;
-            }
+            }*/
             body[body.length] = head + multiFieldWidth;
         } else if (durection == "ArrowDown") {
             body = body.splice(0, 1);
-            for (let i = 0; i < body.length; i++) {
+            /*for (let i = 0; i < body.length; i++) {
                 body[i] = body[i] - multiFieldWidth;
-            }
+            }*/
             body[body.length] = head - multiFieldWidth;
         }
 
@@ -82,6 +82,5 @@ function playMulti() {
 
         // change the past durection
         pastDurection = durection;
-
     }
 }
