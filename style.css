@@ -36,7 +36,7 @@ button:active {
 }
 #settings {
     position: absolute;
-    left: calc(50% - 40px);
+    left: calc(50% - 70px);
     top: calc(25% + 55px);
     font-size: 25px;
     z-index: 50;
