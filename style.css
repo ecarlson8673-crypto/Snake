@@ -34,6 +34,13 @@ button:active {
     font-size: 25px;
     z-index: 50;
 }
+#settings {
+    position: absolute;
+    left: calc(50% - 40px);
+    top: calc(25% + 55px);
+    font-size: 25px;
+    z-index: 50;
+}
 
 /* title */
 #snakeTitle {
