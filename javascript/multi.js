@@ -48,18 +48,36 @@ function playMulti() {
 
         // move body
         if (durection == "ArrowRight") {
-
+            body = body.splice(0, 1);
+            for (let i = 0; i < body.length; i++) {
+                body[i] = body[i] - 1;
+            }
+            body[body.length] = head - 1;
         } else if (durection == "ArrowLeft") {
-
+            body = body.splice(0, 1);
+            for (let i = 0; i < body.length; i++) {
+                body[i] = body[i] + 1;
+            }
+            body[body.length] = head + 1;
         } else if (durection == "ArrowUp") {
-
+            body = body.splice(0, 1);
+            for (let i = 0; i < body.length; i++) {
+                body[i] = body[i] + multiFieldWidth;
+            }
+            body[body.length] = head + multiFieldWidth;
         } else if (durection == "ArrowDown") {
-
+            body = body.splice(0, 1);
+            for (let i = 0; i < body.length; i++) {
+                body[i] = body[i] - multiFieldWidth;
+            }
+            body[body.length] = head - multiFieldWidth;
         }
 
         // recolor body after movement
-        for (let i = 0; i < moveBody.length; i++) {
-            document.getElementById(`multi${body[i]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+        for (let i = 0; i < body.length; i++) {
+            if (body[i] >= 0 && body[i] < multiFieldWidth * multiFieldHeight) {
+                document.getElementById(`multi${body[i]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+            }
         }
 
         // change the past durection
