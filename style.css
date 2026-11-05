@@ -50,6 +50,15 @@ button:active {
     background-color: rgb(175, 175, 175);
     z-index: 55;
 }
+#settingsTitle {
+    width: 100%;
+    text-align: center;
+}
+#settingsMessage {
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+}
 
 /* title */
 #snakeTitle {

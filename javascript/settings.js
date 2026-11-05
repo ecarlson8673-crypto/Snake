@@ -2,8 +2,8 @@
 function settings() {
     document.getElementById("settingsOptions").style.display = "";
     if (game == "original") {
-        document.getElementById("message").innerHTML = "Settings have not been made yet";
+        document.getElementById("forOriginal").style.display = "";
     } else if (game == "multi") {
-        document.getElementById("message").innerHTML = "Settings have not been made yet";
+        document.getElementById("forMulti").style.display = "";
     }
 }
