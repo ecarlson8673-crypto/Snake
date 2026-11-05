@@ -41,6 +41,14 @@ button:active {
     font-size: 25px;
     z-index: 50;
 }
+#settingsOptions {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(175, 175, 175);
+}
 
 /* title */
 #snakeTitle {
