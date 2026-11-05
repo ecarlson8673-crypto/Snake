@@ -72,9 +72,11 @@ function initializeMulti() {
         if (i % 2 == 0) {
             div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
             field1[i] = `rgb(${0}, ${200}, ${0})`;
+            field2[i] = `rgb(${0}, ${255}, ${0})`;
         } else {
             div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
             field1[i] = `rgb(${0}, ${255}, ${0})`;
+            field2[i] = `rgb(${0}, ${200}, ${0})`;
         }
         document.getElementById("multiContainer").appendChild(div);
     }
@@ -112,6 +114,7 @@ function resetMulti() {
     playMulti();
 }
 
+// function to play again
 function again() {
     if (game == "original") {
         resetOriginal();

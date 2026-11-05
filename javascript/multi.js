@@ -22,6 +22,8 @@ function playMulti() {
         // change field to simulate moving
         changeField();
 
+        // move the body and head of snake
+        moveBody();
     }
 
     // change the field
@@ -46,7 +48,7 @@ function playMulti() {
 
         // move body
         if (durection == "ArrowRight") {
-            
+
         } else if (durection == "ArrowLeft") {
 
         } else if (durection == "ArrowUp") {
