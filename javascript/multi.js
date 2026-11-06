@@ -68,24 +68,32 @@ function playMulti() {
                 body[i] = body[i] - 1;
             }
             body[body.length] = head - 1;
+            // change the actual position of snake relative to larger field
+            viewPort = viewPort + 1;
         } else if (durection == "ArrowLeft") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
                 body[i] = body[i] + 1;
             }
             body[body.length] = head + 1;
+            // change the actual position of snake relative to larger field
+            viewPort = viewPort - 1;
         } else if (durection == "ArrowUp") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
                 body[i] = body[i] + multiFieldWidth;
             }
             body[body.length] = head + multiFieldWidth;
+            // change the actual position of snake relative to larger field
+            viewPort = viewPort - totalFieldWidth;
         } else if (durection == "ArrowDown") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
                 body[i] = body[i] - multiFieldWidth;
             }
             body[body.length] = head - multiFieldWidth;
+            // change the actual position of snake relative to larger field
+            viewPort = viewPort + totalFieldWidth;
         }
 
         // recolor body after movement
