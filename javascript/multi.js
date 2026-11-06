@@ -19,11 +19,14 @@ function playMulti() {
     // move snakes
     multiInterval = setInterval(moveMulti, time);
     function moveMulti() {
+        document.getElementById("ex").innerHTML = "";
         // change field to simulate moving
         changeField();
 
         // move the body and head of snake
         moveBody();
+
+        document.getElementById("ex").innerHTML = pastDurection;
     }
 
     // change the field
