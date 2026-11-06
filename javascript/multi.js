@@ -133,6 +133,7 @@ function playMulti() {
             // the tiles to change color of
             let changeColor = 0;
             for (let i = 0; i < (viewPortX * -1) * multiFieldHeight; i++) {
+                if (changeColor < multiFieldWidth * multiFieldHeight)
                 document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 if (i % (viewPortX * -1) == 0) {
                     changeColor = changeColor + multiFieldWidth;
