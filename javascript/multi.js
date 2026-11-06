@@ -21,9 +21,11 @@ function playMulti() {
         // pause
         if (key == " ") {
             if (pause == true) {
+                clearInterval(multiInterval);
                 document.getElementById("message").innerHTML = "Pause";
                 document.getElementById("settings").style.display = "";
             } else {
+                multiInterval = setInterval(moveMulti, time);
                 document.getElementById("message").innerHTML = "";
                 document.getElementById("settings").style.display = "none";
             }
