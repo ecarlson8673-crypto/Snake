@@ -44,6 +44,8 @@ function playMulti() {
 
         // show food
         showFood();
+
+        document.getElementById("ex").innerHTML = viewPort;
     }
 
     // change the field
