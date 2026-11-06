@@ -13,9 +13,9 @@ function playMulti() {
 
         // change durection of snake
         if (key.includes("Arrow") == true) {
-            //if (pastDurection == "ArrowRight" && key != "ArrowLeft" || pastDurection == "ArrowLeft" && key != "ArrowRight" || PastDurection == "ArrowUp" && key != "ArrowDown" || pastDurection == "ArrowDown" && key != "ArrowUp") {
+            if (pastDurection == "ArrowRight" && key != "ArrowLeft" || pastDurection == "ArrowLeft" && key != "ArrowRight" || pastDurection == "ArrowUp" && key != "ArrowDown" || pastDurection == "ArrowDown" && key != "ArrowUp") {
                 durection = key;
-            //}
+            }
         }
 
         // pause
@@ -34,14 +34,11 @@ function playMulti() {
     // move snakes
     multiInterval = setInterval(moveMulti, time);
     function moveMulti() {
-        document.getElementById("ex").innerHTML = "";
         // change field to simulate moving
         changeField();
 
         // move the body and head of snake
         moveBody();
-
-        document.getElementById("ex").innerHTML = durection;
     }
 
     // change the field
