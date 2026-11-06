@@ -26,7 +26,7 @@ function playMulti() {
         // move the body and head of snake
         moveBody();
 
-        document.getElementById("ex").innerHTML = pastDurection;
+        document.getElementById("ex").innerHTML = durection;
     }
 
     // change the field
