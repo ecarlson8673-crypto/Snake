@@ -45,7 +45,7 @@ function playMulti() {
         // show food
         showFood();
 
-        document.getElementById("ex").innerHTML = viewPort;
+        document.getElementById("ex").innerHTML = viewPortX + " " + viewPortY;
     }
 
     // change the field
@@ -76,7 +76,7 @@ function playMulti() {
             }
             body[body.length] = head - 1;
             // change the actual position of snake relative to larger field
-            viewPort = viewPort + 1;
+            viewPortX = viewPortX + 1;
         } else if (durection == "ArrowLeft") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
@@ -84,7 +84,7 @@ function playMulti() {
             }
             body[body.length] = head + 1;
             // change the actual position of snake relative to larger field
-            viewPort = viewPort - 1;
+            viewPortX = viewPortX - 1;
         } else if (durection == "ArrowUp") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
@@ -92,7 +92,7 @@ function playMulti() {
             }
             body[body.length] = head + multiFieldWidth;
             // change the actual position of snake relative to larger field
-            viewPort = viewPort - totalFieldWidth;
+            viewPortY = viewPortY - 1;
         } else if (durection == "ArrowDown") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
@@ -100,7 +100,7 @@ function playMulti() {
             }
             body[body.length] = head - multiFieldWidth;
             // change the actual position of snake relative to larger field
-            viewPort = viewPort + totalFieldWidth;
+            viewPortY = viewPortY + 1;
         }
 
         // recolor body after movement
@@ -117,8 +117,9 @@ function playMulti() {
     // function to display food
     function showFood() {
         for (let i = 0; i < foodNumber; i++) {
-            if (foodPosition[i] - viewPort >= 0 || (foodPosition[i] - viewPort) < (multiFieldWidth * multiFieldHeight)) {
-                document.getElementById(`multi${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
+            if (foodPosition[i][0] > viewPortX && foodPosition[i][0] < viewPortX + totalFieldWidth && foodPosition[i][1] > viewPortY && foodPosition[i][1] < viewPortY + totalFieldHeight) {
+                let position = (foodPosition[i][0] - viewPortX) + ((foodPosition[i][1] - viewPortY - 1) * multiFieldWidth);
+                document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
             }
         }
     }

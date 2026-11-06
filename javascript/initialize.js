@@ -113,7 +113,7 @@ function resetMulti() {
         let position = Math.floor(Math.random() * (totalFieldWidth * totalFieldHeight));
         foodPosition[i] = position;
     }*/
-    foodPosition[0] = 605;
+    foodPosition[0] = [13, 13];
 
     playMulti();
 }
