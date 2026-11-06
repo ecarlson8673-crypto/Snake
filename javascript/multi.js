@@ -3,16 +3,31 @@ function playMulti() {
     let multiInterval;
     // the field that is currently being used
     let whichField = 1;
+    // wether paused
+    let pause = false;
 
     // check for key event
     document.addEventListener("keydown", keyEvent);
     function keyEvent(event) {
         let key = event.key;
 
+        // change durection of snake
         if (key.includes("Arrow") == true) {
-            if (pastDurection == "ArrowRight" && key != "ArrowLeft" || pastDurection == "ArrowLeft" && key != "ArrowRight" || PastDurection == "ArrowUp" && key != "ArrowDown" || pastDurection == "ArrowDown" && key != "ArrowUp") {
+            //if (pastDurection == "ArrowRight" && key != "ArrowLeft" || pastDurection == "ArrowLeft" && key != "ArrowRight" || PastDurection == "ArrowUp" && key != "ArrowDown" || pastDurection == "ArrowDown" && key != "ArrowUp") {
                 durection = key;
+            //}
+        }
+
+        // pause
+        if (key == " ") {
+            if (pause == true) {
+                document.getElementById("message").innerHTML = "Pause";
+                document.getElementById("settings").style.display = "";
+            } else {
+                document.getElementById("message").innerHTML = "";
+                document.getElementById("settings").style.display = "none";
             }
+            pause = !pause;
         }
     }
 
