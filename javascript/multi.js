@@ -136,7 +136,7 @@ function playMulti() {
                 if (changeColor < multiFieldWidth * multiFieldHeight)
                 document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 if ((i + 1) % (viewPortX * -1) == 0) {
-                    changeColor = changeColor + multiFieldWidth;
+                    changeColor = changeColor + multiFieldWidth + viewPortX + 1;
                 } else {
                     changeColor = changeColor + 1;
                 }
