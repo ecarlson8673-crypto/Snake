@@ -133,7 +133,6 @@ function playMulti() {
             // the tiles to change color of
             let changeColor = 0;
             for (let i = 0; i < (viewPortX * -1) * multiFieldHeight; i++) {
-                //if (changeColor < multiFieldWidth * multiFieldHeight)
                 document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 if ((i + 1) % (viewPortX * -1) == 0) {
                     changeColor = changeColor + multiFieldWidth + viewPortX + 1;
@@ -150,8 +149,8 @@ function playMulti() {
         }
         // if the view port x is greater than 33
         if (viewPortX > totalFieldWidth - multiFieldWidth) {
-            let changeColor = viewPortX + multiFieldWidth - totalFieldWidth;
-            for (let i = 0; i < (((viewPortX * -1) + multiFieldWidth) - totalFieldWidth); i++) {
+            let changeColor = totalFieldWidth - viewPortX + multiFieldWidth;
+            for (let i = 0; i < ((viewPortX * -1) + multiFieldWidth - totalFieldWidth); i++) {
                 document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 if ((i + 1) % (((viewPortX * -1) + multiFieldWidth) - totalFieldWidth) == 0) {
                     changeColor = changeColor + multiFieldWidth + viewPortX + multiFieldWidth - totalFieldWidth + 1;
@@ -162,7 +161,9 @@ function playMulti() {
         }
         // if the view port y is greater than 33
         if (viewPortY > totalFieldHeight - multiFieldHeight) {
-            
+            for (let i = 0; i < (viewPortY * -1) + multiFieldHeight - totalFieldHeight; i++) {
+
+            }
         }
     }
 }
