@@ -43,7 +43,7 @@ function playMulti() {
         moveBody();
 
         // show food
-        showFood();
+        //showFood();
 
         // function to add borders
         borders();
@@ -133,12 +133,12 @@ function playMulti() {
             // the tiles to change color of
             let changeColor = 0;
             for (let i = 0; i < (viewPortX * -1) * multiFieldHeight; i++) {
+                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 if (i % (viewPortX * -1) == 0) {
                     changeColor = changeColor + multiFieldWidth;
                 } else {
                     changeColor = changeColor + 1;
                 }
-                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
             }
         }
         // if view port y if less than 1 then the upper left corner if off field
