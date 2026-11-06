@@ -117,7 +117,7 @@ function playMulti() {
     // function to display food
     function showFood() {
         for (let i = 0; i < foodNumber; i++) {
-            if (foodPosition[i] - viewPort >= 0 || foodPosition[i] - viewPort < multiFieldWidth * multiFieldHeight) {
+            if (foodPosition[i] - viewPort >= 0 || (foodPosition[i] - viewPort) < (multiFieldWidth * multiFieldHeight)) {
                 document.getElementById(`multi${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
             }
         }
