@@ -97,8 +97,8 @@ function resetMulti() {
     document.getElementById("message").innerHTML = "";
     document.getElementById("again").style.display = "none";
     // reset position
-    head = 49;
-    body = [46, 47, 48];
+    head = 60;
+    body = [57, 58, 59];
     durection = "ArrowRight";
 
     // change color of field for head and body
