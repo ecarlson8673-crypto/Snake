@@ -45,6 +45,8 @@ function playMulti() {
         // show food
         showFood();
 
+        // function to add borders
+        borders();
         document.getElementById("ex").innerHTML = viewPortX + " " + viewPortY;
     }
 
@@ -120,6 +122,29 @@ function playMulti() {
             if (foodPosition[i][0] > viewPortX && foodPosition[i][0] < viewPortX + totalFieldWidth && foodPosition[i][1] > viewPortY && foodPosition[i][1] < viewPortY + totalFieldHeight) {
                 let position = (foodPosition[i][0] - viewPortX) + ((foodPosition[i][1] - viewPortY - 1) * multiFieldWidth);
                 document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
+            }
+        }
+    }
+
+    // add borders to field
+    function borders() {
+        // if view port x is less than 1 then the upper left corner is off field
+        if (viewPortX < 1) {
+            // the tiles to change color of
+            let changeColor = 0;
+            for (let i = 0; i < (viewPortX * -1) * multiFieldHeight; i++) {
+                if (i % (viewPortX * -1) == 0) {
+                    changeColor = changeColor + multiFieldWidth;
+                } else {
+                    changeColor = changeColor + 1;
+                }
+                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+            }
+        }
+        // if view port y if less than 1 then the upper left corner if off field
+        if (viewPortY < 1) {
+            for (let i = 0; i < (viewPortY * - 1) * multiFieldWidth; i++) {
+                document.getElementById(`multi${i}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
             }
         }
     }
