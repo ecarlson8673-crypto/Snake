@@ -39,6 +39,9 @@ function playMulti() {
 
         // move the body and head of snake
         moveBody();
+
+        // show food
+        showFood();
     }
 
     // change the field

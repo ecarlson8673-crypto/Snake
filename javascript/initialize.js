@@ -109,7 +109,10 @@ function resetMulti() {
     document.getElementById(`multi${57}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
     
     // set position of food relative to larger field
-    foodPosition = [];
+    for (let i = 0; i < foodNumber; i++) {
+        let position = Math.floor(Math.random() * (totalFieldWidth * totalFieldHeight));
+        foodPosition[i] = position;
+    }
 
     playMulti();
 }
