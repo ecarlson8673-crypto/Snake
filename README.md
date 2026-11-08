@@ -1,8 +1,13 @@
 # Snake
 This is a collection of Snake games.
 
+To play, click one of the buttons bellow the 'Snake' header.
+
+
 ## Original
 This is the original snake game, to play use the arrow keys. Make sure you do not hit the walls or yourself.
+
+![alt text](<Screenshot 2026-11-06 3.31.27 PM.png>)
 
 ## Multi
 This game is in process of being made.
