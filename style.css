@@ -9,13 +9,13 @@ body {
 button {
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    background-color: rgb(255, 190, 190);
+    background-color: rgb(255, 215, 215);
     color: rgb(255, 0, 0);
     border-width: 8px;
     margin: 10px;
 }
 button:active {
-    background-color: rgb(175, 175, 175);
+    background-color: rgb(255, 240, 240);
     border-style: solid;
 }
 
