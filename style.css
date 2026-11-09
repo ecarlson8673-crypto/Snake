@@ -18,6 +18,9 @@ button:active {
     background-color: rgb(255, 240, 240);
     border-style: solid;
 }
+button:hover {
+    border-width: 10px;
+}
 
 #message {
     position: absolute;
