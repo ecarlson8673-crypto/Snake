@@ -67,7 +67,7 @@ button:active {
     position: fixed;
     left: calc(50% - 175px);
     top: 10px;
-    width: 350px;
+    width: 700px;
     height: 100px;
     text-align: center;
     background-color: rgb(179, 228, 255);
