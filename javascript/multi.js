@@ -160,7 +160,7 @@ function playMulti() {
         // if the view port y is greater than 33
         if (viewPortY > totalFieldHeight - multiFieldHeight) {
             for (let i = 0; i < (multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth; i++) {
-                document.getElementById(`multi${i}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                document.getElementById(`multi${i + ((multiFieldWidth * multiFieldHeight) - ((multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth))}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
             }
         }
     }
