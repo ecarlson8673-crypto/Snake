@@ -69,7 +69,8 @@ button:active {
     width: 350px;
     height: 100px;
     text-align: center;
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(102, 204, 255);
+    color: rgb(50, 50, 200);
     border-bottom-width: 10px;
     border-left-width: 10px;
     border-radius: 25px;
