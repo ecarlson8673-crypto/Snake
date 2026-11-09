@@ -71,6 +71,7 @@ button:active {
     text-align: center;
     background-color: rgb(225, 225, 225);
     border-bottom-width: 10px;
+    border-left-width: 10px;
     border-radius: 25px;
     border-style: solid;
 }
