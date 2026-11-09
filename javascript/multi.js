@@ -149,11 +149,11 @@ function playMulti() {
         }
         // if the view port x is greater than 33
         if (viewPortX > totalFieldWidth - multiFieldWidth) {
-            let changeColor = (viewPortX - totalFieldWidth);
-            for (let i = 0; i < (viewPortX - multiFieldWidth) * totalFieldHeight; i++) {
+            let changeColor = (totalFieldWidth - viewPortX);
+            for (let i = 0; i < (multiFieldWidth - viewPortX) * multiFieldHeight; i++) {
                 document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
-                if ((i + 1) % (viewPortX - totalFieldWidth) == 0) {
-                    changeColor = changeColor + 1 + (multiFieldWidth - (viewPortX - totalFieldWidth));
+                if ((i + 1) % (totalFieldWidth - viewPortX) == 0) {
+                    changeColor = changeColor + 1 + (multiFieldWidth - (totalFieldWidth - viewPortX));
                 } else {
                     changeColor = changeColor + 1;
                 }
