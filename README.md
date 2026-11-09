@@ -5,6 +5,8 @@ To play, click one of the buttons on the left side of the screen bellow the 'Sna
 
 ![alt text](<Screenshot 2026-11-08 5.07.01 PM.png>)
 
+
+# The Games
 ## Original
 This is the original snake game, to play use the arrow keys. Make sure you do not hit the walls or yourself.
 
