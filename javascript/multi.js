@@ -131,7 +131,9 @@ function playMulti() {
             // the tiles to change color of
             let changeColor = 0;
             for (let i = 0; i < (viewPortX * -1) * multiFieldHeight; i++) {
-                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                if (changeColor < multiFieldWidth * multiFieldHeight) {
+                    document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                }
                 if ((i + 1) % (viewPortX * -1) == 0) {
                     changeColor = changeColor + multiFieldWidth + viewPortX + 1;
                 } else {
@@ -142,14 +144,18 @@ function playMulti() {
         // if view port y if less than 1 then the upper left corner if off field
         if (viewPortY < 1) {
             for (let i = 0; i < (viewPortY * - 1) * multiFieldWidth; i++) {
-                document.getElementById(`multi${i}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                if (i <= multiFieldWidth * multiFieldHeight) {
+                    document.getElementById(`multi${i}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                }
             }
         }
         // if the view port x is greater than 33
         if (viewPortX > totalFieldWidth - multiFieldWidth) {
             let changeColor = totalFieldWidth - viewPortX;
             for (let i = 0; i < (multiFieldWidth - (multiFieldWidth - viewPortX)) * multiFieldHeight; i++) {
-                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                if (changeColor < multiFieldWidth * multiFieldHeight) {
+                    document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                }
                 if ((i + 1) % (multiFieldWidth - (totalFieldWidth - viewPortX)) == 0) {
                     changeColor = changeColor + 1 + (totalFieldWidth - viewPortX);
                 } else {
@@ -160,7 +166,9 @@ function playMulti() {
         // if the view port y is greater than 33
         if (viewPortY > totalFieldHeight - multiFieldHeight) {
             for (let i = 0; i < (multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth; i++) {
-                document.getElementById(`multi${i + ((multiFieldWidth * multiFieldHeight) - ((multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth))}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                if (i + ((multiFieldWidth * multiFieldHeight) - ((multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth)) < multiFieldWidth * multiFieldHeight) {
+                    document.getElementById(`multi${i + ((multiFieldWidth * multiFieldHeight) - ((multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth))}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                }
             }
         }
     }
