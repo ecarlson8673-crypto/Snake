@@ -133,7 +133,7 @@ function playMulti() {
             // the tiles to change color of
             let changeColor = 0;
             for (let i = 0; i < (viewPortX * -1) * multiFieldHeight; i++) {
-                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 if ((i + 1) % (viewPortX * -1) == 0) {
                     changeColor = changeColor + multiFieldWidth + viewPortX + 1;
                 } else {
@@ -144,15 +144,15 @@ function playMulti() {
         // if view port y if less than 1 then the upper left corner if off field
         if (viewPortY < 1) {
             for (let i = 0; i < (viewPortY * - 1) * multiFieldWidth; i++) {
-                document.getElementById(`multi${i}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+                document.getElementById(`multi${i}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
             }
         }
         // if the view port x is greater than 33
         if (viewPortX > totalFieldWidth - multiFieldWidth) {
             let changeColor = (viewPortX - totalFieldWidth);
             for (let i = 0; i < (viewPortX - multiFieldWidth) * totalFieldHeight; i++) {
-                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
-                if ((i + 1) % (viewPortX - totalFieldWidth) == 0) {
+                document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+                if ((i + 1) % (viewPortX - multiFieldWidth) == 0) {
                     changeColor = changeColor + 1 + (multiFieldWidth - (viewPortX - totalFieldWidth));
                 } else {
                     changeColor = changeColor + 1;
@@ -162,7 +162,7 @@ function playMulti() {
         // if the view port y is greater than 33
         if (viewPortY > totalFieldHeight - multiFieldHeight) {
             for (let i = 0; i < (viewPortY) + multiFieldHeight - totalFieldHeight; i++) {
-                document.getElementById(`multi${i + (viewPortY - multifieldHeight + totalFieldHeight)}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+                document.getElementById(`multi${i + (viewPortY - multifieldHeight + totalFieldHeight)}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
             }
         }
     }
