@@ -161,8 +161,8 @@ function playMulti() {
         }
         // if the view port y is greater than 33
         if (viewPortY > totalFieldHeight - multiFieldHeight) {
-            for (let i = 0; i < (viewPortY) + multiFieldHeight - totalFieldHeight; i++) {
-                document.getElementById(`multi${i + (viewPortY - multifieldHeight + totalFieldHeight)}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
+            for (let i = 0; i < (multiFieldHeight - (multiFieldHeight - viewPortY)) * multiFieldWidth; i++) {
+                document.getElementById(`multi${i + ((multiFieldWidth - (multiFieldHeight - (multiFieldHeight - viewPortY))) * multiFieldWidth * multiFieldHeight)}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
             }
         }
     }
