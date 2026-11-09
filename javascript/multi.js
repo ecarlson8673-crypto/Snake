@@ -23,11 +23,9 @@ function playMulti() {
             if (pause == false) {
                 clearInterval(multiInterval);
                 document.getElementById("message").innerHTML = "Pause";
-                document.getElementById("settings").style.display = "";
             } else {
                 multiInterval = setInterval(moveMulti, time);
                 document.getElementById("message").innerHTML = "";
-                document.getElementById("settings").style.display = "none";
             }
             pause = !pause;
         }

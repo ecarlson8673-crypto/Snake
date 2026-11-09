@@ -25,12 +25,9 @@ function playOriginal() {
             if (pause == false) {
                 clearInterval(originalInterval);
                 document.getElementById("message").innerHTML = "Paused";
-                document.getElementById("settings").style.display = "";
             } else {
                 originalInterval = setInterval(moveOriginal, time);
                 document.getElementById("message").innerHTML = "";
-                document.getElementById("settings").style.display = "none";
-                document.getElementById("settingsOptions").style.display = "none";
             }
             pause = !pause;
         }

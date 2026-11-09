@@ -12,30 +12,6 @@
         <!-- messages like, 'You lost' -->
         <div id="message"></div>
         <button id="again" onclick="again()">Play again</button>
-        <button id="settings" onclick="settings()">Settings</button>
-        <div id="settingsOptions">
-            <div id="settingsTitle">Settings</div>
-            <div id="settingsMessage">Press Space to Continue</div>
-            <div id="forOriginal">
-                <!-- setting to add
-                 - change color of snake
-                 - change speed
-                 - change amount of food
-                 - change type of food (color)
-                -->
-will be original settings
-            </div>
-            <div id="forMulti">
-                <!-- setting to add
-                 - change color of snake
-                 - change speed
-                 - change number of food
-                 - change number of bots?
-                 - change type of food 
-                -->
-will be multi settings
-            </div>
-        </div>
         <!-- the title to be displayed at the beginning and removed once started -->
         <div id="titles">
             <div id="titleBack"></div>
@@ -63,6 +39,29 @@ will be multi settings
  ||    ||  \\_//  ||__/  ||   __||_  
             </pre></button>
         </div>
+        <button id="settings" onclick="settings()">Settings</button>
+        <div id="settingsOptions">
+            <div id="settingsTitle">Settings</div>
+            <div id="forOriginal">
+                <!-- setting to add
+                 - change color of snake
+                 - change speed
+                 - change amount of food
+                 - change type of food (color)
+                -->
+will be original settings
+            </div>
+            <div id="forMulti">
+                <!-- setting to add
+                 - change color of snake
+                 - change speed
+                 - change number of food
+                 - change number of bots?
+                 - change type of food 
+                -->
+will be multi settings
+            </div>
+        </div>
         <!-- snake element go here -->
          <div id="fieldElements">
             <div id="originalContainer"></div>
@@ -73,8 +72,6 @@ will be multi settings
     <script>
         // hide things
         document.getElementById("again").style.display = "none";
-        document.getElementById("settings").style.display = "none";
-        document.getElementById("settingsOptions").style.display = "none";
         document.getElementById("forOriginal").style.display = "none";
         document.getElementById("forMulti").style.display = "none";
 
