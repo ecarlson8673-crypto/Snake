@@ -5,6 +5,9 @@ function playMulti() {
     let whichField = 1;
     // wether paused
     let pause = false;
+    // the actual view port
+    let actualPortX;
+    let actualPortY;
 
     // check for key event
     document.addEventListener("keydown", keyEvent);
@@ -34,7 +37,10 @@ function playMulti() {
     // move snakes
     multiInterval = setInterval(moveMulti, time);
     function moveMulti() {
-        document.getElementById("ex").innerHTML = (viewPortX + 5) + " " + (viewPortY + 5);
+        actualPortX = viewPortX + 5;
+        actualPortY = viewPortY + 5;
+
+        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY;
         // change field to simulate moving
         changeField();
 
@@ -180,7 +186,7 @@ function playMulti() {
 
     // check if snake dies
     function die() {
-        if (viewPortX > 32 || viewPortX < 0 || viewPortY > 32 || viewPortY < 0) {
+        if (actualPortX > 32 || actualPortX < 0 || actualPortY > 32 || actualPortY < 0) {
             return true;
         }
     }
