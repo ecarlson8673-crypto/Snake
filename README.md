@@ -1,6 +1,10 @@
 # Snake Games
 This is a collection of Snake games.
 
+## Why Snake?
+I have always loved the Snake game because of its simplicity to code and play. Recently when playing Snake, I thought of some fun ways to modify the original game. This program contains those ideas (or will). 
+
+## Get Started
 To play, click one of the buttons on the left side of the screen bellow the 'Snake Games' header.
 
 ![alt text](<Screenshot 2026-11-08 5.07.01 PM.png>)
@@ -15,7 +19,8 @@ This is the original snake game, to play use the arrow keys. Make sure you do no
 ![alt text](<Screenshot 2026-11-06 3.31.27 PM.png>)
 
 ## Multi
-This game is in process of being made.
+This game is in the process of being made.
+
 Use the arrow keys to avoid the other snakes. The field is limited, although you can not see all of it. Get as big as possible by eating the food.
 
 #
