@@ -36,6 +36,7 @@ function playMulti() {
     // move snakes
     multiInterval = setInterval(moveMulti, time);
     function moveMulti() {
+        document.getElementById("ex").innerHTML = viewPortX + " " + viewPortY;
         // change field to simulate moving
         changeField();
 
@@ -47,7 +48,6 @@ function playMulti() {
 
         // function to add borders
         borders();
-        document.getElementById("ex").innerHTML = viewPortX + " " + viewPortY;
     }
 
     // change the field

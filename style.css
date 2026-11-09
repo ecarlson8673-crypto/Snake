@@ -123,3 +123,9 @@ button:active {
     width: 495px;
     height: 495px;
 }
+
+#logo {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+}
