@@ -20,7 +20,7 @@ function playMulti() {
 
         // pause
         if (key == " ") {
-            if (pause == true) {
+            if (pause == false) {
                 clearInterval(multiInterval);
                 document.getElementById("message").innerHTML = "Pause";
                 document.getElementById("settings").style.display = "";
@@ -149,7 +149,7 @@ function playMulti() {
         }
         // if the view port x is greater than 33
         if (viewPortX > totalFieldWidth - multiFieldWidth) {
-            let changeColor = multiFieldWidth - 1 - (viewPortX - totalFieldWidth);
+            let changeColor = multiFieldWidth - (viewPortX - totalFieldWidth);
             for (let i = 0; i < (viewPortX - multiFieldWidth) * totalFieldHeight; i++) {
                 document.getElementById(`multi${changeColor}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 if ((i + 1) % (viewPortX - multiFieldWidth) == 0) {
