@@ -9,7 +9,8 @@ body {
 button {
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(255, 122, 122);
+    color: rgb(255, 0, 0);
     border-width: 8px;
     margin: 10px;
 }
