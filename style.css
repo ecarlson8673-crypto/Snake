@@ -86,7 +86,7 @@ button:active {
     height: 135px;
     background-color: rgb(125, 125, 125);
     border-style: solid;
-    border-bottom-width: 10px;
+    border-bottom-width: 5px;
     border-color: rgb(0, 0, 0);
 }
 #spacer {
