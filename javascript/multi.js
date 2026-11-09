@@ -46,6 +46,11 @@ function playMulti() {
 
         // function to add borders
         borders();
+
+        // check if snake hit walls, self, or other snake
+        if (die() == true) {
+            document.getElementById("message").innerHTML = "You lost";
+        }
     }
 
     // change the field
@@ -170,6 +175,13 @@ function playMulti() {
                     document.getElementById(`multi${i + ((multiFieldWidth * multiFieldHeight) - ((multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth))}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 }
             }
+        }
+    }
+
+    // check if snake dies
+    function die() {
+        if (viewPortX > 32 || viewPortX < 0 || viewPortY > 32 || viewPortY < 0) {
+            return true;
         }
     }
 }
