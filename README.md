@@ -7,6 +7,8 @@ To play, click one of the buttons on the left side of the screen bellow the 'Sna
 
 
 # The Games
+Currently there is one game that works with plans for more games and features in the future.
+
 ## Original
 This is the original snake game, to play use the arrow keys. Make sure you do not hit the walls or yourself.
 
