@@ -37,15 +37,16 @@ function playMulti() {
     // move snakes
     multiInterval = setInterval(moveMulti, time);
     function moveMulti() {
-        actualPortX = viewPortX + 5;
-        actualPortY = viewPortY + 5;
-
-        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY;
         // change field to simulate moving
         changeField();
 
         // move the body and head of snake
         moveBody();
+
+        actualPortX = viewPortX + 5;
+        actualPortY = viewPortY + 5;
+
+        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY;
 
         // show food
         showFood();
