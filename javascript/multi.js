@@ -48,7 +48,7 @@ function playMulti() {
         moveBody();
 
         // show food
-        //showFood();
+        showFood();
 
         // function to add borders
         borders();
