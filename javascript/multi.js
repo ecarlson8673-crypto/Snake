@@ -56,7 +56,7 @@ function playMulti() {
         // check if snake hit walls, self, or other snake
         if (die() == true) {
             document.getElementById("message").innerHTML = "You lost";
-            //clearInterval(multiInterval);
+            clearInterval(multiInterval);
         }
     }
 
@@ -127,14 +127,14 @@ function playMulti() {
     }
 
     // function to display food
-    /*function showFood() {
+    function showFood() {
         for (let i = 0; i < foodNumber; i++) {
             if (actualPortX < foodPosition[i][0] && (actualPortX + multiFieldWidth) > foodPosition[i][0] && actualPortY < foodPosition[i][1] && (actualPortY + multiFieldHeight) > foodPosition[i][1]) {
                 let position = (actualPortX - foodPosition[i][0]) + ((actualPortY - foodPosition[i][1] - 1) * multiFieldHeight);
                 document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
             }
         }
-    }*/
+    }
 
     // add borders to field
     function borders() {
