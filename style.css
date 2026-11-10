@@ -60,6 +60,8 @@ button:hover {
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+    font-size: 40px;
+    border-width: 6px;
 }
 #settingsOptions button:active {
     background-color: rgb(200, 200, 200);

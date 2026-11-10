@@ -46,7 +46,7 @@ function playMulti() {
         actualPortX = viewPortX + 5;
         actualPortY = viewPortY + 5;
 
-        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY;
+        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY + " " + foodPosition;
 
         // show food
         showFood();
