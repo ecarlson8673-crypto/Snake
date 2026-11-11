@@ -42,32 +42,28 @@
         <button id="settings" onclick="settings()">Settings</button>
         <div id="settingsOptions">
             <div id="settingsTitle">Settings</div>
+
             <div>Snake Color</div>
-            <div>
-                <button id="blue">Blue Snake</button>
-                <button id="red">Red Snake</button>
-                <button id="green">Green Snake</button>
-            </div>
+            <button id="blue" onclick="blue()">Blue Snake</button>
+            <button id="red" onclick="red()">Red Snake</button>
+            <button id="green" onclick="green()">Green Snake</button>
+
             <div>Food Type</div>
-            <div>
-                <button id="cherry">Cherry</button>
-                <button id="apple">Apple</button>
-                <button id="orange">Orange</button>
-            </div>
+            <button id="cherry" onclick="cherry()">Cherry</button>
+            <button id="apple" onclick="apple()">Apple</button>
+            <button id="orange" onclick="orange()">Orange</button>
+
             <div>Food Number</div>
-            <div>
-                <button id="one">One</button>
-                <button id="two">Two</button>
-                <button id="three">Three</button>
-                <button id="five">Five</button>
-                <button id="ten">Ten</button>
-            </div>
+            <button id="one" onclick="one()">One</button>
+            <button id="two" onclick="two()">Two</button>
+            <button id="three" onclick="three()">Three</button>
+            <button id="five" onclick="five()">Five</button>
+            <button id="ten" onclick="ten()">Ten</button>
+
             <div>Speed</div>
-            <div>
-                <button id="fast">Fast</button>
-                <button id="normal">Normal</button>
-                <button id="slow">Slow</button>
-            </div>
+            <button id="fast" onclick="fast()">Fast</button>
+            <button id="normal" onclick="normal()">Normal</button>
+            <button id="slow" onclick="slow()">Slow</button>
         </div>
         <!-- snake element go here -->
          <div id="fieldElements">
@@ -84,6 +80,10 @@
         document.getElementById("settingsOptions").style.display = "none";
 
         // define global varables
+
+        // snake color
+        var headColor = `rgb(${0}, ${0}, ${175})`;
+        var bodyColor = `rgb(${0}, ${0}, ${225})`;
 
         // position of head and body
         var head;
@@ -105,6 +105,8 @@
         var foodPosition = [];
         // number of food
         var foodNumber = 5;
+        // food color
+        var foodColor = `rgb(${255}, ${0}, ${0})`;
 
         // for ORIGINAL
         // size of field
@@ -140,6 +142,7 @@
     <script src="javascript/original.js"></script>
     <script src="javascript/multi.js"></script>
     <script src="javascript/settings.js"></script>
+    <script src="javascript/settingsFunctions.js"></script>
     <script>
         
     </script>

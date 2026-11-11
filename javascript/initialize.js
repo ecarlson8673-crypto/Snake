@@ -38,17 +38,17 @@ function resetOriginal() {
     durection = "ArrowRight";
 
     // set up snake
-    document.getElementById(`original${220}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+    document.getElementById(`original${220}`).style.backgroundColor = headColor;
     // body
-    document.getElementById(`original${219}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
-    document.getElementById(`original${218}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
-    document.getElementById(`original${217}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    document.getElementById(`original${219}`).style.backgroundColor = bodyColor;
+    document.getElementById(`original${218}`).style.backgroundColor = bodyColor;
+    document.getElementById(`original${217}`).style.backgroundColor = bodyColor;
 
     // the position of the food to start
     for (let i = 0; i < foodNumber; i++) {
         let position = Math.floor(Math.random() * 200);
         foodPosition[i] = position;
-        document.getElementById(`original${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
+        document.getElementById(`original${position}`).style.backgroundColor = foodColor;
     }
     
     // be able to move the snake
@@ -102,11 +102,11 @@ function resetMulti() {
     durection = "ArrowRight";
 
     // change color of field for head and body
-    document.getElementById(`multi${60}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+    document.getElementById(`multi${60}`).style.backgroundColor = headColor;
 
-    document.getElementById(`multi${59}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
-    document.getElementById(`multi${58}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
-    document.getElementById(`multi${57}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+    document.getElementById(`multi${59}`).style.backgroundColor = bodyColor;
+    document.getElementById(`multi${58}`).style.backgroundColor = bodyColor;
+    document.getElementById(`multi${57}`).style.backgroundColor = bodyColor;
     
     // set position of food relative to larger field
     for (let i = 0; i < foodNumber; i++) {

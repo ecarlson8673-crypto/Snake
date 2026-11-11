@@ -42,22 +42,22 @@ function playOriginal() {
         // move snake head based on arrows
         if (durection == "ArrowRight") {
             if (head + 1 < originalFieldWidth * originalFieldHeight) {
-                document.getElementById(`original${head + 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+                document.getElementById(`original${head + 1}`).style.backgroundColor = headColor;
             }
             head = head + 1;
         } else if (durection == "ArrowLeft") {
             if (head - 1 >= 0) {
-                document.getElementById(`original${head - 1}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+                document.getElementById(`original${head - 1}`).style.backgroundColor = headColor;
             }
             head = head - 1;
         } else if (durection == "ArrowUp") {
             if (head - originalFieldWidth >= 0) {
-                document.getElementById(`original${head - originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+                document.getElementById(`original${head - originalFieldWidth}`).style.backgroundColor = headColor;
             }
             head = head - originalFieldWidth;
         } else if (durection == "ArrowDown") {
             if (head + originalFieldWidth < originalFieldWidth * originalFieldHeight) {
-                document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+                document.getElementById(`original${head + originalFieldWidth}`).style.backgroundColor = headColor;
             }
             head = head + originalFieldWidth;
         }
@@ -93,7 +93,7 @@ function playOriginal() {
         body.splice(0, 1);
         body[body.length] = head;
         if (head >= 0 && head < originalFieldWidth * originalFieldHeight) {
-            document.getElementById(`original${body[body.length - 1]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+            document.getElementById(`original${body[body.length - 1]}`).style.backgroundColor = bodyColor;
         }
     }
 
@@ -115,7 +115,7 @@ function playOriginal() {
                         }
                     }
                 } while (foodInBody == true);
-                document.getElementById(`original${foodPosition[i]}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
+                document.getElementById(`original${foodPosition[i]}`).style.backgroundColor = foodColor;
             }
         }
     }

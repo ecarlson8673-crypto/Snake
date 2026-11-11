@@ -79,7 +79,7 @@ function playMulti() {
     // move the body
     function moveBody() {
         // recolor head
-        document.getElementById(`multi${60}`).style.backgroundColor = `rgb(${0}, ${0}, ${175})`;
+        document.getElementById(`multi${60}`).style.backgroundColor = headColor;
 
         // move body
         if (durection == "ArrowRight") {
@@ -119,7 +119,7 @@ function playMulti() {
         // recolor body after movement
         for (let i = 0; i < body.length; i++) {
             if (body[i] >= 0 && body[i] < multiFieldWidth * multiFieldHeight) {
-                document.getElementById(`multi${body[i]}`).style.backgroundColor = `rgb(${0}, ${0}, ${225})`;
+                document.getElementById(`multi${body[i]}`).style.backgroundColor = bodyColor;
             }
         }
 
@@ -132,7 +132,7 @@ function playMulti() {
         for (let i = 0; i < foodNumber; i++) {
             if (actualPortX <= foodPosition[i][0] && (actualPortX + multiFieldWidth) > foodPosition[i][0] && actualPortY <= foodPosition[i][1] && (actualPortY + multiFieldHeight) > foodPosition[i][1]) {
                 let position = (foodPosition[i][0] - actualPortX) + ((foodPosition[i][1] - actualPortY) * multiFieldHeight);
-                document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
+                document.getElementById(`multi${position}`).style.backgroundColor = foodColor;
             }
         }
     }
