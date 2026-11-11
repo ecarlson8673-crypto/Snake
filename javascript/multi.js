@@ -131,7 +131,7 @@ function playMulti() {
     function showFood() {
         for (let i = 0; i < foodNumber; i++) {
             if (actualPortX <= foodPosition[i][0] && (actualPortX + multiFieldWidth) > foodPosition[i][0] && actualPortY <= foodPosition[i][1] && (actualPortY + multiFieldHeight) > foodPosition[i][1]) {
-                let position = (foodPosition[i][0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((foodPosition[i][1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+                let position = (foodPosition[i][0] - actualPortX + Math.ciel(multiFieldWidth / 2)) + ((foodPosition[i][1] - actualPortY + Math.ciel(multiFieldHeight / 2)) * multiFieldHeight);
                 document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
             }
         }
