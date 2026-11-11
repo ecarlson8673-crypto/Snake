@@ -130,10 +130,8 @@ function playMulti() {
     // function to display food
     function showFood() {
         for (let i = 0; i < foodNumber; i++) {
-            let left = foodPosition[i][0] + Math.ciel(multiFieldWidth / 2);
-            let top = foodPosition[i][1] + Math.ciel(multiFieldHeight / 2);
-            if (actualPortX <= left && (actualPortX + multiFieldWidth) > left && actualPortY <= top && (actualPortY + multiFieldHeight) > top) {
-                let position = (foodPosition[i][0] - actualPortX + Math.ciel(multiFieldWidth / 2)) + ((foodPosition[i][1] - actualPortY + Math.ciel(multiFieldHeight / 2)) * multiFieldHeight);
+            if (actualPortX <= foodPosition[i][0] && (actualPortX + multiFieldWidth) > foodPosition[i][0] && actualPortY <= foodPosition[i][1] && (actualPortY + multiFieldHeight) > foodPosition[i][1]) {
+                let position = (foodPosition[i][0] - actualPortX) + ((foodPosition[i][1] - actualPortY) * multiFieldHeight);
                 document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${255}, ${0}, ${0})`;
             }
         }
