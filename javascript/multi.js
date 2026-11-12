@@ -192,7 +192,7 @@ function playMulti() {
     // function to eat food
     function eat() {
         for (let i = 0; i < foodNumber; i++) {
-            if (foodPosition[i][0] == (actualPortX + Math.floor(multiFieldWidth / 2)) && foodPosition[i][1] == (actualPortY + Math.floor(multiFieldHeight / 2))) {
+            if ((foodPosition[i][0] + Math.floor(multiFieldWidth / 2)) == actualPortX && (foodPosition[i][1] + Math.floor(multiFieldHeight / 2)) == actualPortY) {
                 foodPosition[i][0] = Math.floor(Math.random() * totalFieldWidth);
                 foodPosition[i][1] = Math.floor(Math.random() * totalFieldHeight);
             }
