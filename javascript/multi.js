@@ -40,13 +40,13 @@ function playMulti() {
         // change field to simulate moving
         changeField();
 
-        // move the body and head of snake
-        moveBody();
-
         actualPortX = viewPortX + 5;
         actualPortY = viewPortY + 5;
 
-        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY + " " + foodPosition;
+        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY + " " + actualBodyPosition;
+
+        // move the body and head of snake
+        moveBody();
 
         // show food
         showFood();
@@ -81,9 +81,6 @@ function playMulti() {
 
     // move the body
     function moveBody() {
-        // recolor head
-        document.getElementById(`multi${60}`).style.backgroundColor = headColor;
-
         // move body
         if (durection == "ArrowRight") {
             body.splice(0, 1);
@@ -93,6 +90,13 @@ function playMulti() {
             body[body.length] = head - 1;
             // change the actual position of snake relative to larger field
             viewPortX = viewPortX + 1;
+
+            // change position of body relative to larger field
+            actualBodyPosition.splice(0, 1);
+            for (let i = 0; i < actualBodyPosition.length; i++) {
+                actualBodyPosition[i][0]++;
+            }
+            actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowLeft") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
@@ -101,6 +105,13 @@ function playMulti() {
             body[body.length] = head + 1;
             // change the actual position of snake relative to larger field
             viewPortX = viewPortX - 1;
+
+            // change position of body relative to larger field
+            actualBodyPosition.splice(0, 1);
+            for (let i = 0; i < actualBodyPosition.length; i++) {
+                actualBodyPosition[i][0]--;
+            }
+            actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowUp") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
@@ -109,6 +120,13 @@ function playMulti() {
             body[body.length] = head + multiFieldWidth;
             // change the actual position of snake relative to larger field
             viewPortY = viewPortY - 1;
+
+            // change position of body relative to larger field
+            actualBodyPosition.splice(0, 1);
+            for (let i = 0; i < actualBodyPosition.length; i++) {
+                actualBodyPosition[i][1]--;
+            }
+            actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowDown") {
             body.splice(0, 1);
             for (let i = 0; i < body.length; i++) {
@@ -117,6 +135,13 @@ function playMulti() {
             body[body.length] = head - multiFieldWidth;
             // change the actual position of snake relative to larger field
             viewPortY = viewPortY + 1;
+
+            // change position of body relative to larger field
+            actualBodyPosition.splice(0, 1);
+            for (let i = 0; i < actualBodyPosition.length; i++) {
+                actualBodyPosition[i][1]++;
+            }
+            actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         }
 
         // recolor body after movement
@@ -125,6 +150,9 @@ function playMulti() {
                 document.getElementById(`multi${body[i]}`).style.backgroundColor = bodyColor;
             }
         }
+
+        // recolor head
+        document.getElementById(`multi${60}`).style.backgroundColor = headColor;
 
         // change the past durection
         pastDurection = durection;

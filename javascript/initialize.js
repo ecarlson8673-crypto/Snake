@@ -99,6 +99,12 @@ function resetMulti() {
     // reset position
     head = 60;
     body = [57, 58, 59];
+    // set actual body position
+    for (let i = 0; i < 4; i++) {
+        actualBodyPosition[i] = [];
+        actualBodyPosition[i][0] = (Math.floor(actualFieldWidth / 2) - i) - 1;
+        actualBodyPosition[i][1] = Math.floor(actualFieldHeight / 2);
+    }
     durection = "ArrowRight";
 
     // change color of field for head and body
