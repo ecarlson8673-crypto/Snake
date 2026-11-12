@@ -100,10 +100,10 @@ function resetMulti() {
     head = 60;
     body = [57, 58, 59];
     // set actual body position
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         actualBodyPosition[i] = [];
         actualBodyPosition[i][0] = (Math.floor(totalFieldWidth / 2) - i) - 1;
-        actualBodyPosition[i][1] = Math.floor(totalFieldHeight / 2);
+        actualBodyPosition[i][1] = Math.ceil(totalFieldHeight / 2);
     }
     durection = "ArrowRight";
 
