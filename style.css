@@ -66,12 +66,6 @@ button:hover {
 #settingsOptions button:active {
     background-color: rgb(200, 200, 200);
 }
-#settingsOptions div {
-    border-width: 5px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(0, 0, 0);
-    background-color: rgb(200, 200, 200);
-}
 #settingsTitle {
     width: 100%;
     font-size: 50px;
