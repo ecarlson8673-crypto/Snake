@@ -51,6 +51,9 @@ function playMulti() {
         // show food
         showFood();
 
+        // eat food
+        eat();
+
         // function to add borders
         borders();
 
@@ -182,6 +185,16 @@ function playMulti() {
                 if (i + ((multiFieldWidth * multiFieldHeight) - ((multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth)) < multiFieldWidth * multiFieldHeight) {
                     document.getElementById(`multi${i + ((multiFieldWidth * multiFieldHeight) - ((multiFieldHeight - (totalFieldHeight - viewPortY)) * multiFieldWidth))}`).style.backgroundColor = `rgb(${200}, ${200}, ${200})`;
                 }
+            }
+        }
+    }
+
+    // function to eat food
+    function eat() {
+        for (let i = 0; i < foodNumber; i++) {
+            if (foodPosition[i][0] == viewPortX + Math.floor(multiFieldWidth / 2) && foodPosition[i][0] == viewPortY + Math.floor(multiFieldHeight / 2)) {
+                foodPosition[i][0] = Math.floor(Math.random() * totalFieldWidth);
+                foodPosition[i][1] = Math.floor(Math.random() * totalFieldHeight);
             }
         }
     }
