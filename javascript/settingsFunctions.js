@@ -30,7 +30,7 @@ function cherry() {
     document.getElementById("cherry").style.borderWidth = `${8}px`;
 }
 function apple() {
-    foodColor = `rgb(${0}, ${255}, ${0})`;
+    foodColor = `rgb(${0}, ${175}, ${0})`;
     resetFoodColor();
     document.getElementById("apple").style.borderWidth = `${8}px`;
 }
