@@ -40,13 +40,13 @@ function playMulti() {
         // change field to simulate moving
         changeField();
 
+        // move the body and head of snake
+        moveBody();
+
         actualPortX = viewPortX + 5;
         actualPortY = viewPortY + 5;
 
         document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY + " " + actualBodyPosition;
-
-        // move the body and head of snake
-        moveBody();
 
         // show food
         showFood();
