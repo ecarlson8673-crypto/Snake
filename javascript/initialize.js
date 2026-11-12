@@ -111,7 +111,7 @@ function resetMulti() {
     // set position of food relative to larger field
     for (let i = 0; i < foodNumber; i++) {
         let x = Math.floor(Math.random() * totalFieldWidth) + Math.floor(multiFieldWidth / 2);
-        let y = Math.floor(Math.random() * totalFieldHeight) + Math.floor(multiFieldheight / 2);
+        let y = Math.floor(Math.random() * totalFieldHeight) + Math.floor(multiFieldHeight / 2);
         foodPosition[i] = [x, y];
     }
 

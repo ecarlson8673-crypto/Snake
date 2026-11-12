@@ -12,8 +12,8 @@ function red() {
     document.getElementById("red").style.borderWidth = `${8}px`;
 }
 function green() {
-    headColor = `rgb(${0}, ${150}, ${0})`;
-    bodyColor = `rgb(${0}, ${230}, ${0})`;
+    headColor = `rgb(${0}, ${130}, ${0})`;
+    bodyColor = `rgb(${0}, ${220}, ${0})`;
     resetSnakeColor();
     document.getElementById("green").style.borderWidth = `${8}px`;
 }
