@@ -135,7 +135,7 @@ function playMulti() {
         // recolor body after movement
         for (let i = 0; i < body.length; i++) {
             if (body[i] >= 0 && body[i] < multiFieldWidth * multiFieldHeight) {
-                if (viewPortX < actualBodyPosition[i][0] && viewPortX > actualBodyPosition[i][0] + multiFieldWidth && viewPortY < actualBodyPosition[i][1] && viewPortY > actualBodyPosition[i][1] + multiFieldHeight) {
+                if (viewPortX > actualBodyPosition[i][0] && viewPortX < actualBodyPosition[i][0] + multiFieldWidth && viewPortY > actualBodyPosition[i][1] && viewPortY < actualBodyPosition[i][1] + multiFieldHeight) {
                     document.getElementById(`multi${body[i]}`).style.backgroundColor = bodyColor;
                 }
             }
