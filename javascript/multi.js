@@ -46,7 +46,7 @@ function playMulti() {
         actualPortX = viewPortX + Math.floor(multiFieldWidth / 2);
         actualPortY = viewPortY + Math.floor(multiFieldHeight / 2);
 
-        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY + " " + actualBodyPosition;
+        document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY;
 
         // show food
         showFood();
@@ -225,6 +225,12 @@ function playMulti() {
     function die() {
         if (actualPortX > 32 || actualPortX < 0 || actualPortY > 32 || actualPortY < 0) {
             return true;
+        }
+
+        for (let i = 0; i < body.length; i++) {
+            if (actualPortX == actualBodyPosition[i][0] && actualPortY == actualBodyPosition[i][1]) {
+                return true;
+            }
         }
     }
 }
