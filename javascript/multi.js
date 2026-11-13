@@ -43,8 +43,8 @@ function playMulti() {
         // move the body and head of snake
         moveBody();
 
-        actualPortX = viewPortX + 5;
-        actualPortY = viewPortY + 5;
+        actualPortX = viewPortX + Math.floor(multiFieldWidth / 2);
+        actualPortY = viewPortY + Math.floor(multiFieldHeight / 2);
 
         document.getElementById("ex").innerHTML = actualPortX + " " + actualPortY + " " + actualBodyPosition;
 
@@ -213,6 +213,8 @@ function playMulti() {
             if (foodPosition[i][0] == actualPortX && foodPosition[i][1] == actualPortY) {
                 foodPosition[i][0] = Math.floor(Math.random() * totalFieldWidth);
                 foodPosition[i][1] = Math.floor(Math.random() * totalFieldHeight);
+                // add another to actual length as well
+                actualBodyPosition.splice(0, 0, actualBodyPosition[0]);
                 // add to the length of the body
                 body.splice(0, 0, body[0]);
             }
