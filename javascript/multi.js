@@ -93,9 +93,6 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            /*for (let i = 0; i < actualBodyPosition.length; i++) {
-                actualBodyPosition[i][0] = actualBodyPosition[i][0] - 1;
-            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowLeft") {
             body.splice(0, 1);
@@ -108,9 +105,6 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            /*for (let i = 0; i < actualBodyPosition.length; i++) {
-                actualBodyPosition[i][0] = actualBodyPosition[i][0] + 1;
-            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowUp") {
             body.splice(0, 1);
@@ -123,9 +117,6 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            /*for (let i = 0; i < actualBodyPosition.length; i++) {
-                actualBodyPosition[i][1] = actualBodyPosition[i][1] + 1;
-            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowDown") {
             body.splice(0, 1);
@@ -138,16 +129,15 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            /*for (let i = 0; i < actualBodyPosition.length; i++) {
-                actualBodyPosition[i][1] = actualBodyPosition[i][1] - 1;
-            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         }
 
         // recolor body after movement
         for (let i = 0; i < body.length; i++) {
             if (body[i] >= 0 && body[i] < multiFieldWidth * multiFieldHeight) {
-                document.getElementById(`multi${body[i]}`).style.backgroundColor = bodyColor;
+                if (viewPortX < actualBodyPosition[i][0] && viewPortX > actualBodyPosition[i][0] + multiFieldWidth && viewPortY < actualBodyPosition[i][1] && viewPortY > actualBodyPosition[i][1] + multiFieldHeight) {
+                    document.getElementById(`multi${body[i]}`).style.backgroundColor = bodyColor;
+                }
             }
         }
 
