@@ -83,6 +83,8 @@ function initializeMulti() {
     
     resetMulti();
 
+    resetBots();
+
     // warn user game is not done
     document.getElementById("message").innerHTML = "This game is under construction<br>Some functions may not work";
 }
@@ -133,11 +135,18 @@ function again() {
     }
 }
 
+// initialize 3D
+function initialize3D() {
+    clearOptions()
+    document.getElementById("message").innerHTML = "Comming Soon";
+}
+
 // function to clear screen after user chooses a game
 function clearOptions() {
     document.getElementById("titles").style.display = "none";
     document.getElementById("originalTitle").style.display = "none";
     document.getElementById("multiTitle").style.display = "none";
+    document.getElementById("3DTitle").style.display = "none";
     document.getElementById("settings").style.display = "none";
     document.getElementById("settingsOptions").style.display = "none";
 }

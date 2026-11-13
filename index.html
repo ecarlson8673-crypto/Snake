@@ -39,6 +39,14 @@
  ||    ||  \\_//  ||__/  ||   __||_  
             </pre></button>
         </div>
+        <div>
+            <button id="3DTitle" onclick="initialize3D()"><pre>
+.==\\  ____
+' _//  || \\
+.  \\  ||  ||
+'==//  ||_//
+            </pre></button>
+        </div>
         <button id="settings" onclick="settings()">Settings</button>
         <div id="settingsOptions">
             <div id="settingsTitle">Settings</div>
@@ -75,8 +83,6 @@
     <script>
         // hide things
         document.getElementById("again").style.display = "none";
-        //document.getElementById("forOriginal").style.display = "none";
-        //document.getElementById("forMulti").style.display = "none";
         document.getElementById("settingsOptions").style.display = "none";
 
         // define global varables
@@ -146,7 +152,5 @@
     <script src="javascript/multi.js"></script>
     <script src="javascript/settings.js"></script>
     <script src="javascript/settingsFunctions.js"></script>
-    <script>
-        
-    </script>
+    <script src="javascript/botsForMulti.js"></script>
 </html>
