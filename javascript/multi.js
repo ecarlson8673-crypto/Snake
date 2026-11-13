@@ -93,9 +93,9 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            for (let i = 0; i < actualBodyPosition.length; i++) {
+            /*for (let i = 0; i < actualBodyPosition.length; i++) {
                 actualBodyPosition[i][0] = actualBodyPosition[i][0] - 1;
-            }
+            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowLeft") {
             body.splice(0, 1);
@@ -108,9 +108,9 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            for (let i = 0; i < actualBodyPosition.length; i++) {
+            /*for (let i = 0; i < actualBodyPosition.length; i++) {
                 actualBodyPosition[i][0] = actualBodyPosition[i][0] + 1;
-            }
+            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowUp") {
             body.splice(0, 1);
@@ -123,9 +123,9 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            for (let i = 0; i < actualBodyPosition.length; i++) {
+            /*for (let i = 0; i < actualBodyPosition.length; i++) {
                 actualBodyPosition[i][1] = actualBodyPosition[i][1] + 1;
-            }
+            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         } else if (durection == "ArrowDown") {
             body.splice(0, 1);
@@ -138,9 +138,9 @@ function playMulti() {
 
             // change position of body relative to larger field
             actualBodyPosition.splice(0, 1);
-            for (let i = 0; i < actualBodyPosition.length; i++) {
+            /*for (let i = 0; i < actualBodyPosition.length; i++) {
                 actualBodyPosition[i][1] = actualBodyPosition[i][1] - 1;
-            }
+            }*/
             actualBodyPosition[actualBodyPosition.length] = [actualPortX, actualPortY];
         }
 
