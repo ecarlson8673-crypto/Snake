@@ -56,15 +56,15 @@ function playMulti() {
 
         // function to add borders
         borders();
+        
+        // bots
+        botTypeOne(actualPortX, AcutalPortY);
 
         // check if snake hit walls, self, or other snake
         if (die() == true) {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(multiInterval);
         }
-
-        // bots
-        botTypeOne(actualPortX, AcutalPortY);
     }
 
     // change the field
@@ -226,14 +226,20 @@ function playMulti() {
 
     // check if snake dies
     function die() {
+        // check if snake hits wall
         if (actualPortX > 32 || actualPortX < 0 || actualPortY > 32 || actualPortY < 0) {
             return true;
         }
 
+        // check if snake hits self
         for (let i = 0; i < body.length; i++) {
             if (actualPortX == actualBodyPosition[i][0] && actualPortY == actualBodyPosition[i][1]) {
                 return true;
             }
         }
+
+        // check if snake hits other snake
+
+        return false;
     }
 }
