@@ -11,4 +11,10 @@
         }
         open = !open;
     }
+
+    // bold currently active settings
+    document.getElementById("blue").style.borderWidth = `${8}px`;
+    document.getElementById("cherry").style.borderWidth = `${8}px`;
+    document.getElementById("one").style.borderWidth = `${8}px`;
+    document.getElementById("normal").style.borderWidth = `${8}px`;
 }

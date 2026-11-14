@@ -9,10 +9,10 @@ bot 2
 bot 3
     - Figure out later
 */
+var botOneHead = [];
 {
     // position of bots actual
     let botOnePosition = [];
-    let botOneHead = [];
     let botTwoPosition = [];
     let botTwoHead = [];
     let botThreePosition = [];
@@ -36,6 +36,7 @@ bot 3
     }
 
     function botTypeOne(actualPortX, actualPortY) {
+        document.getElementById("")
         // show head if on screen
         if (actualPortX <= botOneHead[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botOneHead[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botOneHead[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botOneHead[1] + Math.floor(multiFieldHeight / 2)) {
             let position = (botOneHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botOneHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
