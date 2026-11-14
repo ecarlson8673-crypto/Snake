@@ -36,11 +36,19 @@ var botOneHead = [];
     }
 
     function botTypeOne(actualPortX, actualPortY) {
-        document.getElementById("")
+        document.getElementById("message").
         // show head if on screen
         if (actualPortX <= botOneHead[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botOneHead[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botOneHead[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botOneHead[1] + Math.floor(multiFieldHeight / 2)) {
             let position = (botOneHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botOneHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
             document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
         }
+    }
+
+    function botTypeTwo(actualPortX, actualPortY) {
+
+    }
+
+    function botTypeThree(actualPortX, actualPortY) {
+
     }
 }
