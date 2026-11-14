@@ -21,21 +21,25 @@ bot 3
 
     function resetBots() {
         // position head of bot
-        let x = Math.floor(Math.random() * totalFieldWidth);
-        let y = Math.floor(Math.random() * totalFieldHeight);
+        let x = Math.floor(Math.random() * ((totalFieldWidth / 3) - 3)) + 3;
+        let y = Math.floor(Math.random() * ((2 * totalFieldHeight / 3) - 3)) + 3;
         botOneHead = [x, y];
-        x = Math.floor(Math.random() * totalFieldWidth);
-        y = Math.floor(Math.random() * totalFieldHeight);
+        x = Math.floor(Math.random() * ((2 * totalFieldWidth / 3) - 3)) + 3;
+        y = Math.floor(Math.random() * (totalFieldHeight / 3)) + Math.floor(2 * totalFieldHeight / 3);
         botTwoHead = [x, y];
-        x = Math.floor(Math.random() * totalFieldWidth);
-        y = Math.floor(Math.random() * totalFieldHeight);
+        x = Math.floor(Math.random() * (totalFieldWidth / 3)) + Math.floor(2 * totalFieldWidth / 3);
+        y = Math.floor(Math.random() * (totalFieldHeight - 3)) + 3;
         botThreeHead = [x, y];
 
         // position body based on head
         
     }
 
-    function botTypeOne() {
-        
+    function botTypeOne(actualPortX, AcutalPortY) {
+        // show head if on screen
+        if (actualPortX <= botOneHead[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botOneHead[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botOneHead[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botOneHead[1] + Math.floor(multiFieldHeight / 2)) {
+            let position = (botOneHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botOneHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+            document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+        }
     }
 }

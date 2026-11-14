@@ -62,6 +62,9 @@ function playMulti() {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(multiInterval);
         }
+
+        // bots
+        botTypeOne(actualPortX, AcutalPortY);
     }
 
     // change the field
