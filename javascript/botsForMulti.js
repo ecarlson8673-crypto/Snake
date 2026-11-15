@@ -78,7 +78,7 @@ bot 3
         // move bot straight(S), right(R), left(L)
         let changeDurection = "S";
         // check if snake is going to hit the wall
-        /*if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
+        if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
             if (botOneHead[1] == 0) {
                 changeDurection = "R";
             } else if (botOneHead[1] == totalFieldHeight - 1) {
@@ -126,7 +126,7 @@ bot 3
                     changeDurection = "L";
                 }
             }
-        } else */{
+        } else {
             // if random == 0 right, random == 1 left, else straight
             let number = Math.floor(Math.random() * 10);
             if (number == 0) {
@@ -138,7 +138,7 @@ bot 3
         }
 
         // change durection of bot if needed
-        /*if (botOneDurection == "R") {
+        if (botOneDurection == "R") {
             if (changeDurection = "R") {
                 botOneDurection = "D";
             } else if (changeDurection == "L") {
@@ -162,10 +162,10 @@ bot 3
             } else if (changeDurection == "L") {
                 botOneDurection = "R";
             }
-        }*/
+        }
 
         // move bot
-        //botOnePosition.splice(0, 1);
+        botOnePosition.splice(0, 1);
         botOnePosition[botOnePosition.length] = [...botOneHead];
         if (botOneDurection == "R") {
             botOneHead[0]++;
