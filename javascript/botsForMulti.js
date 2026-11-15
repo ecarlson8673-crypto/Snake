@@ -78,7 +78,7 @@ bot 3
         // move bot straight(S), right(R), left(L)
         let changeDurection = "S";
         // check if snake is going to hit the wall
-        /*if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
+        if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
             if (botOneHead[1] == 0) {
                 changeDurection = "R";
             } else if (botOneHead[1] == totalFieldHeight - 1) {
@@ -126,18 +126,17 @@ bot 3
                     changeDurection = "L";
                 }
             }
-        } else *///{
+        } else {
             // if random == 0 right, random == 1 left, else straight
             let randomNumber = Math.floor(Math.random() * 10);
-document.getElementById("message").innerHTML = randomNumber;
-            /*if (randomNumber == 0) {
+            if (randomNumber == 0) {
                 changeDurection = "R";
             } else if (randomNumber == 1) {
                 changeDurection = "L";
             } else {
                 changeDurection = "S";
-            }*/
-        //}
+            }
+        }
 
         // change durection of bot if needed
         if (botOneDurection == "R") {
@@ -186,7 +185,7 @@ document.getElementById("message").innerHTML = randomNumber;
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
 
-        //document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead + " " + botOneDurection + " " + changeDurection + " ";
+        document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead + " " + botOneDurection + " " + changeDurection + " ";
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
