@@ -5,10 +5,10 @@
 
 body {
     background-color: rgb(200, 200, 200);
-    display: flex;
-    justify-content: center;
 }
 button {
+    display: block;
+    margin: 0 auto;
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
     background-color: rgb(255, 215, 215);
