@@ -140,27 +140,27 @@ bot 3
 
         // change durection of bot if needed
         if (botOneDurection == "R") {
-            if (changeDurection == "R") {
+            if (changeDurection == "R" && botOneHead[1] != totalFieldHeight - 1) {
                 botOneDurection = "D";
-            } else if (changeDurection == "L") {
+            } else if (changeDurection == "L" && botOneHead[1] != 0) {
                 botOneDurection = "U";
             }
         } else if (botOneDurection == "L") {
-            if (changeDurection == "R") {
+            if (changeDurection == "R" && botOneHead[1] != 0) {
                 botOneDurection = "U";
-            } else if (changeDurection == "L") {
+            } else if (changeDurection == "L" && botOneHead[1] != totalFieldHeight - 1) {
                 botOneDurection = "D";
             }
         } else if (botOneDurection == "U") {
-            if (changeDurection == "R") {
+            if (changeDurection == "R" && botOneHead[0] != totalFieldWidth - 1) {
                 botOneDurection = "R";
-            } else if (changeDurection == "L") {
+            } else if (changeDurection == "L" && botOneHead[0] != 0) {
                 botOneDurection = "L";
             }
         } else if (botOneDurection == "D") {
-            if (changeDurection == "R") {
+            if (changeDurection == "R" && botOneHead[0] != 0) {
                 botOneDurection = "L";
-            } else if (changeDurection == "L") {
+            } else if (changeDurection == "L" && botOneHead[0] != totalFieldWidth - 1) {
                 botOneDurection = "R";
             }
         }
