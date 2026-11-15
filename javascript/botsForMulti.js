@@ -42,11 +42,11 @@ bot 3
             botTwoPosition[i] = [];
             botThreePosition[i] = [];
 
-            botOnePosition[i][0] = botOneHead[0] - 1;
+            botOnePosition[i][0] = botOneHead[0] - 1 - i;
             botOnePosition[i][1] = botOneHead[1];
-            botTwoPosition[i][0] = botTwoHead[0] - 1;
+            botTwoPosition[i][0] = botTwoHead[0] - 1 - i;
             botTwoPosition[i][1] = botTwoHead[1];
-            botThreePosition[i][0] = botThreeHead[0] - 1;
+            botThreePosition[i][0] = botThreeHead[0] - 1 - i;
             botThreePosition[i][1] = botThreeHead[1];
         }
 
