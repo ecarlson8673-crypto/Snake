@@ -165,7 +165,7 @@ bot 3
         }*/
 
         document.getElementById("message").innerHMTL = botOnePosition + " " + botOneHead;
-        
+
         // move bot
         //botOnePosition.splice(0, 1);
         botOnePosition[botOnePosition.length] = botOneHead;
@@ -179,8 +179,12 @@ bot 3
             botOneHead[1]++;
         }
 
+        let first = [...botOneHead];
+        let second = [...botOnePosition];
+        let third = [...botOneColor];
+
         // show head if on screen
-        showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
+        showBot(first, second, third, actualPortX, actualPortY);
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
