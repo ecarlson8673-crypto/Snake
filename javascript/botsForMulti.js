@@ -204,9 +204,9 @@ bot 3
                 }
             }
             if (diedIf == "None") {
-                changeDurection = "L";
-            } else {
                 changeDurection = "R";
+            } else {
+                changeDurection = "L";
             }
         // randomize durection if does not need to avoid walls
         } else {
