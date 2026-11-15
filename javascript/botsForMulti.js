@@ -166,7 +166,7 @@ bot 3
 
         // move bot
         //botOnePosition.splice(0, 1);
-        botOnePosition[botOnePosition.length] = botOneHead;
+        botOnePosition[botOnePosition.length] = [...botOneHead];
         if (botOneDurection == "R") {
             botOneHead[0]++;
         } else if (botOneDurection == "L") {
