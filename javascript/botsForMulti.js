@@ -88,19 +88,19 @@ bot 3
         let diedIf = "None";
         for (let i = 0; i < botOnePosition.length; i++) {
             if (botOneDurection == "R") {
-                if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOnehead[1]) {
+                if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOneHead[1]) {
                     diedIf = "True";
                 }
             } else if (botOneDurection == "L") {
-                if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOnehead[1]) {
+                if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOneHead[1]) {
                     diedIf = "True";
                 }
             } else if (botOneDurection == "U") {
-                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] - 1) {
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] - 1) {
                     diedIf = "True";
                 }
             } else if (botOneDurection == "D") {
-                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] + 1) {
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] + 1) {
                     diedIf = "True";
                 }
             }
@@ -186,19 +186,19 @@ bot 3
             diedIf = "None";
             for (let i = 0; i < botOnePosition.length; i++) {
                 if (botOneDurection == "R") {
-                    if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] - 1) {
+                    if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] - 1) {
                         diedIf == "True";
                     }
                 } else if (botOneDurection == "L") {
-                    if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] + 1) {
+                    if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] + 1) {
                         diedIf == "True";
                     }
                 } else if (botOneDurection == "U") {
-                    if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOnehead[1]) {
+                    if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOneHead[1]) {
                         diedIf == "True";
                     }
                 } else if (botOneDurection == "D") {
-                    if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOnehead[1]) {
+                    if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOneHead[1]) {
                         diedIf == "True";
                     }
                 }
