@@ -127,12 +127,13 @@ bot 3
                 }
             }
         } else {
-        // if random == 0 right, random == 1 left, else straight
-        let number = Math.floor(Math.random() * 10);
-        if (number == 0) {
-            changeDurection = "R";
-        } else if (number == 1) {
-            changeDurection = "L";
+            // if random == 0 right, random == 1 left, else straight
+            let number = Math.floor(Math.random() * 10);
+            if (number == 0) {
+                changeDurection = "R";
+            } else if (number == 1) {
+                changeDurection = "L";
+            }
         }
 
         // change durection of bot if needed
