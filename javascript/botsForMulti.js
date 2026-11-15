@@ -177,10 +177,11 @@ bot 3
             botOneHead[1]++;
         }
 
-        // show head if on screen
-        showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
 
         document.getElementById("message").innerHMTL = botOnePosition + " " + botOneHead;
+        
+        // show head if on screen
+        showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
