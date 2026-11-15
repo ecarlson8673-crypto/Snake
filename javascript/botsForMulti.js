@@ -138,7 +138,7 @@ bot 3
         }
 
         // change durection of bot if needed
-        if (botOneDurection == "R") {
+        /*if (botOneDurection == "R") {
             if (changeDurection = "R") {
                 botOneDurection = "D";
             } else if (changeDurection == "L") {
@@ -162,7 +162,7 @@ bot 3
             } else if (changeDurection == "L") {
                 botOneDurection = "R";
             }
-        }
+        }*/
 
         // move bot
         botOnePosition.splice(0, 1);
