@@ -164,6 +164,8 @@ bot 3
             }
         }*/
 
+        document.getElementById("message").innerHMTL = botOnePosition + " " + botOneHead;
+        
         // move bot
         //botOnePosition.splice(0, 1);
         botOnePosition[botOnePosition.length] = botOneHead;
@@ -177,9 +179,6 @@ bot 3
             botOneHead[1]++;
         }
 
-
-        document.getElementById("message").innerHMTL = botOnePosition + " " + botOneHead;
-        
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
     }
