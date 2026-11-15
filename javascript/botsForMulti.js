@@ -78,7 +78,7 @@ bot 3
         // move bot straight(S), right(R), left(L)
         let changeDurection = "S";
         // check if snake is going to hit the wall
-        if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
+        /*if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
             if (botOneHead[1] == 0) {
                 changeDurection = "R";
             } else if (botOneHead[1] == totalFieldHeight - 1) {
@@ -126,7 +126,7 @@ bot 3
                     changeDurection = "L";
                 }
             }
-        } else {
+        } else */{
             // if random == 0 right, random == 1 left, else straight
             let number = Math.floor(Math.random() * 10);
             if (number == 0) {
@@ -182,7 +182,7 @@ bot 3
         let third = [...botOneColor];
 
         // show head if on screen
-        showBot(first, second, third, actualPortX, actualPortY);
+        showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
 
         document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead;
     }

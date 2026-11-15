@@ -13,13 +13,18 @@ button {
     color: rgb(255, 0, 0);
     border-width: 8px;
     margin: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 10px;
 }
 button:active {
     background-color: rgb(255, 240, 240);
     border-style: solid;
+    border-width: 10px;
 }
 button:hover {
     border-width: 10px;
+    border-right-width: 12px;
+    border-bottom-width: 12px;
 }
 
 #message {
