@@ -144,25 +144,25 @@ bot 3
                 botOneDurection = "D";
             } else if (changeDurection == "L") {
                 botOneDurection = "U";
-            } else {}
+            }
         } else if (botOneDurection == "L") {
             if (changeDurection = "R") {
                 botOneDurection = "U";
             } else if (changeDurection == "L") {
                 botOneDurection = "D";
-            } else {}
+            }
         } else if (botOneDurection == "U") {
             if (changeDurection = "R") {
                 botOneDurection = "R";
             } else if (changeDurection == "L") {
                 botOneDurection = "L";
-            } else {}
+            }
         } else if (botOneDurection == "D") {
             if (changeDurection = "R") {
                 botOneDurection = "L";
             } else if (changeDurection == "L") {
                 botOneDurection = "R";
-            } else {}
+            }
         }
 
         // move bot
@@ -185,7 +185,7 @@ bot 3
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
 
-        document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead + " " + botOneDurection;
+        document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead + " " + botOneDurection + " " + cahngeDurection + " ";
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
