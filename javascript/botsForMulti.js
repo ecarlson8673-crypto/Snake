@@ -141,25 +141,25 @@ document.getElementById("message").innerHTML = randomNumber;
 
         // change durection of bot if needed
         if (botOneDurection == "R") {
-            if (changeDurection = "R") {
+            if (changeDurection == "R") {
                 botOneDurection = "D";
             } else if (changeDurection == "L") {
                 botOneDurection = "U";
             }
         } else if (botOneDurection == "L") {
-            if (changeDurection = "R") {
+            if (changeDurection == "R") {
                 botOneDurection = "U";
             } else if (changeDurection == "L") {
                 botOneDurection = "D";
             }
         } else if (botOneDurection == "U") {
-            if (changeDurection = "R") {
+            if (changeDurection == "R") {
                 botOneDurection = "R";
             } else if (changeDurection == "L") {
                 botOneDurection = "L";
             }
         } else if (botOneDurection == "D") {
-            if (changeDurection = "R") {
+            if (changeDurection == "R") {
                 botOneDurection = "L";
             } else if (changeDurection == "L") {
                 botOneDurection = "R";
