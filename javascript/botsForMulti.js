@@ -78,9 +78,31 @@ bot 3
         // move bot straight(S), right(R), left(L)
         let changeDurection = "S";
         let foodVisable = "None";
+        // check if food is on the screen
         for (let i = 0; i < foodPosition.length; i++) {
             if (foodPosition[i][0] >= botOneHead[0] - Math.floor(multiFieldWidth / 2) && foodPosition[i][0] <= botOneHead[0] + Math.floor(multiFieldWidth / 2) && foodPosition[i][1] >= botOneHead[1] - Math.floor(multiFieldHeight / 2) && foodPosition[i][1] <= botOneHead[1] + Math.floor(multiFieldHeight / 2)) {
                 foodVisable = i;
+            }
+        }
+        // check if bot is going to hit itself
+        let diedIf = "None";
+        for (let i = 0; i < botOnePosition.length; i++) {
+            if (botOneDurection == "R") {
+                if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOnehead[1]) {
+                    diedIf = "True";
+                }
+            } else if (botOneDurection == "L") {
+                if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOnehead[1]) {
+                    diedIf = "True";
+                }
+            } else if (botOneDurection == "U") {
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] - 1) {
+                    diedIf = "True";
+                }
+            } else if (botOneDurection == "D") {
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] + 1) {
+                    diedIf = "True";
+                }
             }
         }
         // go to food
@@ -158,6 +180,33 @@ bot 3
                 } else {
                     changeDurection = "L";
                 }
+            }
+        // avoid self, if true then going to hit self if go forward
+        } else if (diedIf == "True") {
+            diedIf = "None";
+            for (let i = 0; i < botOnePosition.length; i++) {
+                if (botOneDurection == "R") {
+                    if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] - 1) {
+                        diedIf == "True";
+                    }
+                } else if (botOneDurection == "L") {
+                    if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOnehead[1] + 1) {
+                        diedIf == "True";
+                    }
+                } else if (botOneDurection == "U") {
+                    if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOnehead[1]) {
+                        diedIf == "True";
+                    }
+                } else if (botOneDurection == "D") {
+                    if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOnehead[1]) {
+                        diedIf == "True";
+                    }
+                }
+            }
+            if (diedIf == "None") {
+                changeDurection = "L";
+            } else {
+                changeDurection = "R";
             }
         // randomize durection if does not need to avoid walls
         } else {
