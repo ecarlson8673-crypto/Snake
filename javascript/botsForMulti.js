@@ -213,10 +213,12 @@ bot 3
         }
 
         // eat food if on it
-        if (botOneHead[0] == foodPosition[foodVisable][0] && botOneHead[1] == foodPosition[foodVisable][1]) {
-            botOnePosition.splice(0, 0, [...botOnePosition[0]]);
-            foodPosition[foodVisable][0] = Math.floor(Math.random() * totalFieldWidth);
-            foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
+        if (foodVisable != "None") {
+            if (botOneHead[0] == foodPosition[foodVisable][0] && botOneHead[1] == foodPosition[foodVisable][1]) {
+                botOnePosition.splice(0, 0, [...botOnePosition[0]]);
+                foodPosition[foodVisable][0] = Math.floor(Math.random() * totalFieldWidth);
+                foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
+            }
         }
 
         // show head if on screen
