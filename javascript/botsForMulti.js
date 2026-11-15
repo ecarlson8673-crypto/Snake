@@ -146,35 +146,9 @@ bot 3
                 }
             }
         }
-        // go to food
-        if (foodVisable != "None") {
-            if (botOneDurection == "R") {
-                if (foodPosition[foodVisable][1] > botOneHead[1]) {
-                    changeDurection = "R";
-                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
-                    changeDurection = "L";
-                }
-            } else if (botOneDurection == "L") {
-                if (foodPosition[foodVisable][1] > botOneHead[1]) {
-                    changeDurection = "L";
-                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
-                    changeDurection = "R";
-                }
-            } else if (botOneDurection == "U") {
-                if (foodPosition[foodVisable][0] > botOneHead[0]) {
-                    changeDurection = "R";
-                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
-                    changeDurection = "L";
-                }
-            } else if (botOneDurection == "D") {
-                if (foodPosition[foodVisable][0] > botOneHead[0]) {
-                    changeDurection = "L";
-                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
-                    changeDurection = "R";
-                }
-            }
+        
         // avoid walls if needed
-        } else if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
+        if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
             if (botOneHead[1] == 0) {
                 changeDurection = "R";
             } else if (botOneHead[1] == totalFieldHeight - 1) {
@@ -245,11 +219,38 @@ bot 3
                 }
             }
             if (diedIf == "None") {
-                changeDurection = "R";
-            } else {
                 changeDurection = "L";
+            } else {
+                changeDurection = "R";
+            } 
+        // go to food
+        } else if (foodVisable != "None") {
+            if (botOneDurection == "R") {
+                if (foodPosition[foodVisable][1] > botOneHead[1]) {
+                    changeDurection = "R";
+                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
+                    changeDurection = "L";
+                }
+            } else if (botOneDurection == "L") {
+                if (foodPosition[foodVisable][1] > botOneHead[1]) {
+                    changeDurection = "L";
+                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
+                    changeDurection = "R";
+                }
+            } else if (botOneDurection == "U") {
+                if (foodPosition[foodVisable][0] > botOneHead[0]) {
+                    changeDurection = "R";
+                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
+                    changeDurection = "L";
+                }
+            } else if (botOneDurection == "D") {
+                if (foodPosition[foodVisable][0] > botOneHead[0]) {
+                    changeDurection = "L";
+                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
+                    changeDurection = "R";
+                }
             }
-        // randomize durection if does not need to avoid walls
+        // randomize durection if does not need to avoid anything
         } else {
             // if random == 0 right, random == 1 left, else straight
             let randomNumber = Math.floor(Math.random() * 10);
