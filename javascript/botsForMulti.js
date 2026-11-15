@@ -318,7 +318,7 @@ bot 3
             }
         }
 
-        document.getElementById("message").innerHTML = "diedIf = " + diedIf + ", leftdie = " + leftDie + ", rightDie" + rightDie;
+        document.getElementById("message").innerHTML = "diedIf = " + diedIf + ", leftdie = " + leftDie + ", rightDie = " + rightDie;
 
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
