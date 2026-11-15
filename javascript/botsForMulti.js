@@ -184,7 +184,7 @@ bot 3
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
 
-        document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead;
+        document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead + " " + botOneDurection;
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
