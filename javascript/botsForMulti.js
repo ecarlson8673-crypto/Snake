@@ -179,6 +179,8 @@ bot 3
 
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
+
+        document.getElementById("message").innerHMTL = botOnePosition + " " + botOneHead;
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
