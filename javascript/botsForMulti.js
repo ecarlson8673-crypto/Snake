@@ -105,6 +105,40 @@ bot 3
                 }
             }
         }
+        // check if turning will kill bot
+        let rightDie = false;
+        let leftDie = false;
+        for (let i = 0; i < botOnePosition.length; i++) {
+            if (botOneDurection == "R") {
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] - 1) {
+                    leftDie = true;
+                }
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] + 1) {
+                    rightDie = true;
+                }
+            } else if (botOneDurection == "L") {
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] + 1) {
+                    leftDie = true;
+                }
+                if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] - 1) {
+                    rightDie = true;
+                }
+            } else if (botOneDurection == "U") {
+                if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOneHead[1]) {
+                    leftDie = true;
+                }
+                if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOneHead[1]) {
+                    rightDie = true;
+                }
+            } else if (botOneDurection == "D") {
+                if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOneHead[1]) {
+                    leftDie = true;
+                }
+                if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOneHead[1]) {
+                    rightDie = true;
+                }
+            }
+        }
         // go to food
         if (foodVisable != "None") {
             if (botOneDurection == "R") {
@@ -204,17 +238,17 @@ bot 3
                 }
             }
             if (diedIf == "None") {
-                changeDurection = "R";
-            } else {
                 changeDurection = "L";
+            } else {
+                changeDurection = "R";
             }
         // randomize durection if does not need to avoid walls
         } else {
             // if random == 0 right, random == 1 left, else straight
             let randomNumber = Math.floor(Math.random() * 10);
-            if (randomNumber == 0) {
+            if (randomNumber == 0 && rightDie == false) {
                 changeDurection = "R";
-            } else if (randomNumber == 1) {
+            } else if (randomNumber == 1 && leftDie == false) {
                 changeDurection = "L";
             } else {
                 changeDurection = "S";
