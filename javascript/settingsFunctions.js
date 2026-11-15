@@ -48,30 +48,30 @@ function resetFoodColor() {
 // change number of food
 function one() {
     foodNumber = 1;
-    resetSpeed();
+    resetNumber();
     document.getElementById("one").style.borderWidth = `${8}px`;
 }
 function two() {
     foodNumber = 2;
-    resetSpeed();
+    resetNumber();
     document.getElementById("two").style.borderWidth = `${8}px`;
 }
 function three() {
     foodNumber = 3;
-    resetSpeed();
+    resetNumber();
     document.getElementById("three").style.borderWidth = `${8}px`;
 }
 function five() {
     foodNumber = 5;
-    resetSpeed();
+    resetNumber();
     document.getElementById("five").style.borderWidth = `${8}px`;
 }
 function ten() {
     foodNumber = 10;
-    resetSpeed();
+    resetNumber();
     document.getElementById("ten").style.borderWidth = `${8}px`;
 }
-function resetSpeed() {
+function resetNumber() {
     document.getElementById("one").style.borderWidth = `${6}px`;
     document.getElementById("two").style.borderWidth = `${6}px`;
     document.getElementById("three").style.borderWidth = `${6}px`;

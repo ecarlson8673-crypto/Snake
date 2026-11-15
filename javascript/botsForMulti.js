@@ -45,10 +45,18 @@ var botOneHead = [];
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
-
+        // show head if on screen
+        if (actualPortX <= botTwoHead[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botTwoHead[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botTwoHead[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botTwoHead[1] + Math.floor(multiFieldHeight / 2)) {
+            let position = (botTwoHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botTwoHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+            document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+        }
     }
 
     function botTypeThree(actualPortX, actualPortY) {
-
+        // show head if on screen
+        if (actualPortX <= botThreeHead[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botThreeHead[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botThreeHead[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botThreeHead[1] + Math.floor(multiFieldHeight / 2)) {
+            let position = (botThreeHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botThreeHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+            document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+        }
     }
 }
