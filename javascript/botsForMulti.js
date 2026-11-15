@@ -128,11 +128,11 @@ bot 3
             }
         } else */{
             // if random == 0 right, random == 1 left, else straight
-            let number = Math.floor(Math.random() * 10);
+            let randomNumber = Math.floor(Math.random() * 10);
 document.getElementById("message").innerHTML = number;
-            if (number == 0) {
+            if (randomNumber == 0) {
                 changeDurection = "R";
-            } else if (number == 1) {
+            } else if (randomNumber == 1) {
                 changeDurection = "L";
             } else {
                 changeDurection = "S";
