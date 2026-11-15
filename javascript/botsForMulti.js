@@ -9,14 +9,19 @@ bot 2
 bot 3
     - Figure out later
 */
-var botOneHead = [];
 {
     // position of bots actual
     let botOnePosition = [];
+    let botOneHead = [];
     let botTwoPosition = [];
     let botTwoHead = [];
     let botThreePosition = [];
     let botThreeHead = [];
+
+    // color of bots
+    let botOneColor;
+    let botTwoColor;
+    let botThreeColor;
 
 
     function resetBots() {
@@ -32,15 +37,51 @@ var botOneHead = [];
         botThreeHead = [x, y];
 
         // position body based on head
-        
+        for (let i = 0; i < 3; i++) {
+            botOnePosition[i] = [];
+            botTwoPosition[i] = [];
+            botThreePosition[i] = [];
+
+            botOnePosition[i][0] = botOneHead[0] - 1;
+            botOnePosition[i][1] = botOneHead[1];
+            botTwoPosition[i][0] = botTwoHead[0] - 1;
+            botTwoPosition[i][1] = botTwoHead[1];
+            botThreePosition[i][0] = botThreeHead[0] - 1;
+            botThreePosition[i][1] = botThreeHead[1];
+        }
+
+        // bot colors
+        let botColorOptions = [
+            [`rgb(${204}, ${51}, ${255})`, `rgb(${230}, ${153}, ${255})`],
+            [`rgb(${230}, ${184}, ${0})`, `rgb(${255}, ${204}, ${0})`],
+            [`rgb(${0}, ${230}, ${184})`, `rgb(${77}, ${255}, ${219})`],
+        ];
+
+        // randomize bot colors
+        for (let i = 0; i < 3; i++) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [botColorOptions[i], botColorOptions[j]] = [botColorOptions[j], botColorOptions[i]];
+        }
+
+        // set colors to different bots
+        botOneColor = botColorOptions[0];
+        botTwoColor = botColorOptions[1];
+        botThreeColor = botColorOptions[2];
     }
 
     function botTypeOne(actualPortX, actualPortY) {
-        document.getElementById("message").innerHTML = botOneHead;
         // show head if on screen
         if (actualPortX <= botOneHead[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botOneHead[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botOneHead[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botOneHead[1] + Math.floor(multiFieldHeight / 2)) {
             let position = (botOneHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botOneHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
-            document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+            document.getElementById(`multi${position}`).style.backgroundColor = botOneColor[0];
+        }
+
+        // show body if on screen
+        for (let i = 0; i < botOnePosition.length; i++) {
+            if (actualPortX <= botOnePosition[i][0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botOnePosition[i][0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botOnePosition[i][1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botOnePosition[i][1] + Math.floor(multiFieldHeight / 2)) {
+                let position = (botOnePosition[i][0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botOnePosition[i][1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+                document.getElementById(`multi${position}`).style.backgroundColor = botOneColor[1];
+            }
         }
     }
 
@@ -50,6 +91,14 @@ var botOneHead = [];
             let position = (botTwoHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botTwoHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
             document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
         }
+
+        // show body if on screen
+        for (let i = 0; i < botTwoPosition.length; i++) {
+            if (actualPortX <= botTwoPosition[i][0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botTwoPosition[i][0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botTwoPosition[i][1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botTwoPosition[i][1] + Math.floor(multiFieldHeight / 2)) {
+                let position = (botTwoPosition[i][0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botTwoPosition[i][1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+                document.getElementById(`multi${position}`).style.backgroundColor = botTwoColor[1];
+            }
+        }
     }
 
     function botTypeThree(actualPortX, actualPortY) {
@@ -57,6 +106,14 @@ var botOneHead = [];
         if (actualPortX <= botThreeHead[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botThreeHead[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botThreeHead[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botThreeHead[1] + Math.floor(multiFieldHeight / 2)) {
             let position = (botThreeHead[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botThreeHead[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
             document.getElementById(`multi${position}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+        }
+
+        // show body if on screen
+        for (let i = 0; i < botThreePosition.length; i++) {
+            if (actualPortX <= botThreePosition[i][0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > botThreePosition[i][0] + Math.floor(multiFieldWidth / 2) && actualPortY <= botThreePosition[i][1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > botThreePosition[i][1] + Math.floor(multiFieldHeight / 2)) {
+                let position = (botThreePosition[i][0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((botThreePosition[i][1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+                document.getElementById(`multi${position}`).style.backgroundColor = botThreeColor[1];
+            }
         }
     }
 }
