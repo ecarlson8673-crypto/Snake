@@ -130,13 +130,13 @@ bot 3
             // if random == 0 right, random == 1 left, else straight
             let randomNumber = Math.floor(Math.random() * 10);
 document.getElementById("message").innerHTML = randomNumber;
-            if (randomNumber == 0) {
+            /*if (randomNumber == 0) {
                 changeDurection = "R";
             } else if (randomNumber == 1) {
                 changeDurection = "L";
             } else {
                 changeDurection = "S";
-            }
+            }*/
         //}
 
         // change durection of bot if needed
