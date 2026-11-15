@@ -28,6 +28,9 @@ bot 3
     let botTwoDurection = "R";
     let botThreeDurection = "R";
 
+    // check if bot is dead
+    let died = false;
+
 
     function resetBots() {
         // position head of bot
@@ -75,6 +78,10 @@ bot 3
     }
 
     function botTypeOne(actualPortX, actualPortY) {
+        if (died == true) {
+            showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
+            return;
+        }
         // move bot straight(S), right(R), left(L)
         let changeDurection = "S";
         let foodVisable = "None";
@@ -301,6 +308,13 @@ bot 3
                 botOnePosition.splice(0, 0, [...botOnePosition[0]]);
                 foodPosition[foodVisable][0] = Math.floor(Math.random() * totalFieldWidth);
                 foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
+            }
+        }
+
+        // die if run into self
+        for (let i = 0; i < botOnePosition.length; i++) {
+            if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1]) {
+                died = true;
             }
         }
 
