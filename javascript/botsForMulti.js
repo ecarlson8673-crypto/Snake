@@ -134,6 +134,7 @@ bot 3
             } else if (number == 1) {
                 changeDurection = "L";
             }
+            changeDurection = "S";
         }
 
         // change durection of bot if needed
