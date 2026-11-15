@@ -76,8 +76,6 @@ bot 3
 
     function botTypeOne(actualPortX, actualPortY) {
         // move bot straight(S), right(R), left(L)
-
-        document.getElementById("message").innerHMTL = botOnePosition + " " + botOneHead;
         let changeDurection = "S";
         // check if snake is going to hit the wall
         /*if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
@@ -185,6 +183,8 @@ bot 3
 
         // show head if on screen
         showBot(first, second, third, actualPortX, actualPortY);
+
+        document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead;
     }
 
     function botTypeTwo(actualPortX, actualPortY) {

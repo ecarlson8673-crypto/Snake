@@ -14,7 +14,7 @@ button {
     background-color: rgb(255, 215, 215);
     color: rgb(255, 0, 0);
     border-width: 8px;
-    margin: 10px;
+    /*margin: 10px;*/
 }
 button:active {
     background-color: rgb(255, 240, 240);
