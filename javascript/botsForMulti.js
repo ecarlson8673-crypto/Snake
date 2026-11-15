@@ -77,8 +77,41 @@ bot 3
     function botTypeOne(actualPortX, actualPortY) {
         // move bot straight(S), right(R), left(L)
         let changeDurection = "S";
-        // check if snake is going to hit the wall
-        if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
+        let foodVisable = "None";
+        for (let i = 0; i < foodPosition.length; i++) {
+            if (foodPosition[i][0] >= botOneHead[0] - Math.floor(multiFieldWidth / 2) && foodPosition[i][0] <= botOneHead[0] + Math.floor(multiFieldWidth / 2) && foodPosition[i][1] >= botOneHead[1] - Math.floor(multiFieldHeight / 2) && foodPosition[i][1] <= botOneHead[1] + Math.floor(multiFieldHeight / 2)) {
+                foodVisable = i;
+            }
+        }
+        // go to food
+        if (foodVisable != "None") {
+            if (botOneDurection == "R") {
+                if (foodPosition[foodVisable][1] > botOneHead[1]) {
+                    changeDurection = "R";
+                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
+                    changeDurection = "L";
+                }
+            } else if (botOneDurection == "L") {
+                if (foodPosition[foodVisable][1] > botOneHead[1]) {
+                    changeDurection = "L";
+                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
+                    changeDurection = "R";
+                }
+            } else if (botOneDurection == "U") {
+                if (foodPosition[foodVisable][0] > botOneHead[0]) {
+                    changeDurection = "R";
+                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
+                    changeDurection = "L";
+                }
+            } else if (botOneDurection == "D") {
+                if (foodPosition[foodVisable][0] > botOneHead[0]) {
+                    changeDurection = "L";
+                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
+                    changeDurection = "R";
+                }
+            }
+        // avoid walls if needed
+        } else if (botOneHead[0] == totalFieldWidth - 1 && botOneDurection == "R") {
             if (botOneHead[1] == 0) {
                 changeDurection = "R";
             } else if (botOneHead[1] == totalFieldHeight - 1) {
@@ -126,6 +159,7 @@ bot 3
                     changeDurection = "L";
                 }
             }
+        // randomize durection if does not need to avoid walls
         } else {
             // if random == 0 right, random == 1 left, else straight
             let randomNumber = Math.floor(Math.random() * 10);
@@ -176,6 +210,13 @@ bot 3
             botOneHead[1]--;
         } else if (botOneDurection == "D") {
             botOneHead[1]++;
+        }
+
+        // eat food if on it
+        if (botOneHead[0] == foodPosition[foodVisable][0] && botOneHead[1] == foodPosition[foodVisable][0]) {
+            botOnePosition.splice(0, 0, [...botOnePosition[0]]);
+            foodPosition[foodVisable][0] = Math.floor(Math.random() * totalFieldWidth);
+            foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
         }
 
         // show head if on screen
