@@ -25,10 +25,10 @@ function playMulti() {
         if (key == " ") {
             if (pause == false) {
                 clearInterval(multiInterval);
-                //document.getElementById("message").innerHTML = "Pause";
+                document.getElementById("message").innerHTML = "Pause";
             } else {
                 multiInterval = setInterval(moveMulti, time);
-                //document.getElementById("message").innerHTML = "";
+                document.getElementById("message").innerHTML = "";
             }
             pause = !pause;
         }
