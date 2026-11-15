@@ -134,7 +134,9 @@ function playOriginal() {
         if (durection == "ArrowRight") {
             if ((head) % originalFieldWidth == 0  && head != 1) {
                 // reset field color of where head is
-                document.getElementById(`original${head}`).style.backgroundColor = fieldColor[head];
+                if (head > originalFieldWidth * originalFieldHeight) {
+                    document.getElementById(`original${head}`).style.backgroundColor = fieldColor[head];
+                }
                 return true;
             }
         } else if (durection == "ArrowLeft") {

@@ -121,6 +121,7 @@ bot 3
     }
 
 
+    // show the bots on the screen
     function showBot(head, body, color) {
         // show head if on screen
         if (actualPortX <= head[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > head[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= head[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > head[1] + Math.floor(multiFieldHeight / 2)) {
@@ -135,5 +136,10 @@ bot 3
                 document.getElementById(`multi${position}`).style.backgroundColor = color[1];
             }
         }
+    }
+
+    // check if the bots die
+    function checkDie() {
+        
     }
 }
