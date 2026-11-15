@@ -178,14 +178,8 @@ bot 3
             botOneHead[1]++;
         }
 
-        let first = [...botOneHead];
-        let second = [...botOnePosition];
-        let third = [...botOneColor];
-
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
-
-        document.getElementById("message").innerHTML = botOnePosition + " " + botOneHead + " " + botOneDurection + " " + changeDurection + " ";
     }
 
     function botTypeTwo(actualPortX, actualPortY) {
