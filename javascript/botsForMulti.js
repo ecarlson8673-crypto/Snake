@@ -29,7 +29,9 @@ bot 3
     let botThreeDurection = "R";
 
     // check if bot is dead
-    let died = false;
+    let botOneDied = false;
+    let botTwoDied = false;
+    let botThreeDied = false;
 
 
     function resetBots() {
@@ -78,7 +80,7 @@ bot 3
     }
 
     function botTypeOne(actualPortX, actualPortY) {
-        if (died == true) {
+        if (botOneDied == true) {
             showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
             return;
         }
@@ -242,18 +244,184 @@ bot 3
         }
 
         // die if run into self
-        died = checkDie(botOnePosition, botOneHead, actualBodyPosition, [actualPortX, actualPortY]);
+        botOneDied = checkDie(botOnePosition, botOneHead, actualBodyPosition, [actualPortX, actualPortY]);
 
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
     }
 
-    /*function botTypeTwo(actualPortX, actualPortY) {
+    function botTypeTwo(actualPortX, actualPortY) {
+        if (botTwoDied == true) {
+            showBot(botTwoHead, botTwoPosition, botTwoColor, actualPortX, actualPortY);
+            return;
+        }
+        // move bot straight(S), right(R), left(L)
+        let changeDurection = "S";
+        let foodVisable = "None";
+        // check if food is on the screen
+        for (let i = 0; i < foodPosition.length; i++) {
+            if (foodPosition[i][0] >= botTwoHead[0] - Math.floor(multiFieldWidth / 2) && foodPosition[i][0] <= botTwoHead[0] + Math.floor(multiFieldWidth / 2) && foodPosition[i][1] >= botTwoHead[1] - Math.floor(multiFieldHeight / 2) && foodPosition[i][1] <= botTwoHead[1] + Math.floor(multiFieldHeight / 2)) {
+                foodVisable = i;
+            }
+        }
+        // check if bot is going to hit itself going straight
+        let straightDie = hitStraight(botTwoPosition, botTwoHead, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        
+        // check if turning will kill bot
+        let rightDie = hitRight(botTwoHead, botTwoPosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let leftDie = hitLeft(botTwoHead, botTwoPosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        
+        {
+        // avoid walls if needed
+        if (botTwoHead[0] == totalFieldWidth - 1 && botTwoDurection == "R") {
+            if (botTwoHead[1] == 0) {
+                changeDurection = "R";
+            } else if (botTwoHead[1] == totalFieldHeight - 1) {
+                changeDurection = "L";
+            } else {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                    changeDurection = "R";
+                } else {
+                    changeDurection = "L";
+                }
+            }
+        } else if (botTwoHead[0] == 0 && botTwoDurection == "L") {
+            if (botTwoHead[1] == 0) {
+                changeDurection = "L";
+            } else if (botTwoHead[1] == totalFieldHeight - 1) {
+                changeDurection = "R";
+            } else {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                    changeDurection = "R";
+                } else {
+                    changeDurection = "L";
+                }
+            }
+        } else if (botTwoHead[1] == 0 && botTwoDurection == "U") {
+            if (botTwoHead[0] == 0) {
+                changeDurection = "R";
+            } else if (botTwoHead[0] == totalFieldWidth - 1) {
+                changeDurection = "L";
+            } else {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                    changeDurection = "R";
+                } else {
+                    changeDurection = "L";
+                }
+            }
+        } else if (botTwoHead[1] == totalFieldHeight - 1 && botTwoDurection == "D") {
+            if (botTwoHead[0] == 0) {
+                changeDurection = "L";
+            } else if (botTwoHead[0] == totalFieldWidth - 1) {
+                changeDurection = "R";
+            } else {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                    changeDurection = "R";
+                } else {
+                    changeDurection = "L";
+                }
+            }
+        // avoid self, if true then going to hit self if go forward
+        } else if (straightDie == true) {
+            straightDie = false;
+            for (let i = 0; i < botTwoPosition.length; i++) {
+                if (botTwoDurection == "R") {
+                    if (botTwoPosition[i][0] == botTwoHead[0] && botTwoPosition[i][1] == botTwoHead[1] - 1) {
+                        straightDie = true;
+                    }
+                } else if (botTwoDurection == "L") {
+                    if (botTwoPosition[i][0] == botTwoHead[0] && botTwoPosition[i][1] == botTwoHead[1] + 1) {
+                        straightDie = true;
+                    }
+                } else if (botTwoDurection == "U") {
+                    if (botTwoPosition[i][0] == botTwoHead[0] - 1 && botTwoPosition[i][1] == botTwoHead[1]) {
+                        straightDie = true;
+                    }
+                } else if (botTwoDurection == "D") {
+                    if (botTwoPosition[i][0] == botTwoHead[0] + 1 && botTwoPosition[i][1] == botTwoHead[1]) {
+                        straightDie = true;
+                    }
+                }
+            }
+            if (straightDie == false) {
+                changeDurection = "L";
+            } else {
+                changeDurection = "R";
+            }
+        // go to food
+        } else if (foodVisable != "None") {
+            if (botTwoDurection == "R") {
+                if (foodPosition[foodVisable][1] > botTwoHead[1] && rightDie == false) {
+                    changeDurection = "R";
+                } else if (foodPosition[foodVisable][1] < botTwoHead[1] && leftDie == false) {
+                    changeDurection = "L";
+                }
+            } else if (botTwoDurection == "L") {
+                if (foodPosition[foodVisable][1] > botTwoHead[1] && leftDie == false) {
+                    changeDurection = "L";
+                } else if (foodPosition[foodVisable][1] < botTwoHead[1] && rightDie == false) {
+                    changeDurection = "R";
+                }
+            } else if (botTwoDurection == "U") {
+                if (foodPosition[foodVisable][0] > botTwoHead[0] && rightDie == false) {
+                    changeDurection = "R";
+                } else if (foodPosition[foodVisable][0] < botTwoHead[0] && leftDie == false) {
+                    changeDurection = "L";
+                }
+            } else if (botTwoDurection == "D") {
+                if (foodPosition[foodVisable][0] > botTwoHead[0] && leftDie == false) {
+                    changeDurection = "L";
+                } else if (foodPosition[foodVisable][0] < botTwoHead[0] && rightDie == false) {
+                    changeDurection = "R";
+                }
+            }
+        // randomize durection if does not need to avoid anything
+        } else {
+            // if random == 0 right, random == 1 left, else straight
+            let randomNumber = Math.floor(Math.random() * 10);
+            if (randomNumber == 0 && rightDie == false) {
+                changeDurection = "R";
+            } else if (randomNumber == 1 && leftDie == false) {
+                changeDurection = "L";
+            } else {
+                changeDurection = "S";
+            }
+        }
+        }
+
+        // change durection of bot if needed
+        botTwoDurection = botChangeDurection(botTwoDurection, changeDurection, botTwoHead);
+
+        // move bot
+        botTwoPosition.splice(0, 1);
+        botTwoPosition[botTwoPosition.length] = [...botTwoHead];
+        if (botTwoDurection == "R") {
+            botTwoHead[0]++;
+        } else if (botTwoDurection == "L") {
+            botTwoHead[0]--;
+        } else if (botTwoDurection == "U") {
+            botTwoHead[1]--;
+        } else if (botTwoDurection == "D") {
+            botTwoHead[1]++;
+        }
+
+        // eat food if on it
+        if (foodVisable != "None") {
+            if (botTwoHead[0] == foodPosition[foodVisable][0] && botTwoHead[1] == foodPosition[foodVisable][1]) {
+                botTwoPosition.splice(0, 0, [...botTwoPosition[0]]);
+                foodPosition[foodVisable][0] = Math.floor(Math.random() * totalFieldWidth);
+                foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
+            }
+        }
+
+        // die if run into self
+        botTwoDied = checkDie(botTwoPosition, botTwoHead, actualBodyPosition, [actualPortX, actualPortY]);
+
         // show head if on screen
         showBot(botTwoHead, botTwoPosition, botTwoColor, actualPortX, actualPortY);
     }
 
-    function botTypeThree(actualPortX, actualPortY) {
+    /*function botTypeThree(actualPortX, actualPortY) {
         // show head if on screen
         showBot(botThreeHead, botThreePosition, botThreeColor, actualPortX, actualPortY);
     }*/
