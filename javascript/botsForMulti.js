@@ -154,7 +154,7 @@ bot 3
             } else if (botOneHead[1] == totalFieldHeight - 1) {
                 changeDurection = "L";
             } else {
-                if (Math.round(Math.random()) == 0 || leftDie == true && rightDie == false) {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
                     changeDurection = "R";
                 } else {
                     changeDurection = "L";
@@ -166,7 +166,7 @@ bot 3
             } else if (botOneHead[1] == totalFieldHeight - 1) {
                 changeDurection = "R";
             } else {
-                if (Math.round(Math.random()) == 0 || leftDie == true && rightDie == false) {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
                     changeDurection = "R";
                 } else {
                     changeDurection = "L";
@@ -178,7 +178,7 @@ bot 3
             } else if (botOneHead[0] == totalFieldWidth - 1) {
                 changeDurection = "L";
             } else {
-                if (Math.round(Math.random()) == 0 || leftDie == true && rightDie == false) {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
                     changeDurection = "R";
                 } else {
                     changeDurection = "L";
@@ -190,7 +190,7 @@ bot 3
             } else if (botOneHead[0] == totalFieldWidth - 1) {
                 changeDurection = "R";
             } else {
-                if (Math.round(Math.random()) == 0 || leftDie == true && rightDie == false) {
+                if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
                     changeDurection = "R";
                 } else {
                     changeDurection = "L";
