@@ -198,23 +198,23 @@ bot 3
             }
         // avoid self, if true then going to hit self if go forward
         } else if (diedIf == "True") {
-            /*diedIf = "None";
+            diedIf = "None";
             for (let i = 0; i < botOnePosition.length; i++) {
                 if (botOneDurection == "R") {
                     if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] - 1) {
-                        diedIf == "True";
+                        diedIf = "True";
                     }
                 } else if (botOneDurection == "L") {
                     if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] + 1) {
-                        diedIf == "True";
+                        diedIf = "True";
                     }
                 } else if (botOneDurection == "U") {
                     if (botOnePosition[i][0] == botOneHead[0] - 1 && botOnePosition[i][1] == botOneHead[1]) {
-                        diedIf == "True";
+                        diedIf = "True";
                     }
                 } else if (botOneDurection == "D") {
                     if (botOnePosition[i][0] == botOneHead[0] + 1 && botOnePosition[i][1] == botOneHead[1]) {
-                        diedIf == "True";
+                        diedIf = "True";
                     }
                 }
             }
