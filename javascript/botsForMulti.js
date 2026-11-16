@@ -226,27 +226,27 @@ bot 3
         // go to food
         } else if (foodVisable != "None") {
             if (botOneDurection == "R") {
-                if (foodPosition[foodVisable][1] > botOneHead[1]) {
+                if (foodPosition[foodVisable][1] > botOneHead[1] && rightDie == false) {
                     changeDurection = "R";
-                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
+                } else if (foodPosition[foodVisable][1] < botOneHead[1] && leftDie == false) {
                     changeDurection = "L";
                 }
             } else if (botOneDurection == "L") {
-                if (foodPosition[foodVisable][1] > botOneHead[1]) {
+                if (foodPosition[foodVisable][1] > botOneHead[1] && leftDie == false) {
                     changeDurection = "L";
-                } else if (foodPosition[foodVisable][1] < botOneHead[1]) {
+                } else if (foodPosition[foodVisable][1] < botOneHead[1] && rightDie == false) {
                     changeDurection = "R";
                 }
             } else if (botOneDurection == "U") {
-                if (foodPosition[foodVisable][0] > botOneHead[0]) {
+                if (foodPosition[foodVisable][0] > botOneHead[0] && rightDie == false) {
                     changeDurection = "R";
-                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
+                } else if (foodPosition[foodVisable][0] < botOneHead[0] && leftDie == false) {
                     changeDurection = "L";
                 }
             } else if (botOneDurection == "D") {
-                if (foodPosition[foodVisable][0] > botOneHead[0]) {
+                if (foodPosition[foodVisable][0] > botOneHead[0] && leftDie == false) {
                     changeDurection = "L";
-                } else if (foodPosition[foodVisable][0] < botOneHead[0]) {
+                } else if (foodPosition[foodVisable][0] < botOneHead[0] && rightDie == false) {
                     changeDurection = "R";
                 }
             }
