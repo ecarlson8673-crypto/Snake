@@ -198,7 +198,7 @@ bot 3
             }
         // avoid self, if true then going to hit self if go forward
         } else if (diedIf == "True") {
-            diedIf = "None";
+            /*diedIf = "None";
             for (let i = 0; i < botOnePosition.length; i++) {
                 if (botOneDurection == "R") {
                     if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1] - 1) {
@@ -222,7 +222,7 @@ bot 3
                 changeDurection = "L";
             } else {
                 changeDurection = "R";
-            } 
+            } */
         // go to food
         } else if (foodVisable != "None") {
             if (botOneDurection == "R") {
