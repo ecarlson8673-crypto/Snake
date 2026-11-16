@@ -302,10 +302,18 @@ bot 3
 
     // check if the bots die
     function checkDie(bodyPosition, headPosition, playerPosition, playerHead) {
-        for (let i = 0; i < botOnePosition.length; i++) {
-            if (botOnePosition[i][0] == botOneHead[0] && botOnePosition[i][1] == botOneHead[1]) {
+        for (let i = 0; i < bodyPosition.length; i++) {
+            if (bodyPosition[i][0] == headPosition[0] && bodyPosition[i][1] == headPosition[1]) {
                 return true;
             }
+        }
+        for (let i = 0; i < playerPosition.length; i++) {
+            if (playerPosition[i][0] == headPosition[0] && playerPosition[i][1] == headPosition[1]) {
+                return true;
+            }
+        }
+        if (playerHead[0] == headPosition[0] && playerHead[1] == headPosition[1]) {
+            return true;
         }
         return false;
     }
