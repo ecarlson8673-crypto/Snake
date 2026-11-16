@@ -92,11 +92,11 @@ bot 3
             }
         }
         // check if bot is going to hit itself going straight
-        let straightDie = hitStraight(botOnePosition, botOneHead, botOneDurection);
+        let straightDie = hitStraight(botOnePosition, botOneHead, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         // check if turning will kill bot
-        let rightDie = hitRight(botOneHead, botOnePosition, botOneDurection);
-        let leftDie = hitLeft(botOneHead, botOnePosition, botOneDurection);
+        let rightDie = hitRight(botOneHead, botOnePosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let leftDie = hitLeft(botOneHead, botOnePosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         {
         // avoid walls if needed
@@ -217,31 +217,7 @@ bot 3
         }
 
         // change durection of bot if needed
-        if (botOneDurection == "R") {
-            if (changeDurection == "R" && botOneHead[1] != totalFieldHeight - 1) {
-                botOneDurection = "D";
-            } else if (changeDurection == "L" && botOneHead[1] != 0) {
-                botOneDurection = "U";
-            }
-        } else if (botOneDurection == "L") {
-            if (changeDurection == "R" && botOneHead[1] != 0) {
-                botOneDurection = "U";
-            } else if (changeDurection == "L" && botOneHead[1] != totalFieldHeight - 1) {
-                botOneDurection = "D";
-            }
-        } else if (botOneDurection == "U") {
-            if (changeDurection == "R" && botOneHead[0] != totalFieldWidth - 1) {
-                botOneDurection = "R";
-            } else if (changeDurection == "L" && botOneHead[0] != 0) {
-                botOneDurection = "L";
-            }
-        } else if (botOneDurection == "D") {
-            if (changeDurection == "R" && botOneHead[0] != 0) {
-                botOneDurection = "L";
-            } else if (changeDurection == "L" && botOneHead[0] != totalFieldWidth - 1) {
-                botOneDurection = "R";
-            }
-        }
+        botOneDurection = botChangeDurection(botOneDurection, changeDurection, botOneHead);
 
         // move bot
         botOnePosition.splice(0, 1);
@@ -507,7 +483,41 @@ bot 3
     }
 
     // change durection of bot
-    function botChangeDurection(botDurection, changeDurection) {
-
+    function botChangeDurection(botDurection, changeDurection, botHead) {
+        if (botDurection == "R") {
+            if (changeDurection == "R" && botHead[1] != totalFieldHeight - 1) {
+                return "D";
+            } else if (changeDurection == "L" && botHead[1] != 0) {
+                return "U";
+            } else {
+                return botDurection;
+            }
+        } else if (botDurection == "L") {
+            if (changeDurection == "R" && botHead[1] != 0) {
+                return "U";
+            } else if (changeDurection == "L" && botHead[1] != totalFieldHeight - 1) {
+                return "D";
+            } else {
+                return botDurection;
+            }
+        } else if (botDurection == "U") {
+            if (changeDurection == "R" && botHead[0] != totalFieldWidth - 1) {
+                return "R";
+            } else if (changeDurection == "L" && botHead[0] != 0) {
+                return "L";
+            } else {
+                return botDurection;
+            }
+        } else if (botDurection == "D") {
+            if (changeDurection == "R" && botHead[0] != 0) {
+                return "L";
+            } else if (changeDurection == "L" && botHead[0] != totalFieldWidth - 1) {
+                return "R";
+            } else {
+                return botDurection;
+            }
+        } else {
+            return botDurection;
+        }
     }
 }
