@@ -222,7 +222,7 @@ bot 3
                 changeDurection = "L";
             } else {
                 changeDurection = "R";
-            } */
+            }
         // go to food
         } else if (foodVisable != "None") {
             if (botOneDurection == "R") {
