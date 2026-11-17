@@ -90,6 +90,9 @@ function resetMulti() {
     for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
         document.getElementById(`multi${i}`).style.backgroundColor = field1[i];
     }
+    // reset view port
+    viewPortX = 12;
+    viewPortY = 12;
     // reset message
     document.getElementById("message").innerHTML = "";
     document.getElementById("again").style.display = "none";
