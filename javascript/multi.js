@@ -66,6 +66,7 @@ function playMulti() {
         if (die() == true || playerDied([actualPortX, actualPortY])) {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(multiInterval);
+            document.getElementById("again").style.display = "";
         }
     }
 

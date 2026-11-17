@@ -84,9 +84,6 @@ function initializeMulti() {
     resetMulti();
 
     resetBots();
-
-    // warn user game is not done
-    document.getElementById("message").innerHTML = "This game is under construction<br>Some functions may not work";
 }
 
 // reset the multi game
