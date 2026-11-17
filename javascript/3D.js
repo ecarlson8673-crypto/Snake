@@ -10,7 +10,7 @@ function play3D() {
         let key = event.key;
 
         if (key == "w") {
-            document.getElementById("DField").style.rotateX = `${rotateX + 1}deg`;
+            document.getElementById("DField").style.transform = `rotateX(${rotateX + 1}deg)`;
             rotateX++;
             document.getElementById("message").innerHTML = rotateX;
         } else if (key == "s") {
