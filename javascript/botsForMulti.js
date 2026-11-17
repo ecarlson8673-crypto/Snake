@@ -94,11 +94,11 @@ bot 3
             }
         }
         // check if bot is going to hit itself going straight
-        let straightDie = hitStraight(botOnePosition, botOneHead, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let straightDie = hitStraight(botOnePosition, botOneHead, botTwoHead, botTwoPosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         // check if turning will kill bot
-        let rightDie = hitRight(botOneHead, botOnePosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
-        let leftDie = hitLeft(botOneHead, botOnePosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let rightDie = hitRight(botOneHead, botOnePosition, botTwoHead, botTwoPosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let leftDie = hitLeft(botOneHead, botOnePosition, botTwoHead, botTwoPosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         {
         // avoid walls if needed
@@ -244,7 +244,7 @@ bot 3
         }
 
         // die if run into self
-        botOneDied = checkDie(botOnePosition, botOneHead, actualBodyPosition, [actualPortX, actualPortY]);
+        botOneDied = checkDie(botOnePosition, botOneHead, botTwoHead, botTwoPosition, actualBodyPosition, [actualPortX, actualPortY]);
 
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
@@ -265,11 +265,11 @@ bot 3
             }
         }
         // check if bot is going to hit itself going straight
-        let straightDie = hitStraight(botTwoPosition, botTwoHead, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let straightDie = hitStraight(botTwoPosition, botTwoHead, botOneHead, botOnePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         // check if turning will kill bot
-        let rightDie = hitRight(botTwoHead, botTwoPosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
-        let leftDie = hitLeft(botTwoHead, botTwoPosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let rightDie = hitRight(botTwoHead, botTwoPosition, botOneHead, botOnePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let leftDie = hitLeft(botTwoHead, botTwoPosition, botOneHead, botOnePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         {
         // avoid walls if needed
@@ -415,7 +415,7 @@ bot 3
         }
 
         // die if run into self
-        botTwoDied = checkDie(botTwoPosition, botTwoHead, actualBodyPosition, [actualPortX, actualPortY]);
+        botTwoDied = checkDie(botTwoPosition, botTwoHead, botOneHead, botOnePosition, actualBodyPosition, [actualPortX, actualPortY]);
 
         // show head if on screen
         showBot(botTwoHead, botTwoPosition, botTwoColor, actualPortX, actualPortY);
@@ -445,12 +445,14 @@ bot 3
     }
 
     // check if the bots die
-    function checkDie(bodyPosition, headPosition, playerPosition, playerHead) {
+    function checkDie(bodyPosition, headPosition, bot1head, bot1body, playerPosition, playerHead) {
+        // check if hit self
         for (let i = 0; i < bodyPosition.length; i++) {
             if (bodyPosition[i][0] == headPosition[0] && bodyPosition[i][1] == headPosition[1]) {
                 return true;
             }
         }
+        // check if hit player
         for (let i = 0; i < playerPosition.length; i++) {
             if (playerPosition[i][0] == headPosition[0] && playerPosition[i][1] == headPosition[1]) {
                 return true;
@@ -459,11 +461,20 @@ bot 3
         if (playerHead[0] == headPosition[0] && playerHead[1] == headPosition[1]) {
             return true;
         }
+        // check if hit other bot
+        for (let i = 0; i < bot1body.length; i++) {
+            if (bot1body[i][0] == headPosition[0] && bot1body[i][1] == headPosition[1]) {
+                return true;
+            }
+        }
+        if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1]) {
+            return true;
+        }
         return false;
     }
 
     // check if bot is going to hit something if goes left
-    function hitLeft(headPosition, botPosition, botDurection, playerhead, playerBody) {
+    function hitLeft(headPosition, botPosition, bot1head, bot1body, botDurection, playerhead, playerBody) {
         // check if hit left bot
         for (let i = 0; i < botPosition.length; i++) {
             if (botDurection == "R") {
@@ -522,12 +533,49 @@ bot 3
                 return true;
             }
         }
+        // check if hit left other bot
+        for (let i = 0; i < bot1body.length; i++) {
+            if (botDurection == "R") {
+                if (bot1body[i][0] == headPosition[0] && bot1body[i][1] == headPosition[1] - 1) {
+                    return true;
+                }
+            } else if (botDurection == "L") {
+                if (bot1body[i][0] == headPosition[0] && bot1body[i][1] == headPosition[1] + 1) {
+                    return true;
+                }
+            } else if (botDurection == "U") {
+                if (bot1body[i][0] == headPosition[0] - 1 && bot1body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "D") {
+                if (bot1body[i][0] == headPosition[0] + 1 && bot1body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection == "R") {
+            if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1] - 1) {
+                return true;
+            }
+        } else if (botDurection == "L") {
+            if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1] + 1) {
+                return true;
+            }
+        } else if (botDurection == "U") {
+            if (bot1head[0] == headPosition[0] - 1 && bot1head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "D") {
+            if (bot1head[0] == headPosition[0] + 1 && bot1head[1] == headPosition[1]) {
+                return true;
+            }
+        }
         
         return false;
     }
 
     // check if bot is going to hit something if goes right
-    function hitRight(headPosition, botPosition, botDurection, playerhead, playerBody) {
+    function hitRight(headPosition, botPosition, bot1head, bot1body, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botPosition.length; i++) {
             if (botDurection == "R") {
                 if (botPosition[i][0] == headPosition[0] && botPosition[i][1] == headPosition[1] + 1) {
@@ -581,6 +629,43 @@ bot 3
             }
         } else if (botDurection == "D") {
             if (playerhead[0] == headPosition[0] - 1 && playerhead[1] == headPosition[1]) {
+                return true;
+            }
+        }
+
+        for (let i = 0; i < bot1body.length; i++) {
+            if (botDurection == "R") {
+                if (bot1body[i][0] == headPosition[0] && bot1body[i][1] == headPosition[1] + 1) {
+                    return true;
+                }
+            } else if (botDurection == "L") {
+                if (bot1body[i][0] == headPosition[0] && bot1body[i][1] == headPosition[1] - 1) {
+                    return true;
+                }
+            } else if (botDurection == "U") {
+                if (bot1body[i][0] == headPosition[0] + 1 && bot1body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "D") {
+                if (bot1body[i][0] == headPosition[0] - 1 && bot1body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection == "R") {
+            if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1] + 1) {
+                return true;
+            }
+        } else if (botDurection == "L") {
+            if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1] - 1) {
+                return true;
+            }
+        } else if (botDurection == "U") {
+            if (bot1head[0] == headPosition[0] + 1 && bot1head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "D") {
+            if (bot1head[0] == headPosition[0] - 1 && bot1head[1] == headPosition[1]) {
                 return true;
             }
         }
@@ -589,7 +674,7 @@ bot 3
     }
 
     // check if bot is going to hit something if goes straight
-    function hitStraight(botPosition, headPosition, botDurection, playerhead, playerBody) {
+    function hitStraight(botPosition, headPosition, bot1head, bot1body, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botPosition.length; i++) {
             if (botDurection == "R") {
                 if (botPosition[i][0] == headPosition[0] + 1 && botPosition[i][1] == headPosition[1]) {
@@ -643,6 +728,43 @@ bot 3
             }
         } else if (botDurection == "D") {
             if (playerhead[0] == headPosition[0] && playerhead[1] == headPosition[1] + 1) {
+                return true;
+            }
+        }
+
+        for (let i = 0; i < bot1body.length; i++) {
+            if (botDurection == "R") {
+                if (bot1body[i][0] == headPosition[0] + 1 && bot1body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "L") {
+                if (bot1body[i][0] == headPosition[0] - 1 && bot1body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "U") {
+                if (bot1body[i][0] == headPosition[0] && bot1body[i][1] == headPosition[1] - 1) {
+                    return true;
+                }
+            } else if (botDurection == "D") {
+                if (bot1body[i][0] == headPosition[0] && bot1body[i][1] == headPosition[1] + 1) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection == "R") {
+            if (bot1head[0] == headPosition[0] + 1 && bot1head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "L") {
+            if (bot1head[0] == headPosition[0] - 1 && bot1head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "U") {
+            if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1] - 1) {
+                return true;
+            }
+        } else if (botDurection == "D") {
+            if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1] + 1) {
                 return true;
             }
         }
