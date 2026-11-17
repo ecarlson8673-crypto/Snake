@@ -82,8 +82,6 @@ function initializeMulti() {
     }
     
     resetMulti();
-
-    resetBots();
 }
 
 // reset the multi game
@@ -119,6 +117,9 @@ function resetMulti() {
         let y = Math.floor(Math.random() * totalFieldHeight);
         foodPosition[i] = [x, y];
     }
+
+
+    resetBots();
 
     playMulti();
 }
