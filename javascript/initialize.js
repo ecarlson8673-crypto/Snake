@@ -55,9 +55,7 @@ function resetOriginal() {
     playOriginal();
 }
 
-
-
-
+// start the multi game
 function initializeMulti() {
     // clear screen
     clearOptions();
@@ -100,6 +98,7 @@ function resetMulti() {
     head = 60;
     body = [57, 58, 59];
     // set actual body position
+    actualBodyPosition = [];
     for (let i = 0; i < 3; i++) {
         actualBodyPosition[i] = [];
         actualBodyPosition[i][0] = (Math.floor(totalFieldWidth / 2) - 1);
