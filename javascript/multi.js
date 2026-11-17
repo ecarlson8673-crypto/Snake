@@ -67,6 +67,7 @@ function playMulti() {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(multiInterval);
             document.getElementById("again").style.display = "";
+            return;
         }
     }
 
