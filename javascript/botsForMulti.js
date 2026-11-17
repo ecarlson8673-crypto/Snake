@@ -810,4 +810,28 @@ bot 3
             return botDurection;
         }
     }
+
+    // check if player hits bot
+    function playerDied(playerHead) {
+        // check if player hit bot one
+        for (let i = 0; i < botOnePosition.length; i++) {
+            if (botOnePosition[i][0] == playerHead[0] && botOnePosition[i][1] == playerHead[1]) {
+                return true;
+            }
+        }
+        if (botOneHead[0] == playerHead[0] && botOneHead[1] == playerHead[1]) {
+            return true;
+        }
+        // check if player hit bot two
+        for (let i = 0; i < botTwoPosition.length; i++) {
+            if (botTwoPosition[i][0] == playerHead[0] && botTwoPosition[i][1] == playerHead[1]) {
+                return true;
+            }
+        }
+        if (botTwoHead[0] == playerHead[0] && botTwoHead[1] == playerHead[1]) {
+            return true;
+        }
+
+        return false;
+    }
 }

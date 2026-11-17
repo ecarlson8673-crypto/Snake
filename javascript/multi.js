@@ -63,7 +63,7 @@ function playMulti() {
         //botTypeThree(actualPortX, actualPortY);
 
         // check if snake hit walls, self, or other snake
-        if (die() == true) {
+        if (die() == true || playerDied([actualPortX, actualPortY])) {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(multiInterval);
         }
