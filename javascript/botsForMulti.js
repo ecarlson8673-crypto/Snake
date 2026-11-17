@@ -632,6 +632,15 @@ bot...
         if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1]) {
             return true;
         }
+        // check if hit second bot
+        for (let i = 0; i < bot2body.length; i++) {
+            if (bot2body[i][0] == headPosition[0] && bot2body[i][1] == headPosition[1]) {
+                return true;
+            }
+        }
+        if (bot2head[0] == headPosition[0] && bot2head[1] == headPosition[1]) {
+            return true;
+        }
         return false;
     }
 
@@ -732,7 +741,44 @@ bot...
                 return true;
             }
         }
-        
+        // check if hit left second bot
+        for (let i = 0; i < bot2body.length; i++) {
+            if (botDurection == "R") {
+                if (bot2body[i][0] == headPosition[0] && bot2body[i][1] == headPosition[1] - 1) {
+                    return true;
+                }
+            } else if (botDurection == "L") {
+                if (bot2body[i][0] == headPosition[0] && bot2body[i][1] == headPosition[1] + 1) {
+                    return true;
+                }
+            } else if (botDurection == "U") {
+                if (bot2body[i][0] == headPosition[0] - 1 && bot2body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "D") {
+                if (bot2body[i][0] == headPosition[0] + 1 && bot2body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection == "R") {
+            if (bot2head[0] == headPosition[0] && bot2head[1] == headPosition[1] - 1) {
+                return true;
+            }
+        } else if (botDurection == "L") {
+            if (bot2head[0] == headPosition[0] && bot2head[1] == headPosition[1] + 1) {
+                return true;
+            }
+        } else if (botDurection == "U") {
+            if (bot2head[0] == headPosition[0] - 1 && bot2head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "D") {
+            if (bot2head[0] == headPosition[0] + 1 && bot2head[1] == headPosition[1]) {
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -832,6 +878,43 @@ bot...
             }
         }
 
+        for (let i = 0; i < bot2body.length; i++) {
+            if (botDurection == "R") {
+                if (bot2body[i][0] == headPosition[0] && bot2body[i][1] == headPosition[1] + 1) {
+                    return true;
+                }
+            } else if (botDurection == "L") {
+                if (bot2body[i][0] == headPosition[0] && bot2body[i][1] == headPosition[1] - 1) {
+                    return true;
+                }
+            } else if (botDurection == "U") {
+                if (bot2body[i][0] == headPosition[0] + 1 && bot2body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "D") {
+                if (bot2body[i][0] == headPosition[0] - 1 && bot2body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection == "R") {
+            if (bot2head[0] == headPosition[0] && bot2head[1] == headPosition[1] + 1) {
+                return true;
+            }
+        } else if (botDurection == "L") {
+            if (bot2head[0] == headPosition[0] && bot2head[1] == headPosition[1] - 1) {
+                return true;
+            }
+        } else if (botDurection == "U") {
+            if (bot2head[0] == headPosition[0] + 1 && bot2head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "D") {
+            if (bot2head[0] == headPosition[0] - 1 && bot2head[1] == headPosition[1]) {
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -927,6 +1010,43 @@ bot...
             }
         } else if (botDurection == "D") {
             if (bot1head[0] == headPosition[0] && bot1head[1] == headPosition[1] + 1) {
+                return true;
+            }
+        }
+
+        for (let i = 0; i < bot2body.length; i++) {
+            if (botDurection == "R") {
+                if (bot2body[i][0] == headPosition[0] + 1 && bot2body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "L") {
+                if (bot2body[i][0] == headPosition[0] - 1 && bot2body[i][1] == headPosition[1]) {
+                    return true;
+                }
+            } else if (botDurection == "U") {
+                if (bot2body[i][0] == headPosition[0] && bot2body[i][1] == headPosition[1] - 1) {
+                    return true;
+                }
+            } else if (botDurection == "D") {
+                if (bot2body[i][0] == headPosition[0] && bot2body[i][1] == headPosition[1] + 1) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection == "R") {
+            if (bot2head[0] == headPosition[0] + 1 && bot2head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "L") {
+            if (bot2head[0] == headPosition[0] - 1 && bot2head[1] == headPosition[1]) {
+                return true;
+            }
+        } else if (botDurection == "U") {
+            if (bot2head[0] == headPosition[0] && bot2head[1] == headPosition[1] - 1) {
+                return true;
+            }
+        } else if (botDurection == "D") {
+            if (bot2head[0] == headPosition[0] && bot2head[1] == headPosition[1] + 1) {
                 return true;
             }
         }
