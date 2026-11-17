@@ -8,6 +8,8 @@ function playMulti() {
     // the actual view port
     let actualPortX = Math.ceil(totalFieldWidth / 2);
     let actualPortY = Math.ceil(totalFieldHeight / 2);
+    // check if died
+    let died = false;
 
     // check for key event
     document.addEventListener("keydown", keyEvent);
@@ -22,7 +24,7 @@ function playMulti() {
         }
 
         // pause
-        if (key == " ") {
+        if (key == " " && died == false) {
             if (pause == false) {
                 clearInterval(multiInterval);
                 document.getElementById("message").innerHTML = "Pause";
@@ -67,6 +69,7 @@ function playMulti() {
             document.getElementById("message").innerHTML = "You lost";
             clearInterval(multiInterval);
             document.getElementById("again").style.display = "";
+            died = true;
             return;
         }
     }
