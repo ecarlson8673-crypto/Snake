@@ -144,6 +144,43 @@ button:hover {
     height: 495px;
 }
 
+/* style for 3D */
+#DContainer {
+    width: 200px;
+    height: 200px;
+    margin: 100px auto;
+    perspective: 600px;
+}
+#DField {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 12s infinite linear;
+}
+.cubeFace {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid white;
+    line-height: 200px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: rgba(255, 0, 0, 0.5);
+}
+.front { transform: rotateY( 0deg) translateZ(100px); }
+.back { transform: rotateY(180deg) translateZ(100px); }
+.left { transform: rotateY(-90deg) translateZ(100px); }
+.right { transform: rotateY( 90deg) translateZ(100px); }
+.top { transform: rotateX( 90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+@keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
 #logo {
   position: fixed;
   right: 5px;
