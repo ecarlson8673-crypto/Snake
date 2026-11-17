@@ -156,7 +156,7 @@ button:hover {
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    animation: spin 12s infinite linear;
+    /*animation: spin 12s infinite linear;*/
 }
 .cubeFace {
     position: absolute;
@@ -176,10 +176,10 @@ button:hover {
 .right { transform: rotateY( 90deg) translateZ(100px); }
 .top { transform: rotateX( 90deg) translateZ(100px); }
 .bottom { transform: rotateX(-90deg) translateZ(100px); }
-@keyframes spin {
+/*@keyframes spin {
     from { transform: rotateX(0deg) rotateY(0deg); }
     to { transform: rotateX(360deg) rotateY(360deg); }
-}
+}*/
 
 #logo {
   position: fixed;
