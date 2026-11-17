@@ -1140,6 +1140,15 @@ bot...
         if (botTwoHead[0] == playerHead[0] && botTwoHead[1] == playerHead[1]) {
             return true;
         }
+        // check if player hit bot three
+        for (let i = 0; i < botThreePosition.length; i++) {
+            if (botThreePosition[i][0] == playerHead[0] && botThreePosition[i][1] == playerHead[1]) {
+                return true;
+            }
+        }
+        if (botThreeHead[0] == playerHead[0] && botThreeHead[1] == playerHead[1]) {
+            return true;
+        }
 
         return false;
     }
