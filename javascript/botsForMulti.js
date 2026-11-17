@@ -59,6 +59,7 @@ bot...
         let y = Math.floor(Math.random() * ((2 * totalFieldHeight / 3) - 3)) + 3;
         botOneHead = [x, y];
 
+        botOnePosition = [];
         // position body
         for (let i = 0; i < 3; i++) {
             botOnePosition[i] = [];
@@ -74,6 +75,7 @@ bot...
         y = Math.floor(Math.random() * (totalFieldHeight / 3)) + Math.floor(2 * totalFieldHeight / 3);
         botTwoHead = [x, y];
 
+        botTwoPosition = [];
         // position body
         for (let i = 0; i < 3; i++) {
             botTwoPosition[i] = [];
@@ -89,6 +91,7 @@ bot...
         y = Math.floor(Math.random() * (totalFieldHeight - 3)) + 3;
         botThreeHead = [x, y];
 
+        botThreePosition = [];
         // position body
         for (let i = 0; i < 3; i++) {
             botThreePosition[i] = [];
