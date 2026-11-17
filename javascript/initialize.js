@@ -62,6 +62,8 @@ function initializeMulti() {
 
     game = "multi";
 
+    foodNumber = foodNumber * 3;
+
     // set up the field for multi
     for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
         let div = document.createElement("div");
@@ -114,7 +116,6 @@ function resetMulti() {
     document.getElementById(`multi${57}`).style.backgroundColor = bodyColor;
     
     // set position of food relative to larger field
-    foodNumber = foodNumber * 3;
     for (let i = 0; i < foodNumber; i++) {
         let x = Math.floor(Math.random() * totalFieldWidth);
         let y = Math.floor(Math.random() * totalFieldHeight);
