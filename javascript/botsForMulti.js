@@ -6,31 +6,30 @@ bot...
     - if food can be seen goes to it
 */
 {
-    // position of bots actual
-    let botOnePosition = [];
-    let botOneHead = [];
-    let botTwoPosition = [];
-    let botTwoHead = [];
-    let botThreePosition = [];
-    let botThreeHead = [];
-
-    // color of bots
-    let botOneColor;
-    let botTwoColor;
-    let botThreeColor;
-
-    // durection of bots
-    let botOneDurection = "R";
-    let botTwoDurection = "R";
-    let botThreeDurection = "R";
-
-    // check if bot is dead
-    let botOneDied = false;
-    let botTwoDied = false;
-    let botThreeDied = false;
-
-
     function resetBots() {
+        // position of bots actual
+        let botOnePosition = [];
+        let botOneHead = [];
+        let botTwoPosition = [];
+        let botTwoHead = [];
+        let botThreePosition = [];
+        let botThreeHead = [];
+
+        // color of bots
+        let botOneColor;
+        let botTwoColor;
+        let botThreeColor;
+
+        // durection of bots
+        let botOneDurection = "R";
+        let botTwoDurection = "R";
+        let botThreeDurection = "R";
+
+        // check if bot is dead
+        let botOneDied = false;
+        let botTwoDied = false;
+        let botThreeDied = false;
+
         resetOne();
         resetTwo();
         resetThree();
