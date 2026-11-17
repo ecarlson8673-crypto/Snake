@@ -31,30 +31,9 @@ bot...
 
 
     function resetBots() {
-        // position head of bot
-        let x = Math.floor(Math.random() * ((totalFieldWidth / 3) - 3)) + 3;
-        let y = Math.floor(Math.random() * ((2 * totalFieldHeight / 3) - 3)) + 3;
-        botOneHead = [x, y];
-        x = Math.floor(Math.random() * ((2 * totalFieldWidth / 3) - 3)) + 3;
-        y = Math.floor(Math.random() * (totalFieldHeight / 3)) + Math.floor(2 * totalFieldHeight / 3);
-        botTwoHead = [x, y];
-        x = Math.floor(Math.random() * (totalFieldWidth / 3)) + Math.floor(2 * totalFieldWidth / 3);
-        y = Math.floor(Math.random() * (totalFieldHeight - 3)) + 3;
-        botThreeHead = [x, y];
-
-        // position body based on head
-        for (let i = 0; i < 3; i++) {
-            botOnePosition[i] = [];
-            botTwoPosition[i] = [];
-            botThreePosition[i] = [];
-
-            botOnePosition[i][0] = botOneHead[0] - 1 - i;
-            botOnePosition[i][1] = botOneHead[1];
-            botTwoPosition[i][0] = botTwoHead[0] - 1 - i;
-            botTwoPosition[i][1] = botTwoHead[1];
-            botThreePosition[i][0] = botThreeHead[0] - 1 - i;
-            botThreePosition[i][1] = botThreeHead[1];
-        }
+        resetOne();
+        resetTwo();
+        resetThree();
 
         // bot colors
         let botColorOptions = [
@@ -74,10 +53,55 @@ bot...
         botTwoColor = botColorOptions[1];
         botThreeColor = botColorOptions[2];
     }
+    function resetOne() {
+        // position head
+        let x = Math.floor(Math.random() * ((totalFieldWidth / 3) - 3)) + 3;
+        let y = Math.floor(Math.random() * ((2 * totalFieldHeight / 3) - 3)) + 3;
+        botOneHead = [x, y];
+
+        // position body
+        for (let i = 0; i < 3; i++) {
+            botOnePosition[i] = [];
+
+            botOnePosition[i][0] = botOneHead[0];
+            botOnePosition[i][1] = botOneHead[1];
+        }
+        botOneDied = false;
+    }
+    function resetTwo() {
+        // position head
+        x = Math.floor(Math.random() * ((2 * totalFieldWidth / 3) - 3)) + 3;
+        y = Math.floor(Math.random() * (totalFieldHeight / 3)) + Math.floor(2 * totalFieldHeight / 3);
+        botTwoHead = [x, y];
+
+        // position body
+        for (let i = 0; i < 3; i++) {
+            botTwoPosition[i] = [];
+
+            botTwoPosition[i][0] = botTwoHead[0];
+            botTwoPosition[i][1] = botTwoHead[1];
+        }
+        botTwoDied = false;
+    }
+    function resetThree() {
+        // position head
+        x = Math.floor(Math.random() * (totalFieldWidth / 3)) + Math.floor(2 * totalFieldWidth / 3);
+        y = Math.floor(Math.random() * (totalFieldHeight - 3)) + 3;
+        botThreeHead = [x, y];
+
+        // position body
+        for (let i = 0; i < 3; i++) {
+            botThreePosition[i] = [];
+
+            botThreePosition[i][0] = botThreeHead[0];
+            botThreePosition[i][1] = botThreeHead[1];
+        }
+        botThreeDied = false;
+    }
 
     function botTypeOne(actualPortX, actualPortY) {
         if (botOneDied == true) {
-            showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
+            resetOne();
             return;
         }
         // move bot straight(S), right(R), left(L)
@@ -248,7 +272,7 @@ bot...
 
     function botTypeTwo(actualPortX, actualPortY) {
         if (botTwoDied == true) {
-            showBot(botTwoHead, botTwoPosition, botTwoColor, actualPortX, actualPortY);
+            resetTwo();
             return;
         }
         // move bot straight(S), right(R), left(L)
@@ -419,7 +443,7 @@ bot...
 
     function botTypeThree(actualPortX, actualPortY) {
         if (botThreeDied == true) {
-            showBot(botThreeHead, botThreePosition, botThreeColor, actualPortX, actualPortY);
+            resetThree();
             return;
         }
         // move bot straight(S), right(R), left(L)
