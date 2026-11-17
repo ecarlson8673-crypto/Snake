@@ -1,13 +1,9 @@
 // this file has the code for the bots for the multi game
 /* Each bot has different code moving it
 NOTE: see it means in view port (within 5 field tiles of head)
-bot 1
+bot...
     - moves randomly averaging going straight
     - if food can be seen goes to it
-bot 2
-    - goes for the closest food even if can not see it
-bot 3
-    - Figure out later
 */
 {
     // position of bots actual
@@ -94,11 +90,11 @@ bot 3
             }
         }
         // check if bot is going to hit itself going straight
-        let straightDie = hitStraight(botOnePosition, botOneHead, botTwoHead, botTwoPosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let straightDie = hitStraight(botOnePosition, botOneHead, botTwoHead, botTwoPosition, botThreeHead, botThreePosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         // check if turning will kill bot
-        let rightDie = hitRight(botOneHead, botOnePosition, botTwoHead, botTwoPosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
-        let leftDie = hitLeft(botOneHead, botOnePosition, botTwoHead, botTwoPosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let rightDie = hitRight(botOneHead, botOnePosition, botTwoHead, botTwoPosition, botThreeHead, botThreePosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let leftDie = hitLeft(botOneHead, botOnePosition, botTwoHead, botTwoPosition, botThreeHead, botThreePosition, botOneDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         {
             // avoid walls if needed
@@ -244,7 +240,7 @@ bot 3
         }
 
         // die if run into self
-        botOneDied = checkDie(botOnePosition, botOneHead, botTwoHead, botTwoPosition, actualBodyPosition, [actualPortX, actualPortY]);
+        botOneDied = checkDie(botOnePosition, botOneHead, botTwoHead, botTwoPosition, botThreeHead, botThreePosition, actualBodyPosition, [actualPortX, actualPortY]);
 
         // show head if on screen
         showBot(botOneHead, botOnePosition, botOneColor, actualPortX, actualPortY);
@@ -265,11 +261,11 @@ bot 3
             }
         }
         // check if bot is going to hit itself going straight
-        let straightDie = hitStraight(botTwoPosition, botTwoHead, botOneHead, botOnePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let straightDie = hitStraight(botTwoPosition, botTwoHead, botOneHead, botOnePosition, botThreeHead, botThreePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         // check if turning will kill bot
-        let rightDie = hitRight(botTwoHead, botTwoPosition, botOneHead, botOnePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
-        let leftDie = hitLeft(botTwoHead, botTwoPosition, botOneHead, botOnePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let rightDie = hitRight(botTwoHead, botTwoPosition, botOneHead, botOnePosition, botThreeHead, botThreePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let leftDie = hitLeft(botTwoHead, botTwoPosition, botOneHead, botOnePosition, botThreeHead, botThreePosition, botTwoDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         {
             // avoid walls if needed
@@ -415,7 +411,7 @@ bot 3
         }
 
         // die if run into self
-        botTwoDied = checkDie(botTwoPosition, botTwoHead, botOneHead, botOnePosition, actualBodyPosition, [actualPortX, actualPortY]);
+        botTwoDied = checkDie(botTwoPosition, botTwoHead, botOneHead, botOnePosition, botThreeHead, botThreePosition, actualBodyPosition, [actualPortX, actualPortY]);
 
         // show head if on screen
         showBot(botTwoHead, botTwoPosition, botTwoColor, actualPortX, actualPortY);
@@ -436,11 +432,11 @@ bot 3
             }
         }
         // check if bot is going to hit itself going straight
-        let straightDie = hitStraight(botThreePosition, botThreeHead, botOneHead, botOnePosition, botThreeDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let straightDie = hitStraight(botThreePosition, botThreeHead, botOneHead, botOnePosition, botTwoHead, botTwoPosition, botThreeDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         // check if turning will kill bot
-        let rightDie = hitRight(botThreeHead, botThreePosition, botOneHead, botOnePosition, botThreeDurection, [actualPortX, actualPortY], actualBodyPosition);
-        let leftDie = hitLeft(botThreeHead, botThreePosition, botOneHead, botOnePosition, botThreeDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let rightDie = hitRight(botThreeHead, botThreePosition, botOneHead, botOnePosition, botTwoHead, botTwoPosition, botThreeDurection, [actualPortX, actualPortY], actualBodyPosition);
+        let leftDie = hitLeft(botThreeHead, botThreePosition, botOneHead, botOnePosition, botTwoHead, botTwoPosition, botThreeDurection, [actualPortX, actualPortY], actualBodyPosition);
         
         {
             // avoid walls if needed
@@ -586,7 +582,7 @@ bot 3
         }
 
         // die if run into self
-        botThreeDied = checkDie(botThreePosition, botThreeHead, botOneHead, botOnePosition, actualBodyPosition, [actualPortX, actualPortY]);
+        botThreeDied = checkDie(botThreePosition, botThreeHead, botOneHead, botOnePosition, botTwoHead, botTwoPosition, actualBodyPosition, [actualPortX, actualPortY]);
 
         // show head if on screen
         showBot(botThreeHead, botThreePosition, botThreeColor, actualPortX, actualPortY);
@@ -611,7 +607,7 @@ bot 3
     }
 
     // check if the bots die
-    function checkDie(bodyPosition, headPosition, bot1head, bot1body, playerPosition, playerHead) {
+    function checkDie(bodyPosition, headPosition, bot1head, bot1body, bot2head, bot2body, playerPosition, playerHead) {
         // check if hit self
         for (let i = 0; i < bodyPosition.length; i++) {
             if (bodyPosition[i][0] == headPosition[0] && bodyPosition[i][1] == headPosition[1]) {
@@ -640,7 +636,7 @@ bot 3
     }
 
     // check if bot is going to hit something if goes left
-    function hitLeft(headPosition, botPosition, bot1head, bot1body, botDurection, playerhead, playerBody) {
+    function hitLeft(headPosition, botPosition, bot1head, bot1body, bot2head, bot2body, botDurection, playerhead, playerBody) {
         // check if hit left bot
         for (let i = 0; i < botPosition.length; i++) {
             if (botDurection == "R") {
@@ -741,7 +737,7 @@ bot 3
     }
 
     // check if bot is going to hit something if goes right
-    function hitRight(headPosition, botPosition, bot1head, bot1body, botDurection, playerhead, playerBody) {
+    function hitRight(headPosition, botPosition, bot1head, bot1body, bot2head, bot2body, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botPosition.length; i++) {
             if (botDurection == "R") {
                 if (botPosition[i][0] == headPosition[0] && botPosition[i][1] == headPosition[1] + 1) {
@@ -840,7 +836,7 @@ bot 3
     }
 
     // check if bot is going to hit something if goes straight
-    function hitStraight(botPosition, headPosition, bot1head, bot1body, botDurection, playerhead, playerBody) {
+    function hitStraight(botPosition, headPosition, bot1head, bot1body, bot2head, bot2body, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botPosition.length; i++) {
             if (botDurection == "R") {
                 if (botPosition[i][0] == headPosition[0] + 1 && botPosition[i][1] == headPosition[1]) {
