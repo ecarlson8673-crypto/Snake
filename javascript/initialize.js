@@ -142,6 +142,12 @@ function initialize3D() {
     clearOptions()
     document.getElementById("message").innerHTML = "Comming Soon";
     document.getElementById("DContainer").style.display = "";
+
+    reset3D();
+}
+function reset3D() {
+        
+    play3D();
 }
 
 // function to clear screen after user chooses a game
