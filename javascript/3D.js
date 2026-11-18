@@ -100,15 +100,13 @@ function play3D() {
     function snakeRight() {
         head[0]++;
         for (let i = 0; i < 6; i++) {
-            let head = document.getElementsByClassName("head")[i];
-            head.style.left = `${head[0]}px`;
+            document.getElementsByClassName("head")[i].style.left = `${head[0]}px`;
         }
     }
     function snakeLeft() {
         head[0]--;
         for (let i = 0; i < 6; i++) {
-            let head = document.getElementsByClassName("head")[i];
-            head.style.left = `${head[0]}px`;
+            document.getElementsByClassName("head")[i].style.left = `${head[0]}px`;
         }
     }
     function snakeUp() {
