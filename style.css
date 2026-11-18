@@ -174,8 +174,8 @@ button:hover {
 .bottom { transform: rotateX(-90deg) translateZ(189px); }
 .head {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: calc(50% - 27px);
+    top: calc(50% - 27px);
     width: 54px;
     height: 54px;
     background-color: black;
