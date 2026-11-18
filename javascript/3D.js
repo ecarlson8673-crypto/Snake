@@ -28,6 +28,15 @@ function play3D() {
         } else if (key == "d") {
             d = true;
         }
+        if (key == "ArrowRight") {
+            Right = true;
+        } else if (key == "ArrowLeft") {
+            Left = true;
+        } else if (key == "ArrowUp") {
+            Up = true;
+        } else if (key == "ArrowDown") {
+            Down = true;
+        }
     }
     // check if a key is released
     document.addEventListener("keyup", keyUp);
@@ -42,6 +51,15 @@ function play3D() {
             a = false;
         } else if (key == "d") {
             d = false;
+        }
+        if (key == "ArrowRight") {
+            Right = false;
+        } else if (key == "ArrowLeft") {
+            Left = false;
+        } else if (key == "ArrowUp") {
+            Up = false;
+        } else if (key == "ArrowDown") {
+            Down = false;
         }
     }
     // move the cube every 10 ms
@@ -63,5 +81,38 @@ function play3D() {
             rotateY++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
+
+        if (Right == true) {
+            snakeRight();
+        }
+        if (Left == true) {
+            snakeLeft();
+        }
+        if (Up == true) {
+
+        }
+        if (Down == true) {
+
+        }
+    }
+    function snakeRight() {
+        head[0]++;
+        for (let i = 0; i < 6; i++) {
+            let head = document.getElementsByClassName("head")[i];
+            head.style.left = `${head[0]}`;
+        }
+    }
+    function snakeLeft() {
+        head[0]--;
+        for (let i = 0; i < 6; i++) {
+            let head = document.getElementsByClassName("head")[i];
+            head.style.left = `${head[0]}`;
+        }
+    }
+    function snakeUp() {
+
+    }
+    function snakeDown() {
+
     }
 }

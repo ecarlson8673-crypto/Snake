@@ -160,7 +160,9 @@ function initialize3D() {
 
 // reset 3D game
 function reset3D() {
-
+    // reset position of head of snake
+    head = [0, 0, 0];
+ 
     play3D();
 }
 
