@@ -173,8 +173,8 @@ button:hover {
 .top { transform: rotateX( 90deg) translateZ(189px); }
 .bottom { transform: rotateX(-90deg) translateZ(189px); }
 .DFieldTile {
-    width: 42px;
-    height: 42px;
+    width: 54px;
+    height: 54px;
 }
 
 #logo {
