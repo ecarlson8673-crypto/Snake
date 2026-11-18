@@ -84,11 +84,11 @@ function play3D() {
 
         if (Right == true) {
             snakeRight();
-            document.getElementById("message").innerHTML = "right";
+            document.getElementById("message").innerHTML = "right: " + head[0];
         }
         if (Left == true) {
             snakeLeft();
-            document.getElementById("message").innerHTML = "left";
+            document.getElementById("message").innerHTML = "left: " + head[0];
         }
         if (Up == true) {
 
