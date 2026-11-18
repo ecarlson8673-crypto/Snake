@@ -165,6 +165,8 @@ button:hover {
     height: 378px;
     border: 2px solid white;
     background: rgba(255, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
 }
 .front { transform: rotateY( 0deg) translateZ(189px); }
 .back { transform: rotateY(180deg) translateZ(189px); }
@@ -173,7 +175,8 @@ button:hover {
 .top { transform: rotateX( 90deg) translateZ(189px); }
 .bottom { transform: rotateX(-90deg) translateZ(189px); }
 .DFieldTile {
-    width: 
+    width: 18px;
+    height: 18px;
 }
 
 #logo {
