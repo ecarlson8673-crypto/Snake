@@ -180,12 +180,12 @@ button:hover {
     height: 54px;
     background-color: black;
 }
-.frontHead { transform: rotateY( 0deg) translateZ(270px); }
-.backHead { transform: rotateY(180deg) translateZ(270px); }
-.leftHead { transform: rotateY(-90deg) translateZ(270px); }
-.rightHead { transform: rotateY( 90deg) translateZ(270px); }
-.topHead { transform: rotateX( 90deg) translateZ(270px); }
-.bottomHead { transform: rotateX(-90deg) translateZ(270px); }
+.frontHead { transform: translateZ(270px) rotateY( 0deg); }
+.backHead { transform: translateZ(270px) rotateY(180deg); }
+.leftHead { transform: translateZ(270px) rotateY(-90deg); }
+.rightHead { transform: translateZ(270px) rotateY( 90deg); }
+.topHead { transform: translateZ(270px) rotateX( 90deg); }
+.bottomHead { transform: translateZ(270px) rotateX(-90deg); }
 .DFieldTile {
     width: 54px;
     height: 54px;
