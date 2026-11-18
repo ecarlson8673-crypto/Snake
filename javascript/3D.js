@@ -21,11 +21,14 @@ function play3D() {
 
         if (key == "w") {
             w = true;
-        } else if (key == "s") {
+        }
+        if (key == "s") {
             s = true;
-        } else if (key == "a") {
+        }
+        if (key == "a") {
             a = true;
-        } else if (key == "d") {
+        }
+        if (key == "d") {
             d = true;
         }
     }
@@ -36,11 +39,14 @@ function play3D() {
 
         if (key == "w") {
             w = false;
-        } else if (key == "s") {
+        }
+        if (key == "s") {
             s = false;
-        } else if (ley == "a") {
+        }
+        if (ley == "a") {
             a = false;
-        } else if (key == "d") {
+        }
+        if (key == "d") {
             d = false;
         }
     }
