@@ -151,7 +151,7 @@ button:hover {
     top: calc(50% - 200px);
     width: 400px;
     height: 400px;
-    perspective: 1200px;
+    perspective: 1000px;
 }
 #DField {
     width: 100%;
