@@ -133,6 +133,27 @@ function resetMulti() {
     playMulti();
 }
 
+// initialize 3D
+function initialize3D() {
+    clearOptions()
+    document.getElementById("message").innerHTML = "Comming Soon";
+    document.getElementById("DContainer").style.display = "";
+
+    for (let i = 0; i < 6; i++) {
+        let face = document.getElementsByClass("cubeFace")[i];
+        for (let j = 0; j < DFieldWidth * DFieldHeight; i++) {
+            face.style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+        }
+    }
+    reset3D();
+}
+
+// reset 3D game
+function reset3D() {
+
+    play3D();
+}
+
 // function to play again
 function again() {
     if (game == "original") {
@@ -140,19 +161,6 @@ function again() {
     } else if (game == "multi") {
         resetMulti();
     }
-}
-
-// initialize 3D
-function initialize3D() {
-    clearOptions()
-    document.getElementById("message").innerHTML = "Comming Soon";
-    document.getElementById("DContainer").style.display = "";
-
-    reset3D();
-}
-function reset3D() {
-
-    play3D();
 }
 
 // function to clear screen after user chooses a game
