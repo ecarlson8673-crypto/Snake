@@ -164,16 +164,16 @@ function play3D() {
             } else if (head[2] == 1) {
                 head[2] = 5;
             } else if (head[2] == 2) {
-                head[2] = 0;
+                head[2] = 1;
                 head[1] = 0;
             } else if (head[2] == 3) {
-                head[2] = 0;
+                head[2] = 1;
                 head[1] = 0;
             } else if (head[2] == 4) {
-                head[2] = 0;
+                head[2] = 1;
                 head[1] = 0;
             } else if (head[2] == 5) {
-                head[2] = 0;
+                head[2] = 1;
                 head[1] = 0;
             }
         }
@@ -183,16 +183,16 @@ function play3D() {
             } else if (head[2] == 1) {
                 head[2] = 4;
             } else if (head[2] == 2) {
-                head[2] = 1;
+                head[2] = 0;
                 head[1] = DFieldHeight - 1;
             } else if (head[2] == 3) {
-                head[2] = 1;
+                head[2] = 0;
                 head[1] = DFieldHeight - 1;
             } else if (head[2] == 4) {
-                head[2] = 1;
+                head[2] = 0;
                 head[1] = DFieldHeight - 1;
             } else if (head[2] == 5) {
-                head[2] = 1;
+                head[2] = 0;
                 head[1] = DFieldHeight - 1;
             }
         }
