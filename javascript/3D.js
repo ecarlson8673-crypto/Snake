@@ -95,7 +95,7 @@ function play3D() {
     function moveSnake() {
         // reset old head position
         let square = (head[1] * DFieldWidth) + head[0];
-        document.getElementById(`D${head[2]}${square}`).style.display = fieldColor[head[2]][square];
+        document.getElementById(`D${head[2]}${square}`).style.backgroundColor = fieldColor[head[2]][square];
         
         // move snake variable
         if (Right == true) {
@@ -112,7 +112,7 @@ function play3D() {
         }
 
         // color the field to show snake
-        document.getElementById(`D${head[2]}${square}`).style.display = `rgb(${0}, ${0}, ${0})`;
+        document.getElementById(`D${head[2]}${square}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
         document.getElementById("message").innerHTML = "works";
     }
 }
