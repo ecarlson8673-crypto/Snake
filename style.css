@@ -147,11 +147,11 @@ button:hover {
 /* style for 3D */
 #DContainer {
     position: absolute;
-    left: calc(50% - 200px);
-    top: calc(50% - 200px);
-    width: 400px;
-    height: 400px;
-    perspective: 1200px;
+    left: calc(50% - 189px);
+    top: calc(50% - 189px);
+    width: 378px;
+    height: 378px;
+    perspective: 1500px;
 }
 #DField {
     width: 100%;
@@ -161,17 +161,20 @@ button:hover {
 }
 .cubeFace {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 378px;
+    height: 378px;
     border: 2px solid white;
     background: rgba(255, 0, 0, 0.5);
 }
-.front { transform: rotateY( 0deg) translateZ(200px); }
-.back { transform: rotateY(180deg) translateZ(200px); }
-.left { transform: rotateY(-90deg) translateZ(200px); }
-.right { transform: rotateY( 90deg) translateZ(200px); }
-.top { transform: rotateX( 90deg) translateZ(200px); }
-.bottom { transform: rotateX(-90deg) translateZ(200px); }
+.front { transform: rotateY( 0deg) translateZ(189px); }
+.back { transform: rotateY(180deg) translateZ(189px); }
+.left { transform: rotateY(-90deg) translateZ(189px); }
+.right { transform: rotateY( 90deg) translateZ(189px); }
+.top { transform: rotateX( 90deg) translateZ(189px); }
+.bottom { transform: rotateX(-90deg) translateZ(189px); }
+.DFieldTile {
+    width: 
+}
 
 #logo {
   position: fixed;

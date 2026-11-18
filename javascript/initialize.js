@@ -140,7 +140,7 @@ function initialize3D() {
     document.getElementById("DContainer").style.display = "";
 
     for (let i = 0; i < 6; i++) {
-        let face = document.getElementsByClass("cubeFace")[i];
+        let face = document.getElementsByClassName("cubeFace")[i];
         for (let j = 0; j < DFieldWidth * DFieldHeight; i++) {
             face.style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
         }
