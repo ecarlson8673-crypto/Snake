@@ -176,6 +176,7 @@ button:hover {
     position: absolute;
     left: calc(50% - 27px);
     top: calc(50% - 27px);
+    transform: translateZ(2200px);
     width: 54px;
     height: 54px;
     background-color: black;
