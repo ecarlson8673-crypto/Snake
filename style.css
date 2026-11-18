@@ -146,9 +146,12 @@ button:hover {
 
 /* style for 3D */
 #DContainer {
-    width: 500px;
-    height: 500px;
-    perspective: 1500px;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+    perspective: 1200px;
 }
 #DField {
     width: 100%;
@@ -158,8 +161,8 @@ button:hover {
 }
 .cubeFace {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     border: 2px solid white;
     background: rgba(255, 0, 0, 0.5);
 }
