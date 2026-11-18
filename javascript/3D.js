@@ -103,15 +103,15 @@ function play3D() {
 
     // functions to move the snake
     function snakeRight() {
-        
+        head[0] += 1;
     }
     function snakeLeft() {
-        
+        head[0] -= 1;
     }
     function snakeUp() {
-        
+        head[1] -= DFieldWidth;
     }
     function snakeDown() {
-        
+        head[1] += DFieldWidth;
     }
 }
