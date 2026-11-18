@@ -12,13 +12,15 @@ function play3D() {
         if (key == "w") {
             document.getElementById("DField").style.transform = `rotateX(${rotateX + 1}deg)`;
             rotateX++;
-            document.getElementById("message").innerHTML = rotateX;
         } else if (key == "s") {
-
+            document.getElementById("DField").style.transform = `rotateX(${rotateX - 1}deg)`;
+            rotateX--;
         } else if (key == "a") {
-
+            document.getElementById("DField").style.transform = `rotateY(${rotateY - 1}deg)`;
+            rotateY--;
         } else if (key == "d") {
-
+            document.getElementById("DField").style.transform = `rotateY(${rotateY - 1}deg)`;
+            rotateY++;
         }
     }
 }
