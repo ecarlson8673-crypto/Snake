@@ -111,6 +111,8 @@ function play3D() {
             head[1] += DFieldWidth;
         }
 
+        square = (head[1] * DFieldWidth) + head[0];
+
         // color the field to show snake
         document.getElementById(`D${head[2]}${square}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
         document.getElementById("message").innerHTML = "works";
