@@ -55,8 +55,8 @@ function play3D() {
             d = false;
         }
     }
-    // move the cube every 10 ms
-    setInterval(moveCube, 1);
+    // move the cube every 5 ms
+    setInterval(moveCube, 5);
     function moveCube() {
         if (w == true) {
             rotateX++;
@@ -67,11 +67,11 @@ function play3D() {
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
         if (a == true) {
-            rotateY--;
+            rotateY++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
         if (d == true) {
-            rotateY++;
+            rotateY--;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
         if (rotateX >= 360) {
