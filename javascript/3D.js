@@ -84,6 +84,7 @@ function play3D() {
         } else if (rotateY < 0) {
             rotateY = 360;
         }
+        document.getElementById("message").innerHTML = "rotate Y: " + rotateY;
     }
 
     // interval to play game
