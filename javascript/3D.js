@@ -29,14 +29,24 @@ function play3D() {
             d = true;
         }
         if (key == "ArrowRight") {
+            clearKey();
             Right = true;
         } else if (key == "ArrowLeft") {
+            clearKey();
             Left = true;
         } else if (key == "ArrowUp") {
+            clearKey();
             Up = true;
         } else if (key == "ArrowDown") {
+            clearKey();
             Down = true;
         }
+    }
+    function clearKey() {
+        Right = false;
+        Left = false;
+        Up = false;
+        Down = false;
     }
     // check if a key is released
     document.addEventListener("keyup", keyUp);
@@ -51,15 +61,6 @@ function play3D() {
             a = false;
         } else if (key == "d") {
             d = false;
-        }
-        if (key == "ArrowRight") {
-            Right = false;
-        } else if (key == "ArrowLeft") {
-            Left = false;
-        } else if (key == "ArrowUp") {
-            Up = false;
-        } else if (key == "ArrowDown") {
-            Down = false;
         }
     }
     // move the cube every 10 ms
@@ -81,38 +82,48 @@ function play3D() {
             rotateY++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
+    }
 
+    // interval to move snake
+    setInterval(moveSnake, time);
+    function moveSnake() {
         if (Right == true) {
             snakeRight();
-            document.getElementById("message").innerHTML = "right: " + head[0];
         }
         if (Left == true) {
             snakeLeft();
-            document.getElementById("message").innerHTML = "left: " + head[0];
         }
         if (Up == true) {
-
+            snakeUp();
         }
         if (Down == true) {
-
+            snakeDown();
         }
     }
+
+    // functions to move the snake
     function snakeRight() {
-        head[0]++;
+        head[0] += 54;
         for (let i = 0; i < 6; i++) {
             document.getElementsByClassName("head")[i].style.left = `${head[0]}px`;
         }
     }
     function snakeLeft() {
-        head[0]--;
+        head[0] -= 54;
         for (let i = 0; i < 6; i++) {
             document.getElementsByClassName("head")[i].style.left = `${head[0]}px`;
         }
     }
     function snakeUp() {
-
+        head[1] -= 54;
+        for (let i = 0; i < 6; i++) {
+            document.getElementsByClassName("head")[i].style.top = `${head[1]}px`;
+        }
     }
     function snakeDown() {
-
+        head[1] += 54;
+        for (let i = 0; i < 6; i++) {
+            document.getElementsByClassName("head")[i].style.top = `${head[1]}px`;
+        }
     }
 }
