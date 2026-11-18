@@ -50,13 +50,16 @@ function play3D() {
         if (w == true) {
             rotateX++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else if (s == true) {
+        }
+        if (s == true) {
             rotateX--;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else if (a == true) {
+        }
+        if (a == true) {
             rotateY--;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else if (d == true) {
+        }
+        if (d == true) {
             rotateY++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
