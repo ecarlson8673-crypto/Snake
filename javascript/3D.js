@@ -74,6 +74,16 @@ function play3D() {
             rotateY++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
+        if (rotateX >= 360) {
+            rotateX = 0;
+        } else if (rotateX < 0) {
+            rotateX = 360;
+        }
+        if (rotateY >= 360) {
+            rotateY = 0;
+        } else if (rotateY < 0) {
+            rotateY = 360;
+        }
     }
 
     // interval to play game
