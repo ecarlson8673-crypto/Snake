@@ -145,6 +145,7 @@ function initialize3D() {
         for (let j = 0; j < DFieldWidth * DFieldHeight; j++) {
             let div = document.createElement("div");
             div.classList.add("DFieldTile");
+            div.id = `D${i}${j}`;
             if (j % 2 == 0) {
                 div.style.backgroundColor = `rgba(${0}, ${255}, ${0}, ${0.85})`;
                 fieldColor[i][j] = `rgba(${0}, ${255}, ${0}, ${0.85})`;
@@ -160,8 +161,9 @@ function initialize3D() {
 
 // reset 3D game
 function reset3D() {
-    // reset position of head of snake
-    head = [162, 162, 216];
+    // reset position of head of snake 0 = x, 1 = y, 2 = which side (0 - 5)
+    head = [3, 3, 0];
+    document.getElementsByClassName("cubeFace")[head[2]].style.backgroundColor = "black";
  
     play3D();
 }

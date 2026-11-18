@@ -103,27 +103,15 @@ function play3D() {
 
     // functions to move the snake
     function snakeRight() {
-        head[0] += 54;
-        for (let i = 0; i < 6; i++) {
-            document.getElementsByClassName("head")[i].style.left = `${head[0]}px`;
-        }
+        
     }
     function snakeLeft() {
-        head[0] -= 54;
-        for (let i = 0; i < 6; i++) {
-            document.getElementsByClassName("head")[i].style.left = `${head[0]}px`;
-        }
+        
     }
     function snakeUp() {
-        head[1] -= 54;
-        for (let i = 0; i < 6; i++) {
-            document.getElementsByClassName("head")[i].style.top = `${head[1]}px`;
-        }
+        
     }
     function snakeDown() {
-        head[1] += 54;
-        for (let i = 0; i < 6; i++) {
-            document.getElementsByClassName("head")[i].style.top = `${head[1]}px`;
-        }
+        
     }
 }
