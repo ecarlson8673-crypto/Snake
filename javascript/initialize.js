@@ -146,11 +146,11 @@ function initialize3D() {
             let div = document.createElement("div");
             div.classList.add("DFieldTile");
             if (j % 2 == 0) {
-                div.style.backgroundColor = `rgba(${0}, ${255}, ${0}, ${0.75})`;
-                fieldColor[i][j] = `rgba(${0}, ${255}, ${0}, ${0.75})`;
+                div.style.backgroundColor = `rgba(${0}, ${255}, ${0}, ${0.85})`;
+                fieldColor[i][j] = `rgba(${0}, ${255}, ${0}, ${0.85})`;
             } else {
-                div.style.backgroundColor = `rgba(${0}, ${200}, ${0}, ${0.75})`;
-                fieldColor[i][j] = `rgba(${0}, ${200}, ${0}, ${0.75})`;
+                div.style.backgroundColor = `rgba(${0}, ${200}, ${0}, ${0.85})`;
+                fieldColor[i][j] = `rgba(${0}, ${200}, ${0}, ${0.85})`;
             }
             face.appendChild(div);
         }
