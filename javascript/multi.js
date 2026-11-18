@@ -66,7 +66,7 @@ function playMulti() {
 
         // check if snake hit walls, self, or other snake
         if (die() == true || playerDied([actualPortX, actualPortY])) {
-            document.getElementById("message").innerHTML = "You lost";
+            document.getElementById("message").innerHTML = "You lost, Score: " + score;
             clearInterval(multiInterval);
             document.getElementById("again").style.display = "";
             died = true;
@@ -221,6 +221,9 @@ function playMulti() {
     function eat() {
         for (let i = 0; i < foodNumber; i++) {
             if (foodPosition[i][0] == actualPortX && foodPosition[i][1] == actualPortY) {
+                // icrease score if eat
+                score++;
+
                 foodPosition[i][0] = Math.floor(Math.random() * totalFieldWidth);
                 foodPosition[i][1] = Math.floor(Math.random() * totalFieldHeight);
                 // add another to actual length as well

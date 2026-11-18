@@ -3,22 +3,60 @@ function play3D() {
     // the current rotation on the cube
     let rotateY = 0;
     let rotateX = 0;
+    // check if these keys are down
+    let w = false;
+    let s = false;
+    let d = false;
+    let a = false;
+    let Up = false;
+    let Down = false;
+    let Left = false;
+    let Right = false;
 
-    document.addEventListener("keydown", move);
-    function move(event) {
+    // check if a key is pressed
+    document.addEventListener("keydown", keyDown);
+    function keyDown(event) {
         // get the key press
         let key = event.key;
 
         if (key == "w") {
+            w = true;
+        } else if (key == "s") {
+            s = true;
+        } else if (key == "a") {
+            a = true;
+        } else if (key == "d") {
+            d = true;
+        }
+    }
+    // check if a key is released
+    document.addEventListener("keyup", keyUp);
+    function keyUp(event) {
+        let key = event.key;
+
+        if (key == "w") {
+            w = false;
+        } else if (key == "s") {
+            s = false;
+        } else if (ley == "a") {
+            a = false;
+        } else if (key == "d") {
+            d = false;
+        }
+    }
+    // move the cube every 50 ms
+    setInterval(moveCube, 50);
+    function moveCube() {
+        if (w == true) {
             rotateX++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else if (key == "s") {
+        } else if (s == true) {
             rotateX--;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else if (key == "a") {
+        } else if (a == true) {
             rotateY--;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        } else if (key == "d") {
+        } else if (d == true) {
             rotateY++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }

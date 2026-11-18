@@ -74,7 +74,7 @@ function playOriginal() {
         if (die() == true) {
             dead = true;
             clearInterval(originalInterval);
-            document.getElementById("message").innerHTML = "You lost";
+            document.getElementById("message").innerHTML = "You lost, Score: " + score;
             document.getElementById("again").style.display = "";
         }
 
@@ -101,6 +101,8 @@ function playOriginal() {
     function eat() {
         for (let i = 0; i < foodNumber; i++) {
             if (head == foodPosition[i]) {
+                // increase score when eat
+                score++;
                 // increase the length of body
                 body.splice(0, 0, body[0]);
 

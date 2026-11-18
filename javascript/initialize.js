@@ -25,6 +25,9 @@ function initializeOriginal() {
 }
 
 function resetOriginal() {
+    // reset score
+    score = 0;
+
     // clear screen if already have played
     for (let i = 0; i < originalFieldWidth * originalFieldHeight; i++) {
         document.getElementById(`original${i}`).style.backgroundColor = fieldColor[i];
@@ -86,6 +89,8 @@ function initializeMulti() {
 
 // reset the multi game
 function resetMulti() {
+    // reset score
+    score = 0;
     // reset to play again
     for (let i = 0; i < multiFieldWidth * multiFieldHeight; i++) {
         document.getElementById(`multi${i}`).style.backgroundColor = field1[i];
@@ -146,7 +151,7 @@ function initialize3D() {
     reset3D();
 }
 function reset3D() {
-        
+
     play3D();
 }
 
