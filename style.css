@@ -178,6 +178,12 @@ button:hover {
     height: 54px;
     background-color: black;
 }
+.frontHead { transform: rotateY( 0deg) translateZ(27px); }
+.backHead { transform: rotateY(180deg) translateZ(27px); }
+.leftHead { transform: rotateY(-90deg) translateZ(27px); }
+.rightHead { transform: rotateY( 90deg) translateZ(27px); }
+.topHead { transform: rotateX( 90deg) translateZ(27px); }
+.bottomHead { transform: rotateX(-90deg) translateZ(27px); }
 .DFieldTile {
     width: 54px;
     height: 54px;
