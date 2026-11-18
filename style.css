@@ -176,17 +176,16 @@ button:hover {
     position: absolute;
     left: calc(50% - 27px);
     top: calc(50% - 27px);
-    transform: translateZ(2200px);
     width: 54px;
     height: 54px;
     background-color: black;
 }
-.frontHead { transform: rotateY( 0deg) translateZ(27px); }
-.backHead { transform: rotateY(180deg) translateZ(27px); }
-.leftHead { transform: rotateY(-90deg) translateZ(27px); }
-.rightHead { transform: rotateY( 90deg) translateZ(27px); }
-.topHead { transform: rotateX( 90deg) translateZ(27px); }
-.bottomHead { transform: rotateX(-90deg) translateZ(27px); }
+.frontHead { transform: rotateY( 0deg) translateZ(270px); }
+.backHead { transform: rotateY(180deg) translateZ(270px); }
+.leftHead { transform: rotateY(-90deg) translateZ(270px); }
+.rightHead { transform: rotateY( 90deg) translateZ(270px); }
+.topHead { transform: rotateX( 90deg) translateZ(270px); }
+.bottomHead { transform: rotateX(-90deg) translateZ(270px); }
 .DFieldTile {
     width: 54px;
     height: 54px;
