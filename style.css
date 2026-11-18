@@ -151,7 +151,7 @@ button:hover {
     top: calc(50% - 200px);
     width: 400px;
     height: 400px;
-    perspective: 1000px;
+    perspective: 1200px;
 }
 #DField {
     width: 100%;
@@ -166,12 +166,12 @@ button:hover {
     border: 2px solid white;
     background: rgba(255, 0, 0, 0.5);
 }
-.front { transform: rotateY( 0deg) translateZ(250px); }
-.back { transform: rotateY(180deg) translateZ(250px); }
-.left { transform: rotateY(-90deg) translateZ(250px); }
-.right { transform: rotateY( 90deg) translateZ(250px); }
-.top { transform: rotateX( 90deg) translateZ(250px); }
-.bottom { transform: rotateX(-90deg) translateZ(250px); }
+.front { transform: rotateY( 0deg) translateZ(200px); }
+.back { transform: rotateY(180deg) translateZ(200px); }
+.left { transform: rotateY(-90deg) translateZ(200px); }
+.right { transform: rotateY( 90deg) translateZ(200px); }
+.top { transform: rotateX( 90deg) translateZ(200px); }
+.bottom { transform: rotateX(-90deg) translateZ(200px); }
 
 #logo {
   position: fixed;
