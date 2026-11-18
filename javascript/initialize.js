@@ -143,13 +143,16 @@ function initialize3D() {
         let face = document.getElementsByClassName("cubeFace")[i];
         fieldColor[i] = [];
         for (let j = 0; j < DFieldWidth * DFieldHeight; j++) {
+            let div = document.createElement("div");
+            div.classList.add("DFieldTile");
             if (j % 2 == 0) {
-                face.style.backgroundColor = `rgba(${0}, ${255}, ${0}, ${0.5})`;
+                div.style.backgroundColor = `rgba(${0}, ${255}, ${0}, ${0.5})`;
                 fieldColor[i][j] = `rgba(${0}, ${255}, ${0}, ${0.5})`;
             } else {
-                face.style.backgroundColor = `rgba(${0}, ${200}, ${0}, ${0.5})`;
+                div.style.backgroundColor = `rgba(${0}, ${200}, ${0}, ${0.5})`;
                 fieldColor[i][j] = `rgba(${0}, ${200}, ${0}, ${0.5})`;
             }
+            face.appendChild(div);
             //face.style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
         }
     }
