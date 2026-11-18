@@ -172,6 +172,12 @@ button:hover {
 .right { transform: rotateY( 90deg) translateZ(189px); }
 .top { transform: rotateX( 90deg) translateZ(189px); }
 .bottom { transform: rotateX(-90deg) translateZ(189px); }
+.head {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    background-color: balck;
+}
 .DFieldTile {
     width: 54px;
     height: 54px;
