@@ -44,8 +44,8 @@ function play3D() {
             d = false;
         }
     }
-    // move the cube every 25 ms
-    setInterval(moveCube, 25);
+    // move the cube every 10 ms
+    setInterval(moveCube, 10);
     function moveCube() {
         if (w == true) {
             rotateX++;

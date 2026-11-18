@@ -163,8 +163,6 @@ button:hover {
     position: absolute;
     width: 378px;
     height: 378px;
-    border: 2px solid white;
-    background: rgba(255, 0, 0, 0.5);
     display: flex;
     flex-wrap: wrap;
 }

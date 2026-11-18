@@ -153,7 +153,6 @@ function initialize3D() {
                 fieldColor[i][j] = `rgba(${0}, ${200}, ${0}, ${0.5})`;
             }
             face.appendChild(div);
-            //face.style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
         }
     }
     reset3D();
