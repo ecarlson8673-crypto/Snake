@@ -111,6 +111,92 @@ function play3D() {
             head[1] += 1;
         }
 
+        // check if snake has moved to a different side of cube
+        /*
+        top    0
+        bottom 1
+        left   2
+        right  3
+        back   4
+        front  5
+        */
+        if (head[0] >= DFieldWidth) {
+            if (head[2] == 0) {
+                head[2] = 3;
+            } else if (head[2] == 1) {
+                head[2] = 3;
+            } else if (head[2] == 2) {
+                head[2] = 5;
+                head[0] = 0;
+            } else if (head[2] == 3) {
+                head[2] = 4;
+                head[0] = 0;
+            } else if (head[2] == 4) {
+                head[2] = 2;
+                head[0] = 0;
+            } else if (head[2] == 5) {
+                head[2] = 3;
+                head[0] = 0;
+            }
+        }
+        if (head[0] < 0) {
+            if (head[2] == 0) {
+                head[2] = 2;
+            } else if (head[2] == 1) {
+                head[2] = 2;
+            } else if (head[2] == 2) {
+                head[2] = 4;
+                head[0] = DFieldWidth - 1;
+            } else if (head[2] == 3) {
+                head[2] = 5;
+                head[0] = DFieldWidth - 1;
+            } else if (head[2] == 4) {
+                head[2] = 3;
+                head[0] = DFieldWidth - 1;
+            } else if (head[2] == 5) {
+                head[2] = 2;
+                head[0] = DFieldWidth - 1;
+            }
+        }
+        if (head[1] >= DFieldHeight) {
+            if (head[2] == 0) {
+                head[2] = 4;
+            } else if (head[2] == 1) {
+                head[2] = 5;
+            } else if (head[2] == 2) {
+                head[2] = 0;
+                head[1] = 0;
+            } else if (head[2] == 3) {
+                head[2] = 0;
+                head[1] = 0;
+            } else if (head[2] == 4) {
+                head[2] = 0;
+                head[1] = 0;
+            } else if (head[2] == 5) {
+                head[2] = 0;
+                head[1] = 0;
+            }
+        }
+        if (head[1] < 0) {
+            if (head[2] == 0) {
+                head[2] = 5;
+            } else if (head[2] == 1) {
+                head[2] = 4;
+            } else if (head[2] == 2) {
+                head[2] = 1;
+                head[1] = DFieldHeight - 1;
+            } else if (head[2] == 3) {
+                head[2] = 1;
+                head[1] = DFieldHeight - 1;
+            } else if (head[2] == 4) {
+                head[2] = 1;
+                head[1] = DFieldHeight - 1;
+            } else if (head[2] == 5) {
+                head[2] = 1;
+                head[1] = DFieldHeight - 1;
+            }
+        }
+
         square = (head[1] * DFieldWidth) + head[0];
 
         // color the field to show snake
