@@ -151,7 +151,7 @@ button:hover {
     top: calc(50% - 189px);
     width: 378px;
     height: 378px;
-    perspective: 1500px;
+    perspective: 2000px;
 }
 #DField {
     width: 100%;
@@ -175,8 +175,8 @@ button:hover {
 .top { transform: rotateX( 90deg) translateZ(189px); }
 .bottom { transform: rotateX(-90deg) translateZ(189px); }
 .DFieldTile {
-    width: 18px;
-    height: 18px;
+    width: 42px;
+    height: 42px;
 }
 
 #logo {
