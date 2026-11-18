@@ -209,6 +209,5 @@ function play3D() {
 
         // color the field to show snake
         document.getElementById(`D${head[2]}${square}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
-        document.getElementById("message").innerHTML = "works";
     }
 }
