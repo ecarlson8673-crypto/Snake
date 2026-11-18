@@ -84,34 +84,34 @@ function play3D() {
         }
     }
 
-    // interval to move snake
-    setInterval(moveSnake, time);
-    function moveSnake() {
-        if (Right == true) {
-            snakeRight();
-        }
-        if (Left == true) {
-            snakeLeft();
-        }
-        if (Up == true) {
-            snakeUp();
-        }
-        if (Down == true) {
-            snakeDown();
-        }
+    // interval to play game
+    setInterval(mainInterval, time);
+    function mainInterval() {
+        // move the snake on the field
+        moveSnake();
     }
 
-    // functions to move the snake
-    function snakeRight() {
-        head[0] += 1;
-    }
-    function snakeLeft() {
-        head[0] -= 1;
-    }
-    function snakeUp() {
-        head[1] -= DFieldWidth;
-    }
-    function snakeDown() {
-        head[1] += DFieldWidth;
+    // move and change the color of the field to move snake
+    function moveSnake() {
+        // reset old head position
+        let square = (head[1] * DFieldWidth) + head[0];
+        document.getElementById(`D${head[2]}${square}`).style.display = fieldColor[head[2]][square];
+        
+        // move snake variable
+        if (Right == true) {
+            head[0] += 1;
+        }
+        if (Left == true) {
+            head[0] -= 1;
+        }
+        if (Up == true) {
+            head[1] -= DFieldWidth;
+        }
+        if (Down == true) {
+            head[1] += DFieldWidth;
+        }
+
+        // color the field to show snake
+        document.getElementById(`D${head[2]}${square}`).style.display = `rgb(${0}, ${0}, ${0})`;
     }
 }
