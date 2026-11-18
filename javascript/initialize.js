@@ -163,7 +163,7 @@ function initialize3D() {
 function reset3D() {
     // reset position of head of snake 0 = x, 1 = y, 2 = which side (0 - 5)
     head = [3, 3, 0];
-    document.getElementById(`D${head[2]}${(head[1] * dFieldWidth) + head[2]}`)[head[2]].style.backgroundColor = `rgb(0, 0, 0)`;
+    document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[2]}`)[head[2]].style.backgroundColor = `rgb(0, 0, 0)`;
  
     play3D();
 }
