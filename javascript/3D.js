@@ -8,10 +8,8 @@ function play3D() {
     let s = false;
     let d = false;
     let a = false;
-    let Up = false;
-    let Down = false;
-    let Left = false;
-    let Right = false;
+    // if cube is turned keep up always up
+    let durectionOffSet = 0;
 
     // check if a key is pressed
     document.addEventListener("keydown", keyDown);
@@ -29,24 +27,14 @@ function play3D() {
             d = true;
         }
         if (key == "ArrowRight") {
-            clearKey();
-            Right = true;
+            durection = 1;
         } else if (key == "ArrowLeft") {
-            clearKey();
-            Left = true;
+            durection = 3;
         } else if (key == "ArrowUp") {
-            clearKey();
-            Up = true;
+            durection = 0;
         } else if (key == "ArrowDown") {
-            clearKey();
-            Down = true;
+            durection = 2;
         }
-    }
-    function clearKey() {
-        Right = false;
-        Left = false;
-        Up = false;
-        Down = false;
     }
     // check if a key is released
     document.addEventListener("keyup", keyUp);
@@ -64,7 +52,7 @@ function play3D() {
         }
     }
     // move the cube every 10 ms
-    setInterval(moveCube, 10);
+    setInterval(moveCube, 1);
     function moveCube() {
         if (w == true) {
             rotateX++;
@@ -98,16 +86,16 @@ function play3D() {
         document.getElementById(`D${head[2]}${square}`).style.backgroundColor = fieldColor[head[2]][square];
         
         // move snake variable
-        if (Right == true) {
+        if (durection == 1) {
             head[0] += 1;
         }
-        if (Left == true) {
+        if (durection == 3) {
             head[0] -= 1;
         }
-        if (Up == true) {
+        if (durection == 0) {
             head[1] -= 1;
         }
-        if (Down == true) {
+        if (durection == 2) {
             head[1] += 1;
         }
 
