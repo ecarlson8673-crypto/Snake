@@ -105,10 +105,10 @@ function play3D() {
             head[0] -= 1;
         }
         if (Up == true) {
-            head[1] -= DFieldWidth;
+            head[1] -= 1;
         }
         if (Down == true) {
-            head[1] += DFieldWidth;
+            head[1] += 1;
         }
 
         square = (head[1] * DFieldWidth) + head[0];
