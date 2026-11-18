@@ -26,14 +26,18 @@ function play3D() {
         } else if (key == "d") {
             d = true;
         }
+        // durection value
         if (key == "ArrowRight") {
-            durection = 1;
+            durection = 1 + durectionOffSet;
         } else if (key == "ArrowLeft") {
-            durection = 3;
+            durection = 3 + durectionOffSet;
         } else if (key == "ArrowUp") {
-            durection = 0;
+            durection = 0 + durectionOffSet;
         } else if (key == "ArrowDown") {
-            durection = 2;
+            durection = 2 + durectionOffSet;
+        }
+        while (durection > 3) {
+            durection = durection - 4;
         }
     }
     // check if a key is released
