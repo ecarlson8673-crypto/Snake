@@ -52,8 +52,8 @@ function play3D() {
             d = false;
         }
     }
-    // move the cube every 5 ms
-    setInterval(moveCube, 5);
+    // move the cube every 10 ms
+    setInterval(moveCube, 10);
     function moveCube() {
         if (w == true) {
             rotateX++;
@@ -114,14 +114,7 @@ function play3D() {
         }
 
         // check if snake has moved to a different side of cube
-        /*
-        top    0
-        bottom 1
-        left   2
-        right  3
-        back   4
-        front  5
-        */
+        // This if works after here (untested)
         // goes off 'right' of side
         if (head[0] >= DFieldWidth) {
             if (head[2] == 0) {
@@ -180,6 +173,7 @@ function play3D() {
                 head[2] = 5;
                 head[1] = 0;
             } else if (head[2] == 1) {
+                durectionOffSet = 2;
                 head[2] = 4;
                 head[1] = DFieldHeight - 1;
                 head[0] = (DFieldWidth - 1) - head[0];
@@ -204,6 +198,14 @@ function play3D() {
                 head[0] = (DFieldHeight - 1) - head[0];
             }
         }
+        /*
+        top    0
+        bottom 1
+        left   2
+        right  3
+        back   4
+        front  5
+        */
         // This if works after here (untested)
         // goes off 'top' of side
         if (head[1] < 0) {
@@ -213,7 +215,6 @@ function play3D() {
                 head[0] = (DFieldWidth - 1) - head[0];
                 head[1] = 0;
             } else if (head[2] == 1) {
-                durectionOffSet = 2;
                 head[2] = 5;
                 head[1] = DFieldHeight - 1;
             } else if (head[2] == 2) {
