@@ -9,7 +9,7 @@ function play3D() {
     let d = false;
     let a = false;
     // if cube is turned keep up always up
-    let durectionOffSet = 0;
+    let directionOffSet = 0;
 
     // check if a key is pressed
     document.addEventListener("keydown", keyDown);
@@ -26,27 +26,31 @@ function play3D() {
         } else if (key == "d") {
             d = true;
         }
-        // change durection values so up is always up
+        // change durection values so up is always up for top
         if (head[2] == 0) {
             if (rotateY > 45 && rotateY < 135) {
-                durectionOffSet = 1;
+                directionOffSet = 1;
             } else if (rotateY >= 135 && rotateY < 225) {
-                durectionOffSet = 2;
+                directionOffSet = 2;
             } else if (rotateY >= 225 && rotateY < 315) {
-                durectionOffSet = 3;
-            } else if (totateY >= 315 && rotateY <= 360) {
-
+                directionOffSet = 3;
+            } else {
+                directionOffSet = 0;
             }
+        }
+        // change durection value so up is always up for bottom
+        if (head[2] == 1) {
+
         }
         // durection value
         if (key == "ArrowRight") {
-            durection = 1 + durectionOffSet;
+            durection = 1 + directionOffSet;
         } else if (key == "ArrowLeft") {
-            durection = 3 + durectionOffSet;
+            durection = 3 + directionOffSet;
         } else if (key == "ArrowUp") {
-            durection = 0 + durectionOffSet;
+            durection = 0 + directionOffSet;
         } else if (key == "ArrowDown") {
-            durection = 2 + durectionOffSet;
+            durection = 2 + directionOffSet;
         }
         // make sure that durection is always between 0 and 3
         while (durection > 3) {
@@ -110,7 +114,7 @@ function play3D() {
     // move and change the color of the field to move snake
     function moveSnake() {
         // reset durection off set
-        durectionOffSet = 0;
+        directionOffSet = 0;
         // reset old head position
         let square = (head[1] * DFieldWidth) + head[0];
         document.getElementById(`D${head[2]}${square}`).style.backgroundColor = fieldColor[head[2]][square];
@@ -142,12 +146,12 @@ function play3D() {
         // goes off 'right' of side
         if (head[0] >= DFieldWidth) {
             if (head[2] == 0) {
-                durectionOffSet = 1;
+                directionOffSet = 1;
                 head[2] = 3;
                 head[0] = (DFieldWidth - 1) - head[1];
                 head[1] = 0;
             } else if (head[2] == 1) {
-                durectionOffSet = 3;
+                directionOffSet = 3;
                 head[2] = 3;
                 head[0] = head[1];
                 head[1] = DFieldHeight - 1;
@@ -169,12 +173,12 @@ function play3D() {
         // goes off 'left' of side
         if (head[0] < 0) {
             if (head[2] == 0) {
-                durectionOffSet = 3;
+                directionOffSet = 3;
                 head[2] = 2;
                 head[0] = head[1];
                 head[1] = 0;
             } else if (head[2] == 1) {
-                durectionOffSet = 1;
+                directionOffSet = 1;
                 head[2] = 2;
                 head[0] = (DFieldWidth - 1) - head[1];
                 head[1] = DFieldWidth - 1;
@@ -199,22 +203,22 @@ function play3D() {
                 head[2] = 5;
                 head[1] = 0;
             } else if (head[2] == 1) {
-                durectionOffSet = 2;
+                directionOffSet = 2;
                 head[2] = 4;
                 head[1] = DFieldHeight - 1;
                 head[0] = (DFieldWidth - 1) - head[0];
             } else if (head[2] == 2) {
-                durectionOffSet = 3;
+                directionOffSet = 3;
                 head[2] = 1;
                 head[1] = (DFieldHeight - 1) - head[0];
                 head[0] = 0;
             } else if (head[2] == 3) {
-                durectionOffSet = 1;
+                directionOffSet = 1;
                 head[2] = 1;
                 head[1] = head[0];
                 head[0] = DFieldWidth - 1;
             } else if (head[2] == 4) {
-                durectionOffSet = 2;
+                directionOffSet = 2;
                 head[2] = 1;
                 head[0] = (DFieldWidth - 1) - head[0];
                 head[1] = (DFieldHeight - 1);
@@ -228,7 +232,7 @@ function play3D() {
         // goes off 'top' of side
         if (head[1] < 0) {
             if (head[2] == 0) {
-                durectionOffSet = 2;
+                directionOffSet = 2;
                 head[2] = 4;
                 head[0] = (DFieldWidth - 1) - head[0];
                 head[1] = 0;
@@ -236,17 +240,17 @@ function play3D() {
                 head[2] = 5;
                 head[1] = DFieldHeight - 1;
             } else if (head[2] == 2) {
-                durectionOffSet = 1;
+                directionOffSet = 1;
                 head[2] = 0;
                 head[1] = head[0];
                 head[0] = 0;
             } else if (head[2] == 3) {
-                durectionOffSet = 3;
+                directionOffSet = 3;
                 head[2] = 0;
                 head[1] = (DFieldHeight - 1) - head[0];
                 head[0] = DFieldWidth - 1;
             } else if (head[2] == 4) {
-                durectionOffSet = 2;
+                directionOffSet = 2;
                 head[2] = 0;
                 head[0] = (DFieldWidth - 1) - head[0];
                 head[1] = 0;
@@ -258,7 +262,7 @@ function play3D() {
 
 
         // change durection of move
-        durection = durection + durectionOffSet;
+        durection = durection + directionOffSet;
         while (durection > 3) {
             durection = durection - 4;
         }
