@@ -190,7 +190,7 @@ function play3D() {
             } else if (head[2] == 2) {
                 durectionOffSet = 3;
                 head[2] = 1;
-                head[1] = head[0];
+                head[1] = (DFieldHeight - 1) - head[0];
                 head[0] = 0;
             } else if (head[2] == 3) {
                 durectionOffSet = 1;
