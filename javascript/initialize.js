@@ -175,8 +175,8 @@ function reset3D() {
         foodPosition = [x, y, side];
 
         // show food
-        let index = (foodPosition[1] * (DFieldWidth - 1)) + foodPosition[0];
-        document.getElementById(`D${foodPosition[2]}${index}`).style.display = foodColor;
+        let square = (foodPosition[1] * DFieldWidth) + foodPosition[0];
+        document.getElementById(`D${foodPosition[2]}${square}`).style.display = foodColor;
     }
  
     play3D();

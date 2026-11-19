@@ -286,11 +286,11 @@ function play3D() {
         square = (head[1] * DFieldWidth) + head[0];
 
         // color the field to show snake
-        document.getElementById(`D${head[2]}${square}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+        document.getElementById(`D${head[2]}${square}`).style.backgroundColor = headColor;
     }
 
     // place food on the field
     function food() {
-        
+
     }
 }
