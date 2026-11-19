@@ -27,7 +27,7 @@ function play3D() {
             d = true;
         }
         // change durection values so up is always up for top
-        if (head[2] == 0 || head[2] == 1) {
+        if (head[2] == 0) {
             if (rotateY > 45 && rotateY < 135) {
                 directionOffSet = 1;
             } else if (rotateY >= 135 && rotateY < 225) {
@@ -40,6 +40,17 @@ function play3D() {
         }
         // change durection value so up is always up for bottom
         if (head[2] == 1) {
+            if (rotateY > 45 && rotateY < 135) {
+                directionOffSet = 3;
+            } else if (rotateY >= 135 && rotateY < 225) {
+                directionOffSet = 2;
+            } else if (rotateY >= 225 && rotateY < 315) {
+                directionOffSet = 1;
+            } else {
+                directionOffSet = 0;
+            }
+        }
+        if (head[2] == 2 || head[2] == 3 || head[2] == 4 || head[2] == 5) {
 
         }
         // durection value
