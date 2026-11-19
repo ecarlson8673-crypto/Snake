@@ -114,11 +114,19 @@ function play3D() {
         }
         
         // check if snake has moved to a different side of cube
-        // GOING TO BOTTOM NEEDS WORK
+        /*
+        top    0
+        bottom 1
+        left   2
+        right  3
+        back   4
+        front  5
+        */
         // This if works after here (untested)
         // goes off 'right' of side
         if (head[0] >= DFieldWidth) {
             if (head[2] == 0) {
+                durectionOffSet = 1;
                 head[2] = 3;
                 head[0] = (DFieldWidth - 1) - head[1];
                 head[1] = 0;
@@ -168,14 +176,6 @@ function play3D() {
                 head[0] = DFieldWidth - 1;
             }
         }
-        /*
-        top    0
-        bottom 1
-        left   2
-        right  3
-        back   4
-        front  5
-        */
         // This if works after here (untested)
         // goes off 'bottom' of side
         if (head[1] >= DFieldHeight) {
