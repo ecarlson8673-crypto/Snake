@@ -206,6 +206,7 @@ function play3D() {
                 durectionOffSet = 2;
                 head[2] = 0;
                 head[0] = (DFieldWidth - 1) - head[0];
+                head[1] = 0;
             } else if (head[2] == 5) {
                 head[2] = 0;
                 head[1] = DFieldHeight - 1;
