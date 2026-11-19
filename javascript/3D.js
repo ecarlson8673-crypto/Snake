@@ -292,7 +292,7 @@ function play3D() {
     // place food on the field
     function food() {
         for (let i = 0; i < foodNumber; i++) {
-            if (foodPosition[0] == headPosition[0] && foodPosition[1] == headPosition[1] && foodPosition[2] == headPosition[2]) {
+            if (foodPosition[i][0] == headPosition[0] && foodPosition[i][1] == headPosition[1] && foodPosition[i][2] == headPosition[2]) {
                 // increase snake length
                 // reposition food
                 let x = Math.floor(Math.random() * DFieldWidth);
