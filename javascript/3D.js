@@ -50,8 +50,17 @@ function play3D() {
                 directionOffSet = 0;
             }
         }
+        // change durection value of sides so up is always up
         if (head[2] == 2 || head[2] == 3 || head[2] == 4 || head[2] == 5) {
-
+            /*if (rotateY > 45 && rotateY < 135) {
+                directionOffSet = 3;
+            } else if (rotateY >= 135 && rotateY < 225) {
+                directionOffSet = 2;
+            } else if (rotateY >= 225 && rotateY < 315) {
+                directionOffSet = 1;
+            } else {
+                directionOffSet = 0;
+            }*/
         }
         // durection value
         if (key == "ArrowRight") {
@@ -112,7 +121,7 @@ function play3D() {
         } else if (rotateY < 0) {
             rotateY = 360;
         }
-        document.getElementById("message").innerHTML = "rotate Y: " + rotateY;
+        document.getElementById("message").innerHTML = "rotate X: " + rotateX;
     }
 
     // interval to play game
