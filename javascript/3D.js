@@ -160,7 +160,7 @@ function play3D() {
             } else if (head[2] == 1) {
                 durectionOffSet = 1;
                 head[2] = 2;
-                head[0] = head[1];
+                head[0] = (DFieldWidth - 1) - head[1];
                 head[1] = DFieldWidth - 1;
             } else if (head[2] == 2) {
                 head[2] = 4;
