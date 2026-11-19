@@ -163,7 +163,21 @@ function initialize3D() {
 function reset3D() {
     // reset position of head of snake 0 = x, 1 = y, 2 = which side (0 - 5)
     head = [3, 3, 5];
-    document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[0]}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+    document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[0]}`).style.backgroundColor = headColor;
+
+    // place food on the field to start
+    for (let i = 0; i < foodNumber; i++) {
+        let side = Math.floor(Math.random() * 4);
+        let x = Math.floor(Math.random() * DFieldWidth);
+        let y = Math.floor(Math.random() * DFieldHeight);
+
+        // set position of food to variable
+        foodPosition = [x, y, side];
+
+        // show food
+        let index = (foodPosition[1] * (fieldWidth - 1)) + foodPosition[0];
+        document.getElementById(`D${foodPosition[2]}${index}`).style.display = foodColor;
+    }
  
     play3D();
 }

@@ -115,12 +115,14 @@ function play3D() {
         } else if (rotateY < 0) {
             rotateY = 360;
         }
-        document.getElementById("message").innerHTML = "rotate X: " + rotateX;
     }
 
     // interval to play game
     setInterval(mainInterval, time);
     function mainInterval() {
+        // add food
+        food();
+
         // move the snake on the field
         moveSnake();
     }
@@ -285,5 +287,10 @@ function play3D() {
 
         // color the field to show snake
         document.getElementById(`D${head[2]}${square}`).style.backgroundColor = `rgb(${0}, ${0}, ${0})`;
+    }
+
+    // place food on the field
+    function food() {
+        
     }
 }
