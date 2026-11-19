@@ -175,7 +175,7 @@ function reset3D() {
         foodPosition = [x, y, side];
 
         // show food
-        let index = (foodPosition[1] * (fieldWidth - 1)) + foodPosition[0];
+        let index = (foodPosition[1] * (DFieldWidth - 1)) + foodPosition[0];
         document.getElementById(`D${foodPosition[2]}${index}`).style.display = foodColor;
     }
  
@@ -199,4 +199,5 @@ function clearOptions() {
     document.getElementById("3DTitle").style.display = "none";
     document.getElementById("settings").style.display = "none";
     document.getElementById("settingsOptions").style.display = "none";
+    document.getElementById("invertedTitle").style.display = "none";
 }
