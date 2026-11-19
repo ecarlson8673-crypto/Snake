@@ -172,7 +172,7 @@ function reset3D() {
         let y = Math.floor(Math.random() * DFieldHeight);
 
         // set position of food to variable
-        foodPosition = [x, y, side];
+        foodPosition[i] = [x, y, side];
 
         // show food
         let square = (foodPosition[1] * DFieldWidth) + foodPosition[0];
