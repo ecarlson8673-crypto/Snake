@@ -26,15 +26,31 @@ function play3D() {
         } else if (key == "d") {
             d = true;
         }
+        // change durection values so up is always up
+        if (head[2] == 0) {
+            if (rotateY > 45 && rotateY < 135) {
+                durectionOffSet = 1;
+            } else if (rotateY >= 135 && rotateY < 225) {
+                durectionOffSet = 2;
+            } else if (rotateY >= 225 && rotateY < 315) {
+                durectionOffSet = 3;
+            } else if (totateY >= 315 && rotateY <= 360) {
+
+            }
+        }
         // durection value
         if (key == "ArrowRight") {
-            durection = 1;
+            durection = 1 + durectionOffSet;
         } else if (key == "ArrowLeft") {
-            durection = 3;
+            durection = 3 + durectionOffSet;
         } else if (key == "ArrowUp") {
-            durection = 0;
+            durection = 0 + durectionOffSet;
         } else if (key == "ArrowDown") {
-            durection = 2;
+            durection = 2 + durectionOffSet;
+        }
+        // make sure that durection is always between 0 and 3
+        while (durection > 3) {
+            durection = durection - 4;
         }
     }
     // check if a key is released
