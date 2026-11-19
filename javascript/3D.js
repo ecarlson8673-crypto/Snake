@@ -27,7 +27,7 @@ function play3D() {
             d = true;
         }
         // change durection values so up is always up for top
-        if (head[2] == 0) {
+        if (head[2] == 0 || head[2] == 1) {
             if (rotateY > 45 && rotateY < 135) {
                 directionOffSet = 1;
             } else if (rotateY >= 135 && rotateY < 225) {
