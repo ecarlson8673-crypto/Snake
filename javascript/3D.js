@@ -28,16 +28,13 @@ function play3D() {
         }
         // durection value
         if (key == "ArrowRight") {
-            durection = 1 + durectionOffSet;
+            durection = 1;
         } else if (key == "ArrowLeft") {
-            durection = 3 + durectionOffSet;
+            durection = 3;
         } else if (key == "ArrowUp") {
-            durection = 0 + durectionOffSet;
+            durection = 0;
         } else if (key == "ArrowDown") {
-            durection = 2 + durectionOffSet;
-        }
-        while (durection > 3) {
-            durection = durection - 4;
+            durection = 2;
         }
     }
     // check if a key is released
@@ -96,6 +93,8 @@ function play3D() {
 
     // move and change the color of the field to move snake
     function moveSnake() {
+        // reset durection off set
+        durectionOffSet = 0;
         // reset old head position
         let square = (head[1] * DFieldWidth) + head[0];
         document.getElementById(`D${head[2]}${square}`).style.backgroundColor = fieldColor[head[2]][square];
@@ -211,6 +210,13 @@ function play3D() {
                 head[2] = 0;
                 head[1] = DFieldHeight - 1;
             }
+        }
+
+
+        // change durection of move
+        durection = durection + durectionOffSet;
+        while (durection > 3) {
+            durection = durection - 4;
         }
 
         square = (head[1] * DFieldWidth) + head[0];
