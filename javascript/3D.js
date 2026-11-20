@@ -75,7 +75,7 @@ function play3D() {
         while (durection > 3) {
             durection = durection - 4;
         }
-        if (initialDurection == durection) {
+        if (initialDurection == passedDurection) {
             durection = initialDurection;
         }
 
