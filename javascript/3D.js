@@ -11,7 +11,7 @@ function play3D() {
     // if cube is turned keep up always up
     let directionOffSet = 0;
     // interval that move the cube
-    let moveCubeInterval;
+    let moveSnakeInterval;
     // check if game is paused
     let pause = false;
 
@@ -78,9 +78,9 @@ function play3D() {
         // check for pause
         if (key == " ") {
             if (pause == false) {
-                clearInterval(moveCubeInterval);
+                clearInterval(moveSnakeInterval);
             } else {
-                moveCubeInterval = setInterval(moveCube, time);
+                moveSnakeInterval = setInterval(mainInterval, time);
             }
             pause = !pause;
         }
@@ -101,7 +101,7 @@ function play3D() {
         }
     }
     // move the cube every 10 ms
-    moveCubeInterval = setInterval(moveCube, 10);
+    setInterval(moveCube, 10);
     function moveCube() {
         if (w == true) {
             rotateX++;
@@ -132,7 +132,7 @@ function play3D() {
     }
 
     // interval to play game
-    setInterval(mainInterval, time);
+    moveSnakeInterval = setInterval(mainInterval, time);
     function mainInterval() {
         // add food
         food();
