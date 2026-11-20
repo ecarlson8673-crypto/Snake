@@ -27,6 +27,10 @@ The cube can be moved by using the 'wasd' keys. The arrow keys move the snake ar
 
 ![alt text](51b7fb60-4669-4040-a0ba-9dd7783b2ad8.webp)
 
+## Inverted
+This project is still under construnction
+
+
 #
 NOTE: This project is not done yet. I am still working on the project and there may be bugs or features that do not work. Thanks for your understanding.
 
