@@ -217,6 +217,19 @@ function reset3D() {
     play3D();
 }
 
+// initialize portal
+function initializePortal() {
+    game = "portal";
+    document.getElementById("message").innerHTML = "Coming Soon";
+
+    resetPortal();
+}
+
+function resetPortal() {
+
+    playPortal();
+}
+
 // function to play again
 function again() {
     if (game == "original") {
@@ -225,6 +238,8 @@ function again() {
         resetMulti();
     } else if (game == "3D") {
         reset3D();
+    } else if (game == "portal") {
+        resetPortal();
     }
 }
 
@@ -236,5 +251,5 @@ function clearOptions() {
     document.getElementById("3DTitle").style.display = "none";
     document.getElementById("settings").style.display = "none";
     document.getElementById("settingsOptions").style.display = "none";
-    document.getElementById("invertedTitle").style.display = "none";
+    document.getElementById("portalTitle").style.display = "none";
 }
