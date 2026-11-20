@@ -190,8 +190,8 @@ button:hover {
 #portalFieldTwo {
     /* 3 x 3 */
     position: absolute;
-    left: 60px;
-    top: 50px;
+    left: 260px;
+    top: 100px;
     width: 120px;
     height: 120px;
     background-color: black;
@@ -199,8 +199,8 @@ button:hover {
 #portalFieldThree {
     /* 7 x 3 */
     position: absolute;
-    left: 100px;
-    top: 40px;
+    left: 400px;
+    top: 60px;
     width: 280px;
     height: 120px;
     background-color: black;
@@ -212,7 +212,6 @@ button:hover {
     top: 100px;
     width: 160px;
     height: 200px;
-    background-color: black;
 }
 #portalFieldFive {
     /* 8 x 7 */
@@ -221,7 +220,6 @@ button:hover {
     top: 130px;
     width: 320px;
     height: 280px;
-    background-color: black;
 }
 #portalFieldSix {
     /* 3 x 4 */
@@ -230,7 +228,6 @@ button:hover {
     top: 120px;
     width: 120px;
     height: 160px;
-    background-color: black;
 }
 #portalFieldSeven {
     /* 9 x 4 */
@@ -239,7 +236,6 @@ button:hover {
     top: 200px;
     width: 360px;
     height: 160px;
-    background-color: black;
 }
 .portalSquare {
     width: 40px;
