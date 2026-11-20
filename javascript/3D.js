@@ -130,7 +130,7 @@ function play3D() {
     // move and change the color of the field to move snake
     function moveSnake() {
         // reset end body position
-        let square = (body[1] * DFieldHeight) + body[0];
+        let square = (body[0][1] * DFieldHeight) + body[0][0];
         document.getElementById(`D${body[0][2]}${square}`).style.backgroundColor = fieldColor[body[0][2]][square];
 
         // move body
