@@ -44,7 +44,7 @@ button:hover {
     z-index: 50;
 }
 #settings {
-    position: absolute;
+    position: fixed;
     left: 5%;
     top: 25px;
     font-size: 25px;
