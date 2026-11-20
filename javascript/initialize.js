@@ -194,7 +194,7 @@ function reset3D() {
     document.getElementById("again").style.display = "none";
 
     // reset field tiles
-    for (let i = 0; i < 6) {
+    for (let i = 0; i < 6; i++) {
         for (let j = 0; j < DFieldWidth * DFieldHeight; j++) {
             document.getElementById(`D${i}${j}`).style.backgroundColor = fieldColor[i][j];
         }
