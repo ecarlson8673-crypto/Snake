@@ -14,6 +14,8 @@ function play3D() {
     let moveSnakeInterval;
     // check if game is paused
     let pause = false;
+    // check if died
+    let dead = false;
 
     // check if a key is pressed
     document.addEventListener("keydown", keyDown);
@@ -86,11 +88,11 @@ function play3D() {
         }
 
         // check for pause
-        if (key == " ") {
+        if (key == " " && dead == false) {
             if (pause == false) {
                 clearInterval(moveSnakeInterval);
                 document.getElementById("message").innerHTML = "Pause";
-            } else {
+            } else if (dead == false) {
                 moveSnakeInterval = setInterval(mainInterval, time);
                 document.getElementById("message").innerHTML = "";
             }
@@ -155,7 +157,8 @@ function play3D() {
         // Check die
         if (die() == true) {
             clearInterval(moveSnakeInterval);
-            document.getElementById("message").innerHTML = "You Lose";
+            document.getElementById("message").innerHTML = "You Lose, Score: " + score;
+            dead = true;
         }
     }
 
@@ -344,6 +347,9 @@ function play3D() {
                 let side = Math.floor(Math.random() * 6);
 
                 foodPosition[i] = [x, y, side];
+
+                // increase score
+                score++;
             }
         }
         // make the food show up
