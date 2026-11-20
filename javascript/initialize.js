@@ -136,7 +136,6 @@ function resetMulti() {
 // initialize 3D
 function initialize3D() {
     clearOptions();
-    //document.getElementById("DContainer").style.display = "";
 
     // set which game is being played
     game = "3D";
@@ -183,6 +182,23 @@ function reset3D() {
 
     // reset the orientation of the cube
     document.getElementById("DField").style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
+
+    // clear interval for cube
+    clearInterval(cubeInterval);
+
+    // reset score
+    score = 0;
+
+    // reset message and play again button
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("again").style.display = "none";
+
+    // reset field tiles
+    for (let i = 0; i < 6) {
+        for (let j = 0; j < DFieldWidth * DFieldHeight; j++) {
+            document.getElementById(`D${i}${j}`).style.backgroundColor = fieldColor[i][j];
+        }
+    }
 
     // place food on the field to start
     for (let i = 0; i < foodNumber; i++) {

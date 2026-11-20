@@ -12,8 +12,6 @@ function play3D() {
     let directionOffSet = 0;
     // interval that move the cube
     let moveSnakeInterval;
-    // move the cube interval
-    let moveCubeInterval;
     // check if game is paused
     let pause = false;
     // check if died
@@ -117,7 +115,7 @@ function play3D() {
         }
     }
     // move the cube every 10 ms
-    setInterval(moveCube, 10);
+    cubeInterval = setInterval(moveCube, 10);
     function moveCube() {
         if (w == true) {
             rotateX++;
