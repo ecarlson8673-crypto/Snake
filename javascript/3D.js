@@ -341,12 +341,26 @@ function play3D() {
                 // increase snake length
                 body.splice(0, 0, [...body[0]]);
 
-                // reposition food
-                let x = Math.floor(Math.random() * DFieldWidth);
-                let y = Math.floor(Math.random() * DFieldHeight);
-                let side = Math.floor(Math.random() * 6);
+                let repeat = false;
+                do {
+                    // reset repeat
+                    repeat = false;
 
-                foodPosition[i] = [x, y, side];
+                    // reposition food
+                    let x = Math.floor(Math.random() * DFieldWidth);
+                    let y = Math.floor(Math.random() * DFieldHeight);
+                    let side = Math.floor(Math.random() * 6);
+
+                    foodPosition[i] = [x, y, side];
+
+                    // check if food is on the body, if so reposition food
+                    for (let j = 0; j < body.length; j++) {
+                        if (foodPosition[i][0] == body[j][0] && foodPosition[i][1] == body[j][1] && foodPosition[i][2] == body[j][2]) {
+                            repeat = true;
+                        }
+                    }
+
+                } while (repeat == true);
 
                 // increase score
                 score++;

@@ -28,7 +28,7 @@ The cube can be moved by using the 'wasd' keys. The arrow keys move the snake ar
 ![alt text](pictures/51b7fb60-4669-4040-a0ba-9dd7783b2ad8.webp)
 
 ## Inverted
-This project is still under construnction
+This project is still under construnction.
 
 
 #
