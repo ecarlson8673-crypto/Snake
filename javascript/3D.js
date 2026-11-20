@@ -300,6 +300,10 @@ function play3D() {
                 let side = Math.floor(Math.random() * 6);
 
                 foodPosition[i] = [x, y, side];
+
+                // show food
+                let square = (foodPosition[1] * DFieldHeight) + foodPosition[0];
+                document.getElementById(`D${foodPosition[2]}${square}`).style.display = foodColor;
             }
         }
     }
