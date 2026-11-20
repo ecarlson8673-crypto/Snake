@@ -172,7 +172,7 @@ function reset3D() {
         [0, 3, 5]
     ];
     for (let i = 0; i < 3; i++) {
-        document.getElementById(`D${body[2]}${(body[1] * DFieldWidth) + body[0]}`).style.backgroundColor = bodyColor;
+        document.getElementById(`D${body[i][2]}${(body[i][1] * DFieldWidth) + body[i][0]}`).style.backgroundColor = bodyColor;
     }
 
     // place food on the field to start
