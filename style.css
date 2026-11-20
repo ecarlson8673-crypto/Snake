@@ -190,7 +190,7 @@ button:hover {
 #portalFieldTwo {
     /* 3 x 3 */
     position: absolute;
-    left: 260px;
+    left: 300px;
     top: 100px;
     width: 120px;
     height: 120px;
@@ -199,7 +199,7 @@ button:hover {
 #portalFieldThree {
     /* 7 x 3 */
     position: absolute;
-    left: 400px;
+    left: 470px;
     top: 60px;
     width: 280px;
     height: 120px;
