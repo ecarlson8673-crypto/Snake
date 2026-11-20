@@ -215,12 +215,12 @@ button:hover {
     background-color: black;
 }
 #portalFieldFive {
-    /* 8 x 7 */
+    /* 4 x 3 */
     position: absolute;
-    left: 500px;
+    left: 540px;
     top: 290px;
-    width: 320px;
-    height: 280px;
+    width: 160px;
+    height: 120px;
     background-color: black;
 }
 #portalFieldSix {
@@ -230,14 +230,16 @@ button:hover {
     top: 120px;
     width: 120px;
     height: 160px;
+    background-color: black;
 }
 #portalFieldSeven {
     /* 9 x 4 */
     position: absolute;
     left: 140px;
-    top: 200px;
+    top: 400px;
     width: 360px;
     height: 160px;
+    background-color: black;
 }
 .portalSquare {
     width: 40px;
