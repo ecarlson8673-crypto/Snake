@@ -135,8 +135,7 @@ function resetMulti() {
 
 // initialize 3D
 function initialize3D() {
-    clearOptions()
-    document.getElementById("message").innerHTML = "Comming Soon";
+    clearOptions();
     document.getElementById("DContainer").style.display = "";
 
     for (let i = 0; i < 6; i++) {
