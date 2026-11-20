@@ -220,6 +220,8 @@ function reset3D() {
 // initialize portal
 function initializePortal() {
     clearOptions();
+    //TEMPORARY
+    document.getElementById("portalContainer").style.display = "";
 
     // set the game
     game = "portal";
