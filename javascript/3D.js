@@ -313,7 +313,7 @@ function play3D() {
 
                 // show food
                 let square = (foodPosition[1] * DFieldHeight) + foodPosition[0];
-                document.getElementById(`D${foodPosition[2]}${square}`).style.display = foodColor;
+                document.getElementById(`D${foodPosition[2]}${square}`).style.backgroundColor = foodColor;
             }
         }
     }
