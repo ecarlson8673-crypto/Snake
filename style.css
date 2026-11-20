@@ -226,8 +226,8 @@ button:hover {
 #portalFieldSix {
     /* 3 x 4 */
     position: absolute;
-    left: 180px;
-    top: 300px;
+    left: 100px;
+    top: 400px;
     width: 120px;
     height: 160px;
     background-color: black;
@@ -235,8 +235,8 @@ button:hover {
 #portalFieldSeven {
     /* 9 x 4 */
     position: absolute;
-    left: 540px;
-    top: 500px;
+    left: 580px;
+    top: 460px;
     width: 360px;
     height: 160px;
     background-color: black;
