@@ -161,6 +161,8 @@ function initialize3D() {
 
 // reset 3D game
 function reset3D() {
+    // reset durection
+    durection = 1;
     // reset position of head of snake 0 = x, 1 = y, 2 = which side (0 - 5)
     head = [3, 3, 5];
     document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[0]}`).style.backgroundColor = headColor;
