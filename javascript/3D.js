@@ -129,11 +129,19 @@ function play3D() {
 
     // move and change the color of the field to move snake
     function moveSnake() {
+        // reset end body position
+        let square = (body[1] * DFieldHeight) + body[0];
+        document.getElementById(`D${body[0][2]}${square}`).style.backgroundColor = fieldColor[body[0][2]][square];
+
+        // move body
+        body.splice(0, 1);
+
+        // add next body segment
+        body[body.length] = [...head];
+        document.getElementById(`D${body[body.length - 1][2]}${(body[body.length - 1][1] * DFieldHeight) + body[body.length - 1][0]}`).style.backgroundColor = bodyColor;
+
         // reset durection off set
         directionOffSet = 0;
-        // reset old head position
-        let square = (head[1] * DFieldWidth) + head[0];
-        document.getElementById(`D${head[2]}${square}`).style.backgroundColor = fieldColor[head[2]][square];
         
         // move snake variable
         if (durection == 1) {
@@ -294,6 +302,8 @@ function play3D() {
         for (let i = 0; i < foodNumber; i++) {
             if (foodPosition[i][0] == head[0] && foodPosition[i][1] == head[1] && foodPosition[i][2] == head[2]) {
                 // increase snake length
+                body.splice(0, 0, [...body[0]]);
+
                 // reposition food
                 let x = Math.floor(Math.random() * DFieldWidth);
                 let y = Math.floor(Math.random() * DFieldHeight);

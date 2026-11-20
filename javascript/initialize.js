@@ -165,6 +165,16 @@ function reset3D() {
     head = [3, 3, 5];
     document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[0]}`).style.backgroundColor = headColor;
 
+    // position body
+    body = [
+        [2, 3, 5],
+        [1, 3, 5],
+        [0, 3, 5]
+    ];
+    for (let i = 0; i < 3; i++) {
+        document.getElementById(`D${body[2]}${(body[1] * DFieldWidth) + body[0]}`).style.backgroundColor = bodyColor;
+    }
+
     // place food on the field to start
     for (let i = 0; i < foodNumber; i++) {
         let side = Math.floor(Math.random() * 4);
