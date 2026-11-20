@@ -219,6 +219,9 @@ function reset3D() {
 
 // initialize portal
 function initializePortal() {
+    clearOptions();
+
+    // set the game
     game = "portal";
     document.getElementById("message").innerHTML = "Coming Soon";
 
