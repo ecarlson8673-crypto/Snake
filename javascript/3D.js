@@ -89,8 +89,10 @@ function play3D() {
         if (key == " ") {
             if (pause == false) {
                 clearInterval(moveSnakeInterval);
+                document.getElementById("message").innerHTML = "Pause";
             } else {
                 moveSnakeInterval = setInterval(mainInterval, time);
+                document.getElementById("message").innerHTML = "";
             }
             pause = !pause;
         }
@@ -144,11 +146,17 @@ function play3D() {
     // interval to play game
     moveSnakeInterval = setInterval(mainInterval, time);
     function mainInterval() {
+        // move the snake on the field
+        moveSnake();
+
         // add food
         food();
 
-        // move the snake on the field
-        moveSnake();
+        // Check die
+        if (die() == true) {
+            clearInterval(moveSnakeInterval);
+            document.getElementById("message").innerHTML = "You Lose";
+        }
     }
 
     // move and change the color of the field to move snake
@@ -336,11 +344,23 @@ function play3D() {
                 let side = Math.floor(Math.random() * 6);
 
                 foodPosition[i] = [x, y, side];
-
-                // show food
-                let square = (foodPosition[i][1] * DFieldHeight) + foodPosition[i][0];
-                document.getElementById(`D${foodPosition[i][2]}${square}`).style.backgroundColor = foodColor;
             }
         }
+        // make the food show up
+        for (let i = 0; i < foodNumber; i++) {
+            let square = (foodPosition[i][1] * DFieldHeight) + foodPosition[i][0];
+            document.getElementById(`D${foodPosition[i][2]}${square}`).style.backgroundColor = foodColor;
+        }
+    }
+
+    // check if snaked died
+    function die() {
+        for (let i = 0; i < body.length; i++) {
+            if (body[i][0] == head[0] && body[i][1] == head[1] && body[i][2] == head[2]) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
