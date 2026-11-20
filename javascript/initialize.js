@@ -163,15 +163,16 @@ function initialize3D() {
 function reset3D() {
     // reset durection
     durection = 1;
+    passedDurection = 1;
     // reset position of head of snake 0 = x, 1 = y, 2 = which side (0 - 5)
     head = [3, 3, 5];
     document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[0]}`).style.backgroundColor = headColor;
 
     // position body
     body = [
-        [2, 3, 5],
+        [0, 3, 5],
         [1, 3, 5],
-        [0, 3, 5]
+        [2, 3, 5]
     ];
     for (let i = 0; i < 3; i++) {
         document.getElementById(`D${body[i][2]}${(body[i][1] * DFieldWidth) + body[i][0]}`).style.backgroundColor = bodyColor;

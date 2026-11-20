@@ -61,6 +61,7 @@ function play3D() {
            }
         }
         // durection value
+        let initialDurection = durection;
         if (key == "ArrowRight") {
             durection = 1 + directionOffSet;
         } else if (key == "ArrowLeft") {
@@ -73,6 +74,9 @@ function play3D() {
         // make sure that durection is always between 0 and 3
         while (durection > 3) {
             durection = durection - 4;
+        }
+        if (initialDurection == durection) {
+            durection = initialDurection;
         }
 
         // check for pause
@@ -304,6 +308,8 @@ function play3D() {
         while (durection > 3) {
             durection = durection - 4;
         }
+        // set passed direction
+        passedDurection = durection;
 
         square = (head[1] * DFieldWidth) + head[0];
 
