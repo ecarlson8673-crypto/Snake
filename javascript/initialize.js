@@ -169,6 +169,13 @@ function reset3D() {
     // reset position of head of snake 0 = x, 1 = y, 2 = which side (0 - 5)
     head = [3, 3, 5];
     document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[0]}`).style.backgroundColor = headColor;
+    
+    // reset field tiles
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < DFieldWidth * DFieldHeight; j++) {
+            document.getElementById(`D${i}${j}`).style.backgroundColor = fieldColor[i][j];
+        }
+    }
 
     // position body
     body = [
@@ -192,14 +199,7 @@ function reset3D() {
     // reset message and play again button
     document.getElementById("message").innerHTML = "";
     document.getElementById("again").style.display = "none";
-
-    // reset field tiles
-    for (let i = 0; i < 6; i++) {
-        for (let j = 0; j < DFieldWidth * DFieldHeight; j++) {
-            document.getElementById(`D${i}${j}`).style.backgroundColor = fieldColor[i][j];
-        }
-    }
-
+    
     // place food on the field to start
     for (let i = 0; i < foodNumber; i++) {
         let side = Math.floor(Math.random() * 4);
