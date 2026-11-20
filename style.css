@@ -177,6 +177,57 @@ button:hover {
     height: 54px;
 }
 
+/* style for portal */
+#portalFieldOne {
+    /* 5 x 6 */
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    background-color: black;
+}
+#portalFieldTwo {
+    /* 3 x 3 */
+    position: absolute;
+    left: 60px;
+    top: 50px;
+    background-color: black;
+}
+#portalFieldThree {
+    /* 3 x 3 */
+    position: absolute;
+    left: 100px;
+    top: 40px;
+    background-color: black;
+}
+#portalFieldFour {
+    /* 3 x 3 */
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    background-color: black;
+}
+#portalFieldFive {
+    /* 3 x 3 */
+    position: absolute;
+    left: 120px;
+    top: 130px;
+    background-color: black;
+}
+#portalFieldSix {
+    /* 3 x 3 */
+    position: absolute;
+    left: 180px;
+    top: 120px;
+    background-color: black;
+}
+#portalFieldSeven {
+    /* 3 x 3 */
+    position: absolute;
+    left: 140px;
+    top: 200px;
+    background-color: black;
+}
+
 #logo {
   position: fixed;
   right: 5px;
