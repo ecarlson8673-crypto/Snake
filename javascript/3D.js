@@ -98,11 +98,11 @@ function play3D() {
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
         if (a == true) {
-            rotateY++;
+            rotateY--;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
         if (d == true) {
-            rotateY--;
+            rotateY++;
             document.getElementById("DField").style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         }
         if (rotateX >= 360) {
