@@ -12,6 +12,8 @@ function play3D() {
     let directionOffSet = 0;
     // interval that move the cube
     let moveSnakeInterval;
+    // move the cube interval
+    let moveCubeInterval;
     // check if game is paused
     let pause = false;
     // check if died
@@ -158,6 +160,7 @@ function play3D() {
         if (die() == true) {
             clearInterval(moveSnakeInterval);
             document.getElementById("message").innerHTML = "You Lose, Score: " + score;
+            document.getElementById("again").style.display = "";
             dead = true;
         }
     }

@@ -136,7 +136,10 @@ function resetMulti() {
 // initialize 3D
 function initialize3D() {
     clearOptions();
-    document.getElementById("DContainer").style.display = "";
+    //document.getElementById("DContainer").style.display = "";
+
+    // set which game is being played
+    game = "3D";
 
     for (let i = 0; i < 6; i++) {
         let face = document.getElementsByClassName("cubeFace")[i];
@@ -163,6 +166,7 @@ function reset3D() {
     // reset durection
     durection = 1;
     passedDurection = 1;
+
     // reset position of head of snake 0 = x, 1 = y, 2 = which side (0 - 5)
     head = [3, 3, 5];
     document.getElementById(`D${head[2]}${(head[1] * DFieldWidth) + head[0]}`).style.backgroundColor = headColor;
@@ -176,6 +180,9 @@ function reset3D() {
     for (let i = 0; i < 3; i++) {
         document.getElementById(`D${body[i][2]}${(body[i][1] * DFieldWidth) + body[i][0]}`).style.backgroundColor = bodyColor;
     }
+
+    // reset the orientation of the cube
+    document.getElementById("DField").style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
 
     // place food on the field to start
     for (let i = 0; i < foodNumber; i++) {
@@ -200,6 +207,8 @@ function again() {
         resetOriginal();
     } else if (game == "multi") {
         resetMulti();
+    } else if (game == "3D") {
+        reset3D();
     }
 }
 

@@ -5,7 +5,7 @@ This is a collection of Snake games.
 I have always loved the Snake game because of its simplicity to code and play. Recently when playing Snake, I thought of some fun ways to modify the original game. This program contains those ideas (or will). 
 
 ## Get Started
-To play, click one of the buttons on the left side of the screen bellow the 'Snake Games' header. There is a setting button to the left of the blue title. When clicked you have the option to change things like the number of food.
+To play, click one of the buttons on the left side of the screen bellow the 'Snake Games' header. There is a setting button to the left of the blue title. When clicked you have the option to change things like the number of food. When playing any of the games, you can press the space key to pause.
 
 ![alt text](<pictures/Screenshot 2026-11-19 9.24.50 PM.png>)
 
