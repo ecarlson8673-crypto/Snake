@@ -10,6 +10,10 @@ function play3D() {
     let a = false;
     // if cube is turned keep up always up
     let directionOffSet = 0;
+    // interval that move the cube
+    let moveCubeInterval;
+    // check if game is paused
+    let pause = false;
 
     // check if a key is pressed
     document.addEventListener("keydown", keyDown);
@@ -70,6 +74,16 @@ function play3D() {
         while (durection > 3) {
             durection = durection - 4;
         }
+
+        // check for pause
+        if (key == " ") {
+            if (pause == false) {
+                clearInterval(moveCubeInterval);
+            } else {
+                moveCubeInterval = setInterval(moveCube, time);
+            }
+            pause = !pause;
+        }
     }
     // check if a key is released
     document.addEventListener("keyup", keyUp);
@@ -87,7 +101,7 @@ function play3D() {
         }
     }
     // move the cube every 10 ms
-    setInterval(moveCube, 10);
+    moveCubeInterval = setInterval(moveCube, 10);
     function moveCube() {
         if (w == true) {
             rotateX++;
