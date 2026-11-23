@@ -269,6 +269,39 @@ function initializePortal() {
 }
 
 function resetPortal() {
+    // randomize position of portals
+    for (let i = 0; i < portalField.length * 2; i++) {
+        portalTo[i] = i + 1;
+    }
+    for (let i = portalTo.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [portalTo[i], portalTo[j]] = [portalTo[j], portalTo[i]];
+    }
+
+    // deside which sides portals are on
+    for (let i = 0; i < portalField.length * 2; i++) {
+        sideOne = Math.floor(Math.random() * 4);
+        sideTwo = Math.ciel(Math.random() * 3) + sideOne;
+        if (sideTwo > 3) {
+            sideTwo = sideTwo - 4;
+        }
+        portalSide[i] = [sideOne, (sideOne + sideTwo)];
+    }
+
+    // add different colored borders to edges of fields as portals
+    for (let i = 0; i < portalTo.length; i++) {
+        let field = Math.floor((i) % 2);
+        let time = i % 2 ? 0 : 1;
+        if (portalSide[field][time] == 0) {
+            document.getElementsByClassName("portal")[field].style.borderTopColor = "black";
+        } else if (portalSide[field][time] == 1) {
+            document.getElementsByClassName("portal")[field].style.borderRightColor = "black";
+        } else if (portalSide[field][time] == 2) {
+            document.getElementsByClassName("portal")[field].style.borderBottomColor = "black";
+        } else {
+            document.getElementsByClassName("portal")[field].style.borderLeftColor = "black";
+        }
+    }
 
     playPortal();
 }
