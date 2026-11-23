@@ -285,7 +285,7 @@ function resetPortal() {
         if (sideTwo > 3) {
             sideTwo = sideTwo - 4;
         }
-        portalSide[i] = [sideOne, (sideOne + sideTwo)];
+        portalSide[i] = [sideOne, sideTwo];
     }
 
     // add different colored borders to edges of fields as portals
