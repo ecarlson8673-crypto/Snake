@@ -254,10 +254,10 @@ function initializePortal() {
                 }
             } else {
                 if (j % 2 == 0) {
-                    div.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+                    div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
                     fieldColor[i][j] = `rgb(${0}, ${200}, ${0})`;
                 } else {
-                    div.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+                    div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
                     fieldColor[i][j] = `rgb(${0}, ${255}, ${0})`;
                 }
             }
