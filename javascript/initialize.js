@@ -293,13 +293,13 @@ function resetPortal() {
         let field = Math.floor((i) % 2);
         let time = i % 2 ? 0 : 1;
         if (portalSide[field][time] == 0) {
-            document.getElementsByClassName("portal")[field].style.borderTopColor = "black";
+            document.getElementsByClassName("portal")[field].style.borderTopColor = "red";
         } else if (portalSide[field][time] == 1) {
-            document.getElementsByClassName("portal")[field].style.borderRightColor = "black";
+            document.getElementsByClassName("portal")[field].style.borderRightColor = "red";
         } else if (portalSide[field][time] == 2) {
-            document.getElementsByClassName("portal")[field].style.borderBottomColor = "black";
+            document.getElementsByClassName("portal")[field].style.borderBottomColor = "red";
         } else {
-            document.getElementsByClassName("portal")[field].style.borderLeftColor = "black";
+            document.getElementsByClassName("portal")[field].style.borderLeftColor = "red";
         }
     }
 
