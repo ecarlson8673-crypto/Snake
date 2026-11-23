@@ -245,7 +245,7 @@ function initializePortal() {
                         start = 0;
                     }
                 }
-                if (j + start % 2 == 0) {
+                if ((j + start) % 2 == 0) {
                     div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
                     fieldColor[i][j] = `rgb(${0}, ${200}, ${0})`;
                 } else {
