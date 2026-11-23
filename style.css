@@ -177,12 +177,22 @@ button:hover {
     height: 54px;
 }
 
+/* colors for portal
+    1. rgb(0, 102, 0) 11
+    2. rgb(0, 0, 204) 11
+    3. rgb(255, 51, 0) 11
+    4. rgb(153, 0, 255) 11
+    5. rgb(170, 213, 43) 11
+    6. rgb(51, 204, 204) 11
+    7. rgb(202, 153, 153) 11
+*/
+
 /* style for portal */
 .portal {
     display: flex;
     flex-wrap: wrap;
     border-style: solid;
-    border-width: 5px;
+    border-width: 10px;
 }
 #portalFieldOne {
     /* 5 x 6 */
@@ -191,9 +201,8 @@ button:hover {
     top: 20px;
     width: 200px;
     height: 240px;
-    background-color: black;
-    border-top-color: red;
-    border-right-color: blue;
+    border-top-color: rgb(0, 0, 204);
+    border-right-color: rgb(153, 0, 255);
 }
 #portalFieldTwo {
     /* 3 x 3 */
@@ -202,9 +211,8 @@ button:hover {
     top: 100px;
     width: 120px;
     height: 120px;
-    background-color: black;
-    border-bottom-color: red;
-    border-right-color: blue;
+    border-bottom-color: rgb(202, 153, 153);
+    border-right-color: rgb(170, 213, 43);
 }
 #portalFieldThree {
     /* 7 x 3 */
@@ -213,9 +221,8 @@ button:hover {
     top: 60px;
     width: 280px;
     height: 120px;
-    background-color: black;
-    border-top-color: red;
-    border-left-color: blue;
+    border-top-color: rgb(0, 102, 0);
+    border-left-color: rgb(51, 204, 204);
 }
 #portalFieldFour {
     /* 4 x 5 */
@@ -224,9 +231,8 @@ button:hover {
     top: 320px;
     width: 160px;
     height: 200px;
-    background-color: black;
-    border-bottom-color: red;
-    border-left-color: blue;
+    border-bottom-color: rgb(255, 51, 0);
+    border-left-color: rgb(170, 213, 43);
 }
 #portalFieldFive {
     /* 4 x 3 */
@@ -235,9 +241,8 @@ button:hover {
     top: 290px;
     width: 160px;
     height: 120px;
-    background-color: black;
-    border-top-color: red;
-    border-left-color: blue;
+    border-top-color: rgb(0, 0, 204);
+    border-left-color: rgb(255, 51, 0);
 }
 #portalFieldSix {
     /* 3 x 4 */
@@ -246,9 +251,8 @@ button:hover {
     top: 400px;
     width: 120px;
     height: 160px;
-    background-color: black;
-    border-bottom-color: red;
-    border-right-color: blue;
+    border-bottom-color: rgb(202, 153, 153);
+    border-right-color: rgb(51, 204, 204);
 }
 #portalFieldSeven {
     /* 9 x 4 */
@@ -257,14 +261,12 @@ button:hover {
     top: 460px;
     width: 360px;
     height: 160px;
-    background-color: black;
-    border-left-color: red;
-    border-right-color: blue;
+    border-top-color: rgb(153, 0, 255);
+    border-bottom-color: rgb(0, 102, 0);
 }
 .portalSquare {
     width: 40px;
     height: 40px;
-    background-color: black;
 }
 
 #logo {
