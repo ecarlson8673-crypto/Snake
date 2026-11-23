@@ -227,6 +227,35 @@ function initializePortal() {
     game = "portal";
     document.getElementById("message").innerHTML = "Coming Soon";
 
+    // create field
+    for (let i = 0; i < portalField.length; i++) {
+        // color of field tile to start with if odd number across
+        let start = 1;
+        for (let j = 0; j < portalField[i][0] * portalField[i][1]; j++) {
+            let div = document.createElement("div");
+            div.classList.add("portalSquare");
+            div.id = `portal${i}${j}`;
+            // check if field size is odd or even to color tiles
+            if (portalField[i][0] % 2 == 0) {
+                if (j % portalField[i][0] == 0) {
+                    start = 0;
+                }
+                if (j + start % 2 == 0) {
+                    div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+                } else {
+                    div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+                }
+            } else {
+                if (j % 2 == 0) {
+                    div.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+                } else {
+                    div.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+                }
+            }
+            document.getElementsByClassName("portal")[i].appendChild(div);
+        }
+    }
+
     resetPortal();
 }
 
