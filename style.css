@@ -265,7 +265,7 @@ button:hover {
     top: 460px;
     width: 360px;
     height: 160px;
-    border-top-color: rgb(153, 0, 255);
+    border-top-color: linear-gradient(to right, rgb(153, 0, 255) 30%, rgb(0, 0, 0) 70%);
     border-bottom-color: rgb(0, 102, 0);
     border-right-color: rgb(255, 102, 153);
     border-left-color: rgb(153, 102, 0);

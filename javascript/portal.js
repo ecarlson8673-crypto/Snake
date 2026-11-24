@@ -42,24 +42,63 @@ function playPortal() {
     // check if snake goes through portal and move snake to another field if it did
     function portaled() {
         if (head[0] == 0) {
-
+            if (head[1] < 0) {
+                head[0] = 4;
+            }
+            if (head[2] < 0) {
+                head[0] = 2;
+            }
+            if (head[2] > portalField[head[0]][1]) {
+                head[0] = 6;
+            }
         } else if (head[0] == 1) {
-
+            if (head[1] < 0) {
+                head[0] = 6;
+            }
+            if (head[1] > portalField[head[0]][0]) {
+                head[0] = 3;
+            }
+            if (head[2] < 0) {
+                head[0] = 5;
+            }
         } else if (head[0] == 2) {
-
+            if (head[1] < 0) {
+                head[0] = 5;
+            }
+            if (head[2] < 0) {
+                head[0] = 6;
+            }
+            if (head[2] > portalField[head[0]][1]) {
+                head[0] = 0;
+            }
         } else if (head[0] == 3) {
-            
+            if (head[1] < 0) {
+                head[0] = 1;
+            }
+            if (head[1] > portalField[head[0]][0]) {
+                head[0] = 0;
+            }
+            if (head[2] < 0) {
+                head[0] = 4;
+            }
         } else if (head[0] == 4) {
-            
+            if (head[1] > portalField[head[0]][0]) {
+                head[]
+            }
         } else if (head[0] == 5) {
             
         } else if (head[0] == 6) {
-            if (head[1] < 0) {
+            if (head[2] < 0) {
                 head[0] = 0;
-                
             }
-            if (head[1] > portalField[head[0]][1]) {
+            if (head[2] > portalField[head[0]][1]) {
                 head[0] = 2;
+            }
+            if (head[1] < 0) {
+                head[0] = 3;
+            }
+            if (head[1] < portalField[head[0]][0]) {
+                head[0] = 1;
             }
         }
     }
