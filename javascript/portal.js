@@ -1,6 +1,6 @@
 // function to play the portal game
 function playPortal() {
-    addEventListener("keydown", keyDown());
+    document.addEventListener("keydown", keyDown());
     function keyDown(event) {
         let key = event.key;
 
