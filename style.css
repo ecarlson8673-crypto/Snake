@@ -241,7 +241,7 @@ button:hover {
 #bottomThree {
     position: absolute;
     left: 560px;
-    top: 69px;
+    top: 69.5px;
     width: 200px;
     height: 120px;
     border-bottom-style: solid;
@@ -275,7 +275,7 @@ button:hover {
 }
 #rightFour {
     position: absolute;
-    left: 329px;
+    left: 329.5px;
     top: 320px;
     width: 160px;
     height: 160px;
@@ -307,7 +307,7 @@ button:hover {
 }
 #rightSix {
     position: absolute;
-    left: 99px;
+    left: 99.5px;
     top: 450px;
     width: 120px;
     height: 120px;
