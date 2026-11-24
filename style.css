@@ -207,10 +207,13 @@ button:hover {
 #leftOne {
     position: absolute;
     left: 30px;
-    top: 20px;
+    top: 30px;
     height: 120px;
     width: 10px;
-    border-style: solid;
+    border-left-style: solid;
+    border-top-style: solid;
+    border-top-width: 10px;
+    border-top-color: rgba(0, 0, 0, 0);
     border-left-width: 10px;
     border-left-color: rgb(0, 0, 204);
 }
@@ -238,10 +241,13 @@ button:hover {
 #bottomThree {
     position: absolute;
     left: 560px;
-    top: 60px;
+    top: 70px;
     width: 200px;
     height: 120px;
-    border-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-left-width: 10px;
+    border-left-color: rgba(0, 0, 0, 0);
     border-bottom-width: 10px;
     border-bottom-color: rgb(153, 255, 102);
 }
@@ -257,20 +263,26 @@ button:hover {
 #leftFour {
     position: absolute;
     left: 320px;
-    top: 320px;
+    top: 330px;
     width: 10px;
     height: 120px;
-    border-style: solid;
+    border-left-style: solid;
+    border-top-style: solid;
+    border-top-width: 10px;
+    border-top-color: rgba(0, 0, 0, 0);
     border-left-width: 10px;
     border-left-color: rgb(170, 213, 43);
 }
 #rightFour {
     position: absolute;
-    left: 320px;
+    left: 330px;
     top: 320px;
     width: 160px;
     height: 160px;
-    border-style: solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-top-width: 10px;
+    border-top-color: rgba(0, 0, 0, 0);
     border-right-width: 10px;
     border-right-color: rgb(153, 102, 0);
 }
@@ -295,11 +307,14 @@ button:hover {
 }
 #rightSix {
     position: absolute;
-    left: 90px;
-    top: 440px;
+    left: 100px;
+    top: 450px;
     width: 120px;
     height: 120px;
-    border-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+    border-bottom-color: rgba(0, 0, 0, 0);
     border-right-width: 10px;
     border-right-color: rgb(51, 204, 204);
 }
@@ -314,11 +329,12 @@ button:hover {
 }
 #topRightSeven {
     position: absolute;
-    left: 740px;
+    left: 750px;
     top: 460px;
     width: 200px;
     height: 120px;
-    border-style: solid;
+    border-top-style: solid;
+    border-right-style: solid;
     border-top-width: 10px;
     border-right-width: 10px;
     border-top-color: rgb(153, 0, 255);
@@ -327,10 +343,13 @@ button:hover {
 #bottomSeven {
     position: absolute;
     left: 580px;
-    top: 460px;
+    top: 470px;
     height: 160px;
     width: 280px;
-    border-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-left-width: 10px;
+    border-left-color: rgba(0, 0, 0, 0);
     border-bottom-width: 10px;
     border-bottom-color: rgb(0, 102, 0);
 }
