@@ -337,8 +337,6 @@ button:hover {
 .portalSquare {
     width: 40px;
     height: 40px;
-    border-style: solid;
-    border-right-width: 10px;
 }
 
 #logo {
