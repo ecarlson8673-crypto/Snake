@@ -20,7 +20,7 @@ function playPortal() {
                 clearInterval(moveInterval);
                 document.getElementById("message").innerHTML = "";
             } else {
-                moveInterval = setInerval(movePortal, time);
+                moveInterval = setInterval(movePortal, time);
                 document.getElementById("message").innerHTML = "";
             }
             pause = !pause;
