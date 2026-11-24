@@ -20,7 +20,7 @@ function playPortal() {
     // move the snake
     function moveSnake() {
         // recolor tile head was on
-        document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = fieldColor[head[0]][head[1]];
+        document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = fieldColor[head[0]][(head[2] * portalField[head[0]][0]) + head[1]];
         // move snake depending on durection
         if (durection == "ArrowRight") {
             head[1]++;
@@ -50,7 +50,7 @@ function playPortal() {
                 head[0] = 2;
                 head[2] = 2;
             }
-            if (head[2] > portalField[head[0]][1]) {
+            if (head[2] > (portalField[head[0]][1] - 1)) {
                 head[0] = 6;
                 head[1] = head[1] + 4;
                 head[2] = 0;
@@ -60,7 +60,7 @@ function playPortal() {
                 head[0] = 6;
                 head[1] = 8;
             }
-            if (head[1] > portalField[head[0]][0]) {
+            if (head[1] > (portalField[head[0]][0] - 1)) {
                 head[0] = 3;
                 head[1] = 0;
             }
@@ -78,7 +78,7 @@ function playPortal() {
                 head[0] = 6;
                 head[2] = 3;
             }
-            if (head[2] > portalField[head[0]][1] && head[1] < 5) {
+            if (head[2] > (portalField[head[0]][1] - 1) && head[1] < 5) {
                 head[0] = 0;
                 head[2] = 0;
             }
@@ -87,7 +87,7 @@ function playPortal() {
                 head[0] = 1;
                 head[1] = 2;
             }
-            if (head[1] > portalField[head[0]][0] && head[2] < 4) {
+            if (head[1] > (portalField[head[0]][0] - 1) && head[2] < 4) {
                 head[0] = 6;
                 head[1] = 0;
             }
@@ -96,21 +96,21 @@ function playPortal() {
                 head[2] = 2;
             }
         } else if (head[0] == 4) {
-            if (head[1] > portalField[head[0]][0]) {
+            if (head[1] > (portalField[head[0]][0] - 1)) {
                 head[0] = 0;
                 head[1] = 0;
             }
-            if (head[2] > portalField[head[0]][1]) {
+            if (head[2] > (portalField[head[0]][1] - 1)) {
                 head[0] = 3;
                 head[2] = 0;
             }
         } else if (head[0] == 5) {
-            if (head[1] > portalField[head[0]][0] && head[2] > 0) {
+            if (head[1] > (portalField[head[0]][0] - 1) && head[2] > 0) {
                 head[0] = 2;
                 head[1] = 0;
                 head[2] = head[2] - 1;
             }
-            if (head[2] > portalField[head[0]][1]) {
+            if (head[2] > (portalField[head[0]][1] - 1)) {
                 head[0] = 1;
                 head[2] = 0;
             }
@@ -120,7 +120,7 @@ function playPortal() {
                 head[1] = head[1] - 4;
                 head[2] = 5;
             }
-            if (head[2] > portalField[head[0]][1] && head[1] < 3) {
+            if (head[2] > (portalField[head[0]][1] - 1) && head[1] < 3) {
                 head[0] = 2;
                 head[2] = 0;
             }
@@ -128,7 +128,7 @@ function playPortal() {
                 head[0] = 3;
                 head[1] = 3;
             }
-            if (head[1] > portalField[head[0]][0]) {
+            if (head[1] > (portalField[head[0]][0] - 1)) {
                 head[0] = 1;
                 head[1] = 0;
             }
