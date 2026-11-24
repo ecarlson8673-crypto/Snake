@@ -5,7 +5,7 @@ function playPortal() {
         let key = event.key;
 
         // if arrow key then change durection
-        if (key.match("Arrow")) {
+        if (key.includes("Arrow")) {
             durection = key;
         }
     }
