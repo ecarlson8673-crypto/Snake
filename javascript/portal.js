@@ -105,7 +105,7 @@ function playPortal() {
             if (head[1] < 0) {
                 head[0] = 3;
             }
-            if (head[1] < portalField[head[0]][0]) {
+            if (head[1] > portalField[head[0]][0]) {
                 head[0] = 1;
             }
         }
