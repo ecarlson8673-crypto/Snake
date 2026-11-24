@@ -83,10 +83,18 @@ function playPortal() {
             }
         } else if (head[0] == 4) {
             if (head[1] > portalField[head[0]][0]) {
-                head[]
+                head[0] = 0;
+            }
+            if (head[2] > portalField[head[0]][1]) {
+                head[0] = 3;
             }
         } else if (head[0] == 5) {
-            
+            if (head[1] > portalField[head[0]][0]) {
+                head[0] = 2;
+            }
+            if (head[2] > portalField[head[0]][1]) {
+                head[0] = 1;
+            }
         } else if (head[0] == 6) {
             if (head[2] < 0) {
                 head[0] = 0;
