@@ -203,6 +203,7 @@ button:hover {
     height: 240px;
     border-left-color: rgb(0, 0, 204);
     border-bottom-color: rgb(153, 0, 255);
+    border-top-color: rgb(153, 255, 102);
 }
 #portalFieldTwo {
     /* 3 x 3 */
@@ -213,6 +214,7 @@ button:hover {
     height: 120px;
     border-top-color: rgb(202, 153, 153);
     border-right-color: rgb(170, 213, 43);
+    border-left-color: rgb(255, 102, 153);
 }
 #portalFieldThree {
     /* 7 x 3 */
@@ -223,6 +225,7 @@ button:hover {
     height: 120px;
     border-top-color: rgb(0, 102, 0);
     border-left-color: rgb(51, 204, 204);
+    border-bottom-color: rgb(153, 255, 102);
 }
 #portalFieldFour {
     /* 4 x 5 */
@@ -233,6 +236,7 @@ button:hover {
     height: 200px;
     border-top-color: rgb(255, 51, 0);
     border-left-color: rgb(170, 213, 43);
+    border-right-color: rgb(153, 102, 0);
 }
 #portalFieldFive {
     /* 4 x 3 */
@@ -263,6 +267,8 @@ button:hover {
     height: 160px;
     border-top-color: rgb(153, 0, 255);
     border-bottom-color: rgb(0, 102, 0);
+    border-right-color: rgb(255, 102, 153);
+    border-left-color: rgb(153, 102, 0);
 }
 .portalSquare {
     width: 40px;

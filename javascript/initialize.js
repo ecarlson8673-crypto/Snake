@@ -270,8 +270,8 @@ function initializePortal() {
 
 function resetPortal() {
     // position head
-    head = [6, 13];
-    document.getElementById(`portal${head[0]}${head[1]}`).style.backgroundColor = headColor;
+    head = [6, 4, 2];
+    document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
 
     playPortal();
 }
