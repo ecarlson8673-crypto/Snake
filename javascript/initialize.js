@@ -269,7 +269,9 @@ function initializePortal() {
 }
 
 function resetPortal() {
-    
+    // position head
+    head = [7, 13];
+    document.getElementById(`portal${head[0]}${head[1]}`).style.backgroundColor = headColor;
 
     playPortal();
 }
