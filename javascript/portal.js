@@ -1,5 +1,10 @@
 // function to play the portal game
 function playPortal() {
+    // the interval that moves the snake
+    let moveInterval;
+    // whether game is paused or not
+    let pause = false;
+
     document.addEventListener("keydown", keyDown);
     function keyDown(event) {
         let key = event.key;
@@ -8,10 +13,22 @@ function playPortal() {
         if (key.includes("Arrow")) {
             durection = key;
         }
+
+        // pause the game
+        if (key == " ") {
+            if (pause == false) {
+                clearInterval(moveInterval);
+                document.getElementById("message").innerHTML = "";
+            } else {
+                moveInterval = setInerval(movePortal, time);
+                document.getElementById("message").innerHTML = "";
+            }
+            pause = !pause;
+        }
     }
 
     // interval where snake is moved
-    setInterval(movePortal, time);
+    moveInterval = setInterval(movePortal, time);
     function movePortal() {
         // move snake around field
         moveSnake();
