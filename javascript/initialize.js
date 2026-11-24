@@ -235,7 +235,7 @@ function initializePortal() {
         for (let j = 0; j < portalField[i][0] * portalField[i][1]; j++) {
             let div = document.createElement("div");
             div.classList.add("portalSquare");
-            div.id = `portal${i + 1}${j}`;
+            div.id = `portal${i}${j}`;
             // check if field size is odd or even to color tiles
             if (portalField[i][0] % 2 == 0) {
                 if (j % portalField[i][0] == 0) {
@@ -270,7 +270,7 @@ function initializePortal() {
 
 function resetPortal() {
     // position head
-    head = [7, 13];
+    head = [6, 13];
     document.getElementById(`portal${head[0]}${head[1]}`).style.backgroundColor = headColor;
 
     playPortal();

@@ -20,7 +20,7 @@ function playPortal() {
     // move the snake
     function moveSnake() {
         // recolor tile head was on
-        //document.getElementById(`portal${head[0]}${head[1]}`).style.backgroundColor = fieldColor[head[0]][head[1]];
+        document.getElementById(`portal${head[0]}${head[1]}`).style.backgroundColor = fieldColor[head[0]][head[1]];
         // move snake depending on durection
         if (durection == "ArrowRight") {
             head[1]++;
