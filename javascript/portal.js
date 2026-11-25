@@ -44,7 +44,7 @@ function playPortal() {
 
         // move body
         body.splice(0, 1);
-        body[length] = [...head];
+        body[body.length] = [...head];
 
         // move snake depending on durection
         if (durection == "ArrowRight") {
