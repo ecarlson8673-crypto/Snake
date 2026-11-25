@@ -273,6 +273,16 @@ function resetPortal() {
     head = [6, 4, 2];
     document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
 
+    // position body
+    body = [
+        [6, 3, 2],
+        [6, 2, 2],
+        [6, 1, 2]
+    ];
+    for (let i = 0; i < body.length; i++) {
+        document.getElementById(`portal${body[0]}${(body[2] * portalField[body[0]][0]) + body[1]}`).style.backgroundColor = bodyColor;
+    }
+
     // position food
     for (let i = 0; i < foodNumber; i++) {
         // randomize position
@@ -282,7 +292,7 @@ function resetPortal() {
         foodPosition[i] = [field, x, y];
 
         // show food
-        document.getElementById(`portal${foodPosition[0]}${(foodPosition[2] * portalField[0]) + foodPosition[1]}`).style.backgroundColor = foodColor;
+        document.getElementById(`portal${foodPosition[0]}${(foodPosition[2] * portalField[foodPosition[0]][0]) + foodPosition[1]}`).style.backgroundColor = foodColor;
     }
 
     playPortal();

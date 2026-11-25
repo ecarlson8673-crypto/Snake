@@ -39,8 +39,13 @@ function playPortal() {
 
     // move the snake
     function moveSnake() {
-        // recolor tile head was on
-        document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = fieldColor[head[0]][(head[2] * portalField[head[0]][0]) + head[1]];
+        // recolor tile last body segment was on
+        document.getElementById(`portal${body[0][0]}${(body[0][2] * portalField[body[0][0]][0]) + body[0][1]}`).style.backgroundColor = fieldColor[body[0][0]][(body[0][2] * portalField[body[0][0]][0]) + body[0][1]];
+
+        // move body
+        body.splice(0, 1);
+        body[length] = [...head];
+
         // move snake depending on durection
         if (durection == "ArrowRight") {
             head[1]++;
@@ -157,6 +162,8 @@ function playPortal() {
 
     // function to eat food
     function eat() {
-        
+        if (head[0] == foodPosition[0] && head[1] == foodPosition[1] && head[2] == foodPosition[2]) {
+
+        }
     }
 }
