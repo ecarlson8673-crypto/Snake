@@ -150,7 +150,7 @@ function playPortal() {
                 head[1] = head[1] - 4;
                 head[2] = 5;
             }
-            if (head[2] > (portalField[head[0]][1] - 1) && head[1] < 6) {
+            if (head[2] > (portalField[head[0]][1] - 1) && head[1] < 7) {
                 head[0] = 2;
                 head[2] = 0;
             }
@@ -185,7 +185,7 @@ function playPortal() {
 
                     // check if food is in body
                     for (let j = 0; j < body.length; j++) {
-                        if (foodPosition[j][0] == body[j][0] && foodPosition[j][1] == body[j][1] && foodPosition[j][2] == body[j][2]) {
+                        if (foodPosition[i][0] == body[j][0] && foodPosition[i][1] == body[j][1] && foodPosition[i][2] == body[j][2]) {
                             done = false;
                         }
                     }
