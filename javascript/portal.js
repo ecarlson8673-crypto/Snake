@@ -189,7 +189,7 @@ function playPortal() {
                             done = false;
                         }
                     }
-                } while (done == true);
+                } while (done == false);
 
                 // show food
                 document.getElementById(`portal${foodPosition[i][0]}${(foodPosition[i][2] * portalField[foodPosition[i][0]][0]) + foodPosition[i][1]}`).style.backgroundColor = foodColor;
