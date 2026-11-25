@@ -60,6 +60,11 @@ function playPortal() {
         // check if snake goes off field (and goes into portal)
         portaled();
 
+        // color the body
+        for (let i = 0; i < body.length; i++) {
+            document.getElementById(`portal${body[i][0]}${(body[i][2] * portalField[body[i][0]][0]) + body[i][1]}`).style.backgroundColor = bodyColor;
+        }
+
         // color tile with head on it
         document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
     }
@@ -162,8 +167,10 @@ function playPortal() {
 
     // function to eat food
     function eat() {
-        if (head[0] == foodPosition[0] && head[1] == foodPosition[1] && head[2] == foodPosition[2]) {
+        for (let i = 0; i < foodNumber; i++) {
+            if (head[0] == foodPosition[i][0] && head[1] == foodPosition[i][1] && head[2] == foodPosition[i][2]) {
 
+            }
         }
     }
 }
