@@ -150,7 +150,7 @@ function playPortal() {
                 head[1] = head[1] - 4;
                 head[2] = 5;
             }
-            if (head[2] > (portalField[head[0]][1] - 1) && head[1] < 3) {
+            if (head[2] > (portalField[head[0]][1] - 1) && head[1] < 6) {
                 head[0] = 2;
                 head[2] = 0;
             }
@@ -169,7 +169,30 @@ function playPortal() {
     function eat() {
         for (let i = 0; i < foodNumber; i++) {
             if (head[0] == foodPosition[i][0] && head[1] == foodPosition[i][1] && head[2] == foodPosition[i][2]) {
+                // add another segment
+                body.splice(0, 0, [...body[0]]);
 
+                // reposition food
+                let done = true;
+                do {
+                    done = true;
+
+                    // randomize position of food
+                    let field = Math.floor(Math.random() * 6);
+                    let x = Math.floor(Math.random() * portalField[field][0]);
+                    let y = Math.floor(Math.random() * portalField[field][1]);
+                    foodPosition[i] = [field, x, y];
+
+                    // check if food is in body
+                    for (let j = 0; j < body.length; j++) {
+                        if (foodPosition[j][0] == body[j][0] && foodPosition[j][1] == body[j][1] && foodPosition[j][2] == body[j][2]) {
+                            done = false;
+                        }
+                    }
+                } while (done == true);
+
+                // show food
+                document.getElementById(`portal${foodPosition[i][0]}${(foodPosition[i][2] * portalField[foodPosition[i][0]][0]) + foodPosition[i][1]}`).style.backgroundColor = foodColor;
             }
         }
     }
