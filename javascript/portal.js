@@ -13,7 +13,9 @@ function playPortal() {
 
         // if arrow key then change durection
         if (key.includes("Arrow")) {
-            durection = key;
+            if (durection == "ArrowRight" && pastDurection != "ArrowLeft" || durection == "ArrowLeft" && pastDurection != "ArrowRight" || durection == "ArrowUp" && pastDurection != "ArrowDown" || durection == "ArrowDown" && pastDurection != "ArrowUp") {
+                durection = key;
+            }
         }
 
         // pause the game
@@ -78,6 +80,9 @@ function playPortal() {
         if (!(head[1] > (portalField[head[0]][0] - 1) || head[1] < 0 || head[2] > (portalField[head[0]][1] - 1) || head[2] < 0)) {
             document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
         }
+
+        // set the past direction of the snake
+        pastDurection = durection;
     }
 
     // check if snake goes through portal and move snake to another field if it did
