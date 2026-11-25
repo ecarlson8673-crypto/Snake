@@ -4,6 +4,8 @@ function playPortal() {
     let moveInterval;
     // whether game is paused or not
     let pause = false;
+    // check if player died
+    let died = false;
 
     document.addEventListener("keydown", keyDown);
     function keyDown(event) {
@@ -15,7 +17,7 @@ function playPortal() {
         }
 
         // pause the game
-        if (key == " ") {
+        if (key == " " && died == false) {
             if (pause == false) {
                 clearInterval(moveInterval);
                 document.getElementById("message").innerHTML = "";
@@ -35,6 +37,13 @@ function playPortal() {
 
         // eat food if on it
         eat();
+
+        // check if snake died
+        if (die() == true) {
+            clearInterval(moveInterval);
+            document.getElementById("message").innerHTML = "You lost";
+            died = true;
+        }
     }
 
     // move the snake
@@ -195,5 +204,22 @@ function playPortal() {
                 document.getElementById(`portal${foodPosition[i][0]}${(foodPosition[i][2] * portalField[foodPosition[i][0]][0]) + foodPosition[i][1]}`).style.backgroundColor = foodColor;
             }
         }
+    }
+
+    // die
+    function die() {
+        // check is snake hit self
+        for (let i = 0; i < body.length; i++) {
+            if (head[0] == body[i][0] && head[1] == body[i][1] && head[2] == body[i][2]) {
+                return true;
+            }
+        }
+
+        // check if snake hit wall
+        if (head[2] < 0 || head[2] > (portalField[head[0]][1] - 1) || head[1] > (portalField[head[0]][0] - 1) || head[1] < 0) {
+            return true;
+        }
+
+        return false;
     }
 }
