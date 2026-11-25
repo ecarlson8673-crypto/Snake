@@ -10,25 +10,24 @@ To play, click one of the buttons on the left side of the screen bellow the 'Sna
 <img src="pictures/Screenshot 2026-11-19 9.24.50 PM.png" alt="" style="width: 75%; height: 75%; border: 5px solid rgb(50, 50, 50)">
 
 # The Games
-I have not fully tested all of the games but The first three (original, multi, and 3D) should all work.
 
 ## Original
-This is the original snake game, to play use the arrow keys. Make sure you do not hit the walls or yourself.
+This is the original snake game, to play use the arrow keys. Make sure you do not hit the walls or yourself. The goal is to get as long as possible. Do this by eating the food.
 
 <img src="pictures/Screenshot 2026-11-06 3.31.27 PM.png" alt="" style="width: 75%; height: 75%; border: 5px solid rgb(50, 50, 50)">
 
 ## Multi
-Use the arrow keys to avoid the other snakes. The field is limited, although you can not see all of it. Get as big as possible by eating the food.
+Use the arrow keys to avoid the other snakes. The field is limited, although you can not see all of it. Get as big as possible by eating the food. I recomend increasing the number of food in the settings page to five or ten.
 
 <img src="pictures/Screenshot 2026-11-19 9.35.23 PM.png" alt="" style="width: 75%; height: 75%; border: 5px solid rgb(50, 50, 50)">
 
 ## 3D
-The cube can be moved by using the 'wasd' keys. The arrow keys move the snake around the outside of the cube. 
+The cube can be moved by using the 'wasd' keys. The arrow keys move the snake around the outside of the cube. Because the field is on a cube, there are no borders to hit, but you still have to watch out for yourself.
 
 <img src="pictures/51b7fb60-4669-4040-a0ba-9dd7783b2ad8.webp" alt="" style="width: 75%; height: 75%; border: 5px solid rgb(50, 50, 50)">
 
 ## Portal
-Using the arrow keys, a snake is moved around multiple fields connected by portals. Portals of the same color connect and the black walls are not portals and can not be hit.
+Using the arrow keys, a snake is moved around multiple fields connected by portals. Portals of the same color connect and the black walls are not portals and, if hit, will end the game. You may want to slow the game down the first few times in the settings page.
 
 <img src="Screenshot 2026-11-24 10.55.26 PM.png" alt="" style="width: 75%; height: 75%; border: 5px solid rgb(50, 50, 50)">
 
