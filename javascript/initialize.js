@@ -293,6 +293,13 @@ function resetPortal() {
     // reset score
     score = 0;
 
+    // reset durection
+    durection = "ArrowRight";
+
+    // reset message
+    document.getElementById("message").innerHTML = "";
+    document.getElementById("again").style.display = "none";
+
     // position food
     for (let i = 0; i < foodNumber; i++) {
         // randomize position
