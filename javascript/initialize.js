@@ -292,7 +292,7 @@ function resetPortal() {
         foodPosition[i] = [field, x, y];
 
         // show food
-        document.getElementById(`portal${foodPosition[0]}${(foodPosition[2] * portalField[foodPosition[0]][0]) + foodPosition[1]}`).style.backgroundColor = foodColor;
+        document.getElementById(`portal${foodPosition[i][0]}${(foodPosition[i][2] * portalField[foodPosition[i][0]][0]) + foodPosition[i][1]}`).style.backgroundColor = foodColor;
     }
 
     playPortal();
