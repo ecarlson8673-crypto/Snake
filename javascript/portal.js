@@ -22,7 +22,7 @@ function playPortal() {
         if (key == " " && died == false) {
             if (pause == false) {
                 clearInterval(moveInterval);
-                document.getElementById("message").innerHTML = "";
+                document.getElementById("message").innerHTML = "Pause";
             } else {
                 moveInterval = setInterval(movePortal, time);
                 document.getElementById("message").innerHTML = "";

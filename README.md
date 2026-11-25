@@ -20,17 +20,17 @@ This is the original snake game, to play use the arrow keys. Make sure you do no
 ## Multi
 Use the arrow keys to avoid the other snakes. The field is limited, although you can not see all of it. Get as big as possible by eating the food.
 
-![alt text](<pictures/Screenshot 2026-11-19 9.35.23 PM.png> | width=300)
+![alt text](<pictures/Screenshot 2026-11-19 9.35.23 PM.png> | width="300")
 
 ## 3D
 The cube can be moved by using the 'wasd' keys. The arrow keys move the snake around the outside of the cube. 
 
-![alt text](pictures/51b7fb60-4669-4040-a0ba-9dd7783b2ad8.webp | width=300)
+![alt text](pictures/51b7fb60-4669-4040-a0ba-9dd7783b2ad8.webp | width="300px")
 
 ## Portal
 Using the arrow keys, a snake is moved around multiple fields connected by portals. Portals of the same color connect and the black walls are not portals and can not be hit.
 
-
+![alt text](<Screenshot 2026-11-24 10.55.26 PM.png> | width=300)
 
 #
 NOTE: This project is not done yet. I am still working on the project and there may be bugs or features that do not work. Thanks for your understanding.
