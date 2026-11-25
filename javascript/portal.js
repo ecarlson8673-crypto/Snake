@@ -75,7 +75,9 @@ function playPortal() {
         }
 
         // color tile with head on it
-        document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
+        if (!(head[1] > (portalField[head[0]][0] - 1) || head[1] < 0 || head[2] > (portalField[head[0]][1] - 1) || head[2] < 0)) {
+            document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
+        }
     }
 
     // check if snake goes through portal and move snake to another field if it did
