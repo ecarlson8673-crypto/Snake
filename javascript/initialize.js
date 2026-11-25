@@ -275,12 +275,12 @@ function resetPortal() {
 
     // position body
     body = [
-        [6, 3, 2],
+        [6, 1, 2],
         [6, 2, 2],
-        [6, 1, 2]
+        [6, 3, 2]
     ];
     for (let i = 0; i < body.length; i++) {
-        document.getElementById(`portal${body[0]}${(body[2] * portalField[body[0]][0]) + body[1]}`).style.backgroundColor = bodyColor;
+        document.getElementById(`portal${body[i][0]}${(body[i][2] * portalField[body[i][0]][0]) + body[i][1]}`).style.backgroundColor = bodyColor;
     }
 
     // position food
