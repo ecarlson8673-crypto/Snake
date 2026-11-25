@@ -13,7 +13,7 @@ function playPortal() {
 
         // if arrow key then change durection
         if (key.includes("Arrow")) {
-            if (key == "ArrowRight" && pastDurection != "ArrowLeft" && key == "ArrowLeft" && pastDurection != "ArrowRight" && key == "ArrowUp" && pastDurection != "ArrowDown" && key == "ArrowDown" && pastDurection != "ArrowUp") {
+            if (key != "ArrowRight" && pastDurection == "ArrowLeft" || key != "ArrowLeft" && pastDurection == "ArrowRight" || key != "ArrowUp" && pastDurection == "ArrowDown" || key != "ArrowDown" && pastDurection == "ArrowUp") {
                 durection = key;
             }
         }
