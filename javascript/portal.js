@@ -32,6 +32,9 @@ function playPortal() {
     function movePortal() {
         // move snake around field
         moveSnake();
+
+        // eat food if on it
+        eat();
     }
 
     // move the snake
@@ -150,5 +153,10 @@ function playPortal() {
                 head[1] = 0;
             }
         }
+    }
+
+    // function to eat food
+    function eat() {
+        
     }
 }

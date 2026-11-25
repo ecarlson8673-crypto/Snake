@@ -273,6 +273,18 @@ function resetPortal() {
     head = [6, 4, 2];
     document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
 
+    // position food
+    for (let i = 0; i < foodNumber; i++) {
+        // randomize position
+        let field = Math.floor(Math.random() * 6);
+        let x = Math.floor(Math.random() * portalField[field][0]);
+        let y = Math.floor(Math.random() * portalField[field][1]);
+        foodPosition[i] = [field, x, y];
+
+        // show food
+        document.getElementById(`portal${foodPosition[0]}${(foodPosition[2] * portalField[0]) + foodPosition[1]}`).style.backgroundColor = foodColor;
+    }
+
     playPortal();
 }
 
