@@ -269,6 +269,13 @@ function initializePortal() {
 }
 
 function resetPortal() {
+    // recolor field
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < portalField[i][0] * portalField[i][1]; j++) {
+            document.getElementById(`portal${i}${j}`).style.backgroundColor = fieldColor[i][j];
+        }
+    }
+
     // position head
     head = [6, 4, 2];
     document.getElementById(`portal${head[0]}${(head[2] * portalField[head[0]][0]) + head[1]}`).style.backgroundColor = headColor;
@@ -282,6 +289,9 @@ function resetPortal() {
     for (let i = 0; i < body.length; i++) {
         document.getElementById(`portal${body[i][0]}${(body[i][2] * portalField[body[i][0]][0]) + body[i][1]}`).style.backgroundColor = bodyColor;
     }
+
+    // reset score
+    score = 0;
 
     // position food
     for (let i = 0; i < foodNumber; i++) {

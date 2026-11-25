@@ -43,7 +43,8 @@ function playPortal() {
         // check if snake died
         if (die() == true) {
             clearInterval(moveInterval);
-            document.getElementById("message").innerHTML = "You lost";
+            document.getElementById("message").innerHTML = "You lost, Score: " + score;
+            document.getElementById("again").style.display = "";
             died = true;
         }
     }
@@ -209,6 +210,9 @@ function playPortal() {
 
                 // show food
                 document.getElementById(`portal${foodPosition[i][0]}${(foodPosition[i][2] * portalField[foodPosition[i][0]][0]) + foodPosition[i][1]}`).style.backgroundColor = foodColor;
+                
+                // increase score
+                score++;
             }
         }
     }
