@@ -81,6 +81,16 @@ button:hover {
     font-size: 25px;
     text-align: center;
 }
+#colorExample {
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.exampleSquare {
+    width: 50px;
+    height: 50px;
+}
 
 /* title */
 #snakeTitle {
@@ -178,13 +188,13 @@ button:hover {
 }
 
 /* colors for portal
-    1. rgb(0, 102, 0) 11
-    2. rgb(0, 0, 204) 11
-    3. rgb(255, 51, 0) 11
-    4. rgb(153, 0, 255) 11
-    5. rgb(170, 213, 43) 11
-    6. rgb(51, 204, 204) 11
-    7. rgb(202, 153, 153) 11
+    1. rgb(0, 102, 0)
+    2. rgb(0, 0, 204)
+    3. rgb(255, 51, 0)
+    4. rgb(153, 0, 255)
+    5. rgb(170, 213, 43)
+    6. rgb(51, 204, 204)
+    7. rgb(202, 153, 153)
 */
 
 /* style for portal */

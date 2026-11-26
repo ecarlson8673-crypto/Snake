@@ -29,7 +29,7 @@ The cube can be moved by using the 'wasd' keys. The arrow keys move the snake ar
 ## Portal
 Using the arrow keys, a snake is moved around multiple fields connected by portals. Portals of the same color connect and the black walls are not portals and, if hit, will end the game. You may want to slow the game down the first few times in the settings page.
 
-<img src="Screenshot 2026-11-24 10.55.26 PM.png" alt="" style="width: 75%; height: 75%; border: 5px solid rgb(50, 50, 50)">
+<img src="pictures/Screenshot 2026-11-24 10.55.26 PM.png" alt="" style="width: 75%; height: 75%; border: 5px solid rgb(50, 50, 50)">
 
 #
 NOTE: This project is not done yet. I am still working on the project and there may be bugs or features that do not work. Thanks for your understanding.
