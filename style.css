@@ -81,7 +81,7 @@ button:hover {
     font-size: 25px;
     text-align: center;
 }
-#colorExample {
+.settingsExamples {
     width: 250px;
     height: 150px;
     display: flex;
