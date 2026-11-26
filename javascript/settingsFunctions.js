@@ -71,6 +71,8 @@
         // check if time amount of time has passed
         let currentTime = new Date().getTime();
         if (startTime + time > currentTime) {
+            startTime = new Date().getTime();
+
             document.getElementById(`color${body[0]}`).style.backgroundColor = exampleFieldColor[body[0]];
             // move color of snake example
             bodyExample.splice(0, 1);
