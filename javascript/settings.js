@@ -12,19 +12,45 @@
         open = !open;
     }
 
-    // bold currently active settings
-    /*
-    document.getElementById("blue").style.borderWidth = `${8}px`;
-    document.getElementById("cherry").style.borderWidth = `${8}px`;
-    document.getElementById("one").style.borderWidth = `${8}px`;
-    document.getElementById("normal").style.borderWidth = `${8}px`;
-    */
-
     // set up the examples
     // snake color example
     for (let i = 0; i < 15; i++) {
         let div = document.createElement("div");
         div.classList.add("exampleSquare");
-        div.id = 
+        div.id = `color${i}`;
+        if (i % 2 == 0) {
+            div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+            exampleFieldColor[i] = `rgb(${0}, ${255}, ${0})`;
+        } else {
+            div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+            exampleFieldColor[i] = `rgb(${0}, ${200}, ${0})`;
+        }
+        document.getElementById("colorExample").appendChild(div);
+    }
+
+    // food type example
+    for (let i = 0; i < 15; i++) {
+        let div = document.createElement("div");
+        div.classList.add("exampleSquare");
+        div.id = `food${i}`;
+        if (i % 2 == 0) {
+            div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+        } else {
+            div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+        }
+        document.getElementById("foodExample").appendChild(div);
+    }
+
+    // speed example
+    for (let i = 0; i < 15; i++) {
+        let div = document.createElement("div");
+        div.classList.add("exampleSquare");
+        div.id = `speed${i}`;
+        if (i % 2 == 0) {
+            div.style.backgroundColor = `rgb(${0}, ${255}, ${0})`;
+        } else {
+            div.style.backgroundColor = `rgb(${0}, ${200}, ${0})`;
+        }
+        document.getElementById("speedExample").appendChild(div);
     }
 }
