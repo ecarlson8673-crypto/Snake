@@ -44,14 +44,14 @@ button:hover {
     z-index: 50;
 }
 #settings {
-    position: fixed;
+    position: absolute;
     left: 5%;
     top: 25px;
     font-size: 25px;
     z-index: 50;
 }
 #settingsOptions {
-    position: fixed;
+    position: absolute;
     left: 0px;
     top: 0px;
     text-align: center;
