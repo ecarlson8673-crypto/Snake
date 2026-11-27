@@ -78,19 +78,23 @@
     let speedBody = [5, 6, 7];
     function speedRight() {
         if (time == 250) {
+            time = 150;
+        } else if (time == 150) {
             time = 100;
         } else if (time == 100) {
-            time = 400;
-        } else if (time == 400) {
+            time = 350;
+        } else if (time == 350) {
             time = 250;
         }
     }
     function speedLeft() {
         if (time == 250) {
-            time = 400;
-        } else if (time == 400) {
+            time = 350;
+        } else if (time == 350) {
             time = 100;
         } else if (time == 100) {
+            time = 150;
+        } else if (time == 150) {
             time = 250;
         }
     }
@@ -141,7 +145,7 @@
             } else {
                 speedHead++;
             }
-            document.getElementById(`speed${speedBody[speedBody.length - 1]}`).style.backgroundColor = snakeBody;
+            document.getElementById(`speed${speedBody[speedBody.length - 1]}`).style.backgroundColor = bodyColor;
             document.getElementById(`speed${speedHead}`).style.backgroundColor = headColor;
         }
     }
