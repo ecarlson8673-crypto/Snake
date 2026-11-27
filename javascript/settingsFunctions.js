@@ -73,7 +73,7 @@
         if (startTime + time > currentTime) {
             startTime = new Date().getTime();
 
-            document.getElementById(`color${body[0]}`).style.backgroundColor = exampleFieldColor[body[0]];
+            document.getElementById(`color${bodyExample[0]}`).style.backgroundColor = exampleFieldColor[bodyExample[0]];
             // move color of snake example
             bodyExample.splice(0, 1);
             bodyExample[bodyExample.length] = headExample;
@@ -88,7 +88,7 @@
             }
 
             // color new snake tiles
-            document.getElementById(`color${body[body.length - 1]}`).style.backgroundColor = bodyColor;
+            document.getElementById(`color${bodyExample[bodyExample.length - 1]}`).style.backgroundColor = bodyColor;
             document.getElementById(`color${headExample}`).style.backgroundColor = headColor;
 
             // change Food example
