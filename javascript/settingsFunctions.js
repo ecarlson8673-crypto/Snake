@@ -78,19 +78,19 @@
     let speedBody = [5, 6, 7];
     function speedRight() {
         if (time == 250) {
-            time = 300;
-        } else if (time == 300) {
-            time = 200;
-        } else if (time == 200) {
+            time = 100;
+        } else if (time == 100) {
+            time = 400;
+        } else if (time == 400) {
             time = 250;
         }
     }
     function speedLeft() {
         if (time == 250) {
-            time = 200;
-        } else if (time == 200) {
-            time = 300;
-        } else if (time == 300) {
+            time = 400;
+        } else if (time == 400) {
+            time = 100;
+        } else if (time == 100) {
             time = 250;
         }
     }
