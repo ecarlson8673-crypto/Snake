@@ -104,11 +104,11 @@ button:hover {
 }
 .leftButtons {
     position: absolute;
-    right: calc(50% + 175px);
+    right: calc(50% + 160px);
 }
 .rightButtons {
     position: absolute;
-    left: calc(50% + 175px);
+    left: calc(50% + 160px);
 }
 /*
 #colorExample {
