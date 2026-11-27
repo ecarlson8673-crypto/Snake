@@ -92,12 +92,22 @@ button:hover {
     text-align: center;
 }
 .settingsExamples {
-    position: absolute;
-    left: calc(50% - 125px);
     width: 250px;
     height: 150px;
     display: flex;
     flex-wrap: wrap;
+}
+#colorExample {
+    position: absolute;
+    left: calc(50% - 125px);
+}
+#foodExample {
+    position: absolute;
+    left: calc(50% - 125px);
+}
+#speedExample {
+    position: absolute;
+    left: calc(50% - 125px);
 }
 .exampleSquare {
     width: 50px;
