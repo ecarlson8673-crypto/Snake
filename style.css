@@ -99,6 +99,14 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
 }
+.leftButtons {
+    position: absolute;
+    right: calc(50% + 175px);
+}
+.rightButtons {
+    position: absolute;
+    left: calc(50% + 175px);
+}
 /*
 #colorExample {
     position: absolute;
