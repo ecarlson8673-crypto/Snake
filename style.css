@@ -99,6 +99,9 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
 }
+#numberExample {
+    font-size: 40px;
+}
 .leftButtons {
     position: absolute;
     right: calc(50% + 175px);

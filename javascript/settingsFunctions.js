@@ -133,7 +133,7 @@
             document.getElementById(`food${positionOfFood}`).style.backgroundColor = foodColor;
 
             // food number
-            document.getElementById("numberExample").innerHTML = foodNumber + "x";
+            document.getElementById("numberExample").innerHTML = "<b>" + foodNumber + "x</b>";
 
             // speed multiplier example
             document.getElementById(`speed${speedBody[0]}`).style.backgroundColor = exampleFieldColor[speedBody[0]];
