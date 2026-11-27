@@ -5,9 +5,11 @@
         if (open == false) {
             document.getElementById("settings").innerHTML = "Back";
             document.getElementById("settingsOptions").style.display = "";
+            document.getElementById("settingsBacker").style.display = "";
         } else {
             document.getElementById("settings").innerHTML = "Settings";
             document.getElementById("settingsOptions").style.display = "none";
+            document.getElementById("settingsBacker").style.display = "none";
         }
         open = !open;
     }
