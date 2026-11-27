@@ -74,14 +74,25 @@
     }
 
     // change speed
+    let speedHead = 8;
+    let speedBody = [5, 6, 7];
     function speedRight() {
-
+        if (time == 250) {
+            time = 300;
+        } else if (time == 300) {
+            time = 200;
+        } else if (time == 200) {
+            time = 250;
+        }
     }
     function speedLeft() {
-
-    }
-    function updateSpeed() {
-
+        if (time == 250) {
+            time = 200;
+        } else if (time == 200) {
+            time = 300;
+        } else if (time == 300) {
+            time = 250;
+        }
     }
 
     // interval to display settings in example
@@ -116,6 +127,22 @@
             document.getElementById(`food${positionOfFood}`).style.backgroundColor = exampleFieldColor[positionOfFood];
             positionOfFood = Math.floor(Math.random() * 15);
             document.getElementById(`food${positionOfFood}`).style.backgroundColor = foodColor;
+
+            // food number
+            document.getElementById("numberExample").innerHTML = foodNumber + "x";
+
+            // speed multiplier example
+            document.getElementById(`speed${speedBody[0]}`).style.backgroundColor = exampleFieldColor[speedBody[0]];
+            speedBody.splice(0, 1);
+            speedBody[speedBody.length] = speedHead;
+
+            if (speedHead == 9) {
+                speedHead = 5;
+            } else {
+                speedHead++;
+            }
+            document.getElementById(`speed${speedBody[speedBody.length - 1]}`).style.backgroundColor = snakeBody;
+            document.getElementById(`speed${speedHead}`).style.backgroundColor = headColor;
         }
     }
 }
