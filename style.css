@@ -92,6 +92,8 @@ button:hover {
     text-align: center;
 }
 .settingsExamples {
+    position: absolute;
+    left: calc(50% - 125px);
     width: 250px;
     height: 150px;
     display: flex;
