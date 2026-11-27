@@ -110,20 +110,10 @@ button:hover {
     position: absolute;
     left: calc(50% + 160px);
 }
-/*
-#colorExample {
-    position: absolute;
-    left: calc(50% - 125px);
+.exampleText {
+    font-size: 20px;
+    margin: 5px;
 }
-#foodExample {
-    position: absolute;
-    left: calc(50% - 125px);
-}
-#speedExample {
-    position: absolute;
-    left: calc(50% - 125px);
-}
-*/
 .exampleSquare {
     width: 50px;
     height: 50px;

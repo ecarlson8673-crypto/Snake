@@ -24,12 +24,15 @@
         if (currentColor == 0) {
             headColor = `rgb(${0}, ${0}, ${175})`;
             bodyColor = `rgb(${0}, ${0}, ${225})`;
+            document.getElementById("colorName").innerHTML = "Blue";
         } else if (currentColor == 1) {
             headColor = `rgb(${175}, ${0}, ${0})`;
             bodyColor = `rgb(${225}, ${0}, ${0})`;
+            document.getElementById("colorName").innerHTML = "Red";
         } else if (currentColor == 2) {
             headColor = `rgb(${0}, ${130}, ${0})`;
             bodyColor = `rgb(${0}, ${220}, ${0})`;
+            document.getElementById("colorName").innerHTML = "Green";
         }
     }   
 
@@ -55,10 +58,13 @@
     function updateFood() {
         if (currentFood == 0) {
             foodColor = `rgb(${255}, ${0}, ${0})`;
+            document.getElementById("foodName").innerHTML = "Cherry";
         } else if (currentFood == 1) {
             foodColor = `rgb(${0}, ${175}, ${0})`;
+            document.getElementById("foodName").innerHTML = "Apple";
         } else if (currentFood == 2) {
             foodColor = `rgb(${0}, ${0}, ${255})`;
+            document.getElementById("foodName").innerHTML = "Blue Berry";
         }
     }
     // change number of food
@@ -79,23 +85,31 @@
     function speedRight() {
         if (time == 250) {
             time = 150;
+            document.getElementById("speedName").innerHTML = "150%";
         } else if (time == 150) {
             time = 100;
+            document.getElementById("speedName").innerHTML = "200%";
         } else if (time == 100) {
             time = 350;
+            document.getElementById("speedName").innerHTML = "50%";
         } else if (time == 350) {
             time = 250;
+            document.getElementById("speedName").innerHTML = "100%";
         }
     }
     function speedLeft() {
         if (time == 250) {
             time = 350;
+            document.getElementById("speedName").innerHTML = "50%";
         } else if (time == 350) {
             time = 100;
+            document.getElementById("speedName").innerHTML = "200%";
         } else if (time == 100) {
             time = 150;
+            document.getElementById("speedName").innerHTML = "150%";
         } else if (time == 150) {
             time = 250;
+            document.getElementById("speedName").innerHTML = "100%";
         }
     }
 
