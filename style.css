@@ -75,7 +75,8 @@ button:hover {
     color: rgb(0, 0, 0);
     font-size: 25px;
     border-width: 8px;
-    margin: 0px;
+    width: 75px;
+    height: 75px;
 }
 #settingsOptions button:active {
     background-color: rgb(200, 200, 200);

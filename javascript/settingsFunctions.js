@@ -62,8 +62,27 @@
         }
     }
     // change number of food
+    function numberLeft() {
+        if (foodNumber > 1) {
+            foodNumber--;
+        }
+    }
+    function numberRight() {
+        if (foodNumber < 10) {
+            foodNumber++;
+        }
+    }
 
     // change speed
+    function speedRight() {
+
+    }
+    function speedLeft() {
+
+    }
+    function updateSpeed() {
+
+    }
 
     // interval to display settings in example
     let startTime = new Date().getTime();
