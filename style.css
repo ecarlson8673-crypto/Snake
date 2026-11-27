@@ -93,7 +93,7 @@ button:hover {
 }
 .settingsExamples {
     position: absolute;
-    left: 100px;/*calc(50% - 125px);*/
+    left: calc(50% - 125px);
     width: 250px;
     height: 150px;
     display: flex;
