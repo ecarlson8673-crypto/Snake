@@ -35,6 +35,7 @@
 
     // change type (color) of food
     let currentFood = 0;
+    let positionOfFood = 0;
     function foodLeft() {
         if (currentFood < 1) {
             currentFood = 2;
@@ -70,9 +71,10 @@
     function examples() {
         // check if time amount of time has passed
         let currentTime = new Date().getTime();
-        if (startTime + time > currentTime) {
+        if (startTime + time < currentTime) {
             startTime = new Date().getTime();
 
+            // for color example
             document.getElementById(`color${bodyExample[0]}`).style.backgroundColor = exampleFieldColor[bodyExample[0]];
             // move color of snake example
             bodyExample.splice(0, 1);
@@ -92,7 +94,8 @@
             document.getElementById(`color${headExample}`).style.backgroundColor = headColor;
 
             // change Food example
-            let positionOfFood = Math.floor(Math.random() * 15);
+            document.getElementById(`food${positionOfFood}`).style.backgroundColor = exampleFieldColor[positionOfFood];
+            positionOfFood = Math.floor(Math.random() * 15);
             document.getElementById(`food${positionOfFood}`).style.backgroundColor = foodColor;
         }
     }
