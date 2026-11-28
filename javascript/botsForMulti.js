@@ -246,7 +246,7 @@ bot...
     function checkDie(bodyPosition, headPosition, currentBot, playerPosition, playerHead) {
         for (let i = 0; i < botNumber; i++) {
             // check if hit other bot
-            for (let j = 0; j < bot1body.length; j++) {
+            for (let j = 0; j < bodyPosition[i].length; j++) {
                 if (bodyPosition[i][j][0] == headPosition[currentBot][0] && bodyPosition[i][j][1] == headPosition[currentBot][1]) {
                     return true;
                 }
@@ -348,11 +348,11 @@ bot...
                 return true;
             }
         } else if (botDurection == "U") {
-            if (playerhead[0] == headPosition[0] - 1 && playerhead[1] == headPosition[currentBot][1]) {
+            if (playerhead[0] == headPosition[currentBot][0] - 1 && playerhead[1] == headPosition[currentBot][1]) {
                 return true;
             }
         } else if (botDurection[currentBot] == "D") {
-            if (playerhead[0] == headPosition[currentBot][0] + 1 && playerhead[1] == headPosition[1]) {
+            if (playerhead[0] == headPosition[currentBot][0] + 1 && playerhead[1] == headPosition[currentBot][1]) {
                 return true;
             }
         }
