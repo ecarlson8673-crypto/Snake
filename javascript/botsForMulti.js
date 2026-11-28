@@ -69,7 +69,7 @@ bot...
                 }
             }
             // check if bot is going to hit itself going straight
-            let straightDie = hitStraight(botPosition, botHead,i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
+            //let straightDie = hitStraight(botPosition, botHead,i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
             
             // check if turning will kill bot
             let rightDie = hitRight(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
@@ -445,6 +445,7 @@ bot...
     }
 
     // check if bot is going to hit something if goes straight
+    /*
     function hitStraight(botPosition, headPosition, currentBot, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botNumber; i++) {
             for (let j = 0; j < botPosition[currentBot].length; j++) {
@@ -527,6 +528,7 @@ bot...
         return false;
     }
 
+*/
     // change durection of bot
     function botChangeDurection(botDurection, changeDurection, botHead) {
         if (botDurection == "R") {
