@@ -196,8 +196,8 @@ bot...
             // change durection of bot if needed
             botDurection[i] = botChangeDurection(botDurection[i], changeDurection, botHead[i]);
 
-            botDurection[i] = "R";
-            
+            botDurection[i] = "L";
+
             // move bot
             botPosition[i].splice(0, 1);
             botPosition[i][botPosition[i].length] = [...botHead[i]];
