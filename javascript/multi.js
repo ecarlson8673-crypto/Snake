@@ -60,9 +60,13 @@ function playMulti() {
         borders();
         
         // bots
+        moveBots(actualPortX, actualPortY);
+        /*
+        // bots
         botTypeOne(actualPortX, actualPortY);
         botTypeTwo(actualPortX, actualPortY);
         botTypeThree(actualPortX, actualPortY);
+        */
 
         // check if snake hit walls, self, or other snake
         if (die() == true || playerDied([actualPortX, actualPortY])) {

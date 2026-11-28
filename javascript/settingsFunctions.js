@@ -1,6 +1,6 @@
 {
     // change color of snake
-    let currentColor = 1;
+    let currentColor = 0;
     let headExample = 3;
     let bodyExample = [0, 1, 2];
     function colorLeft() {

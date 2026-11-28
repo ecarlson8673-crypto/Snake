@@ -6,6 +6,580 @@ bot...
     - if food can be seen goes to it
 */
 {
+    // the position of the bots
+    let botPosition = [];
+    let botHead = [];
+
+    // the color of the bots
+    let botColor = [
+        [`rgb(${204}, ${51}, ${255})`, `rgb(${230}, ${153}, ${255})`],
+        [`rgb(${230}, ${184}, ${0})`, `rgb(${255}, ${204}, ${0})`],
+        [`rgb(${0}, ${230}, ${184})`, `rgb(${77}, ${255}, ${219})`]
+    ];
+
+    // the durection of the bots
+    let botDurection = [];
+
+    // check if the bot is died
+    let botDied = [];
+
+    // reset and set bot variables
+    function resetBots() {
+        for (let i = 0; i < botNumber; i++) {
+            // set durection of bots
+            botDurection[i] = "R";
+
+            // position head
+            let x = Math.floor(Math.random() * (totalFieldWidth - 3)) + 3;
+            let y = Math.floor(Math.random() * (totalFieldHeight - 3)) + 3;
+            botHead[i] = [x, y];
+
+            botPosition[i] = [];
+            // position body
+            for (let j = 0; j < 3; j++) {
+                botPosition[i][j] = [];
+
+                botPosition[i][j][0] = botHead[i][0];
+                botPosition[i][j][1] = botHead[i][1];
+            }
+            botDied[i] = false;
+        }
+    }
+
+    // move bots
+    function moveBots(actualPortX, actualPortY) {
+        for (let i = 0; i < botNumber; i++) {
+            if (botDied[i] == true) {
+                resetOne();
+                return;
+            }
+            // move bot straight(S), right(R), left(L)
+            let changeDurection = "S";
+            let foodVisable = "None";
+            // check if food is on the screen
+            for (let j = 0; j < foodPosition.length; j++) {
+                if (foodPosition[j][0] >= botHead[i][0] - Math.floor(multiFieldWidth / 2) && foodPosition[j][0] <= botHead[i][0] + Math.floor(multiFieldWidth / 2) && foodPosition[j][1] >= botHead[i][1] - Math.floor(multiFieldHeight / 2) && foodPosition[j][1] <= botHead[i][1] + Math.floor(multiFieldHeight / 2)) {
+                    foodVisable = j;
+                }
+            }
+            // check if bot is going to hit itself going straight
+            let straightDie = hitStraight(botPosition, botHead,i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
+            
+            // check if turning will kill bot
+            let rightDie = hitRight(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
+            let leftDie = hitLeft(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
+            
+            {
+                // avoid walls if needed
+                if (botHead[i][0] == totalFieldWidth - 1 && botDurection[i] == "R") {
+                    if (botHead[i][1] == 0) {
+                        changeDurection = "R";
+                    } else if (botHead[i][1] == totalFieldHeight - 1) {
+                        changeDurection = "L";
+                    } else {
+                        if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                            changeDurection = "R";
+                        } else {
+                            changeDurection = "L";
+                        }
+                    }
+                } else if (botHead[i][0] == 0 && botDurection[i] == "L") {
+                    if (botHead[i][1] == 0) {
+                        changeDurection = "L";
+                    } else if (botHead[i][1] == totalFieldHeight - 1) {
+                        changeDurection = "R";
+                    } else {
+                        if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                            changeDurection = "R";
+                        } else {
+                            changeDurection = "L";
+                        }
+                    }
+                } else if (botHead[i][1] == 0 && botDurection[i] == "U") {
+                    if (botHead[i][0] == 0) {
+                        changeDurection = "R";
+                    } else if (botHead[i][0] == totalFieldWidth - 1) {
+                        changeDurection = "L";
+                    } else {
+                        if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                            changeDurection = "R";
+                        } else {
+                            changeDurection = "L";
+                        }
+                    }
+                } else if (botHead[i][1] == totalFieldHeight - 1 && botDurection[i] == "D") {
+                    if (botHead[i][0] == 0) {
+                        changeDurection = "L";
+                    } else if (botHead[i][0] == totalFieldWidth - 1) {
+                        changeDurection = "R";
+                    } else {
+                        if (Math.round(Math.random()) == 0 && leftDie == true && rightDie == false) {
+                            changeDurection = "R";
+                        } else {
+                            changeDurection = "L";
+                        }
+                    }
+                // avoid self, if true then going to hit self if go forward
+                } else if (straightDie == true) {
+                    straightDie = false;
+                    for (let j = 0; j < botPosition[i].length; j++) {
+                        if (botDurection[i] == "R") {
+                            if (botPosition[i][j][0] == botHead[i][0] && botPosition[i][j][1] == botHead[i][1] - 1) {
+                                straightDie = true;
+                            }
+                        } else if (botDurection[i] == "L") {
+                            if (botPosition[i][j][0] == botHead[i][0] && botPosition[i][j][1] == botHead[i][1] + 1) {
+                                straightDie = true;
+                            }
+                        } else if (botDurection[i] == "U") {
+                            if (botPosition[i][j][0] == botHead[i][0] - 1 && botPosition[i][j][1] == botHead[i][1]) {
+                                straightDie = true;
+                            }
+                        } else if (botDurection[i] == "D") {
+                            if (botPosition[i][j][0] == botHead[i][0] + 1 && botPosition[i][j][1] == botHead[i][1]) {
+                                straightDie = true;
+                            }
+                        }
+                    }
+                    if (straightDie == false) {
+                        changeDurection = "L";
+                    } else {
+                        changeDurection = "R";
+                    }
+                // go to food
+                } else if (foodVisable != "None") {
+                    if (botDurection[i] == "R") {
+                        if (foodPosition[foodVisable][1] > botHead[i][1] && rightDie == false) {
+                            changeDurection = "R";
+                        } else if (foodPosition[foodVisable][1] < botHead[i][1] && leftDie == false) {
+                            changeDurection = "L";
+                        }
+                    } else if (botDurection[i] == "L") {
+                        if (foodPosition[foodVisable][1] > botHead[i][1] && leftDie == false) {
+                            changeDurection = "L";
+                        } else if (foodPosition[foodVisable][1] < botHead[i][1] && rightDie == false) {
+                            changeDurection = "R";
+                        }
+                    } else if (botDurection[i] == "U") {
+                        if (foodPosition[foodVisable][0] > botHead[i][0] && rightDie == false) {
+                            changeDurection = "R";
+                        } else if (foodPosition[foodVisable][0] < botHead[i][0] && leftDie == false) {
+                            changeDurection = "L";
+                        }
+                    } else if (botOneDurection == "D") {
+                        if (foodPosition[foodVisable][0] > botHead[i][0] && leftDie == false) {
+                            changeDurection = "L";
+                        } else if (foodPosition[foodVisable][0] < botHead[i][0] && rightDie == false) {
+                            changeDurection = "R";
+                        }
+                    }
+                // randomize durection if does not need to avoid anything
+                } else {
+                    // if random == 0 right, random == 1 left, else straight
+                    let randomNumber = Math.floor(Math.random() * 10);
+                    if (randomNumber == 0 && rightDie == false) {
+                        changeDurection = "R";
+                    } else if (randomNumber == 1 && leftDie == false) {
+                        changeDurection = "L";
+                    } else {
+                        changeDurection = "S";
+                    }
+                }
+            }
+
+            // change durection of bot if needed
+            botDurection[i] = botChangeDurection(botDurection[i], changeDurection, botHead[i]);
+
+            // move bot
+            botPosition[i].splice(0, 1);
+            botPosition[i][botPosition[i].length] = [...botHead[i]];
+            if (botDurection[i] == "R") {
+                botHead[i][0]++;
+            } else if (botDurection[i] == "L") {
+                botHead[i][0]--;
+            } else if (botDurection[i] == "U") {
+                botHead[i][1]--;
+            } else if (botDurection[i] == "D") {
+                botHead[i][1]++;
+            }
+
+            // eat food if on it
+            if (foodVisable != "None") {
+                if (botHead[i][0] == foodPosition[foodVisable][0] && botHead[i][1] == foodPosition[foodVisable][1]) {
+                    botPosition[i].splice(0, 0, [...botPosition[i][0]]);
+                    foodPosition[foodVisable][0] = Math.floor(Math.random() * totalFieldWidth);
+                    foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
+                }
+            }
+
+            // die if run into self
+            botDied[i] = checkDie(botPosition, botHead, i, actualBodyPosition, [actualPortX, actualPortY]);
+
+            // show head if on screen
+            showBot(botHead[i], botPosition[i], botColor[i], actualPortX, actualPortY);
+        }
+    }
+
+    // show the bots on the screen
+    function showBot(head, body, color, actualPortX, actualPortY) {
+        // show body if on screen
+        for (let i = 0; i < body.length; i++) {
+            if (actualPortX <= body[i][0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > body[i][0] + Math.floor(multiFieldWidth / 2) && actualPortY <= body[i][1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > body[i][1] + Math.floor(multiFieldHeight / 2)) {
+                let position = (body[i][0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((body[i][1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+                document.getElementById(`multi${position}`).style.backgroundColor = color[1];
+            }
+        }
+
+        // show head if on screen
+        if (actualPortX <= head[0] + Math.floor(multiFieldWidth / 2) && (actualPortX + multiFieldWidth) > head[0] + Math.floor(multiFieldWidth / 2) && actualPortY <= head[1] + Math.floor(multiFieldHeight / 2) && (actualPortY + multiFieldHeight) > head[1] + Math.floor(multiFieldHeight / 2)) {
+            let position = (head[0] - actualPortX + Math.floor(multiFieldWidth / 2)) + ((head[1] - actualPortY + Math.floor(multiFieldHeight / 2)) * multiFieldHeight);
+            document.getElementById(`multi${position}`).style.backgroundColor = color[0];
+        }
+    }
+
+    // check if the bots die
+    function checkDie(bodyPosition, headPosition, currentBot, playerPosition, playerHead) {
+        for (let i = 0; i < botNumber; i++) {
+            // check if hit other bot
+            for (let j = 0; j < bot1body.length; j++) {
+                if (bodyPosition[i][j][0] == headPosition[currentBot][0] && bodyPosition[i][j][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            }
+            if (currentBot != i) {
+                if (headPosition[i][0] == headPosition[currentBot][0] && headPosition[i][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            }
+        }
+        // check if hit self
+        for (let i = 0; i < bodyPosition[currentBot].length; i++) {
+            if (bodyPosition[currentBot][i][0] == headPosition[currentBot][0] && bodyPosition[currentBot][i][1] == headPosition[currentBot][1]) {
+                return true;
+            }
+        }
+        // check if hit player
+        for (let i = 0; i < playerPosition.length; i++) {
+            if (playerPosition[i][0] == headPosition[currentBot][0] && playerPosition[i][1] == headPosition[currentBot][1]) {
+                return true;
+            }
+        }
+        if (playerHead[0] == headPosition[currentBot][0] && playerHead[1] == headPosition[currentBot][1]) {
+            return true;
+        }
+        return false;
+    }
+
+    // check if bot is going to hit something if goes left
+    function hitLeft(headPosition, botPosition, currentBot, botDurection, playerhead, playerBody) {
+        for (let i = 0; i < botNumber; i++) {
+            // check if hit left bot
+            for (let j = 0; j < botPosition[currentBot].length; j++) {
+                if (botDurection[currentBot] == "R") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] && botPosition[i][j][1] == headPosition[currentBot][1] - 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "L") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] && botPosition[i][j][1] == headPosition[currentBot][1] + 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "U") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] - 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "D") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] + 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                }
+            }
+            if (currentBot != i) {
+                if (botDurection[currentBot] == "R") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] && headPosition[i][1] == headPosition[currentBot][1] - 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "L") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] && headPosition[i][1] == headPosition[currentBot][1] + 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "U") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] - 1 && headPosition[i][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "D") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] + 1 && headPosition[i][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        // check if hit left player
+        for (let i = 0; i < playerBody.length; i++) {
+            if (botDurection[currentBot] == "R") {
+                if (playerBody[i][0] == headPosition[currentBot][0] && playerBody[i][1] == headPosition[currentBot][1] - 1) {
+                    return true;
+                }
+            } else if (botDurection == "L") {
+                if (playerBody[i][0] == headPosition[currentBot][0] && playerBody[i][1] == headPosition[currentBot][1] + 1) {
+                    return true;
+                }
+            } else if (botDurection == "U") {
+                if (playerBody[i][0] == headPosition[currentBot][0] - 1 && playerBody[i][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            } else if (botDurection == "D") {
+                if (playerBody[i][0] == headPosition[currentBot][0] + 1 && playerBody[i][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection[currentBot] == "R") {
+            if (playerhead[0] == headPosition[currentBot][0] && playerhead[1] == headPosition[currentBot][1] - 1) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "L") {
+            if (playerhead[0] == headPosition[currentBot][0] && playerhead[1] == headPosition[currentBot][1] + 1) {
+                return true;
+            }
+        } else if (botDurection == "U") {
+            if (playerhead[0] == headPosition[0] - 1 && playerhead[1] == headPosition[currentBot][1]) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "D") {
+            if (playerhead[0] == headPosition[currentBot][0] + 1 && playerhead[1] == headPosition[1]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // check if bot is going to hit something if goes right
+    function hitRight(headPosition, botPosition, currentBot, botDurection, playerhead, playerBody) {
+        for (let i = 0; i < botNumber; i++) {
+            for (let j = 0; j < botPosition[currentBot].length; j++) {
+                if (botDurection[currentBot] == "R") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] && botPosition[i][j][1] == headPosition[currentBot][1] + 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "L") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] && botPosition[i][j][1] == headPosition[currentBot][1] - 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "U") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] + 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "D") {
+                    if (botPosition[i][j][0] == headPosition[currnetBot][0] - 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                }
+            }
+            if (currentBot != i) {
+                if (botDurection[currentBot] == "R") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] && headPosition[i][1] == headPosition[currentBot][1] + 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "L") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] && headPosition[i][1] == headPosition[currentBot][1] - 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "U") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] + 1 && headPosition[i][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "D") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] - 1 && headPosition[i][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        for (let i = 0; i < playerBody.length; i++) {
+            if (botDurection[currentBot] == "R") {
+                if (playerBody[i][0] == headPosition[currentBot][0] && playerBody[i][1] == headPosition[currentBot][1] + 1) {
+                    return true;
+                }
+            } else if (botDurection[currentBot] == "L") {
+                if (playerBody[i][0] == headPosition[currentBot][0] && playerBody[i][1] == headPosition[currentBot][1] - 1) {
+                    return true;
+                }
+            } else if (botDurection[currentBot] == "U") {
+                if (playerBody[i][0] == headPosition[currentBot][0] + 1 && playerBody[i][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            } else if (botDurection[currentBot] == "D") {
+                if (playerBody[i][0] == headPosition[currentBot][0] - 1 && playerBody[i][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection[currentBot] == "R") {
+            if (playerhead[0] == headPosition[currentBot][0] && playerhead[1] == headPosition[currentBot][1] + 1) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "L") {
+            if (playerhead[0] == headPosition[currentBot][0] && playerhead[1] == headPosition[currentBot][1] - 1) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "U") {
+            if (playerhead[0] == headPosition[currentBot][0] + 1 && playerhead[1] == headPosition[currentBot][1]) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "D") {
+            if (playerhead[0] == headPosition[currentBot][0] - 1 && playerhead[1] == headPosition[currentBot][1]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // check if bot is going to hit something if goes straight
+    function hitStraight(botPosition, headPosition, currentBot, botDurection, playerhead, playerBody) {
+        for (let i = 0; i < botNumber; i++) {
+            for (let j = 0; j < botPosition[currentBot].length; j++) {
+                if (botDurection[currentBot] == "R") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] + 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "L") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] - 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "U") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] && botPosition[i][j][1] == headPosition[currentBot][1] - 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "D") {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] && botPosition[i][j][1] == headPosition[currentBot][1] + 1) {
+                        return true;
+                    }
+                }
+            }
+            if (currentBot != i) {
+                if (botDurection[currentBot] == "R") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] + 1 && headPosition[i][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "L") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] - 1 && headPosition[i][1] == headPosition[currentBot][1]) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "U") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] && headPosition[i][1] == headPosition[currentBot][1] - 1) {
+                        return true;
+                    }
+                } else if (botDurection[currentBot] == "D") {
+                    if (headPosition[i][0] == headPosition[currentBot][0] && headPosition[i][1] == headPosition[currentBot][1] + 1) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        for (let i = 0; i < playerBody.length; i++) {
+            if (botDurection[currentBot] == "R") {
+                if (playerBody[i][0] == headPosition[currentBot][0] + 1 && playerBody[i][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            } else if (botDurection[currentBot] == "L") {
+                if (playerBody[i][0] == headPosition[currentBot][0] - 1 && playerBody[i][1] == headPosition[currentBot][1]) {
+                    return true;
+                }
+            } else if (botDurection[currentBot] == "U") {
+                if (playerBody[i][0] == headPosition[currentBot][0] && playerBody[i][1] == headPosition[currentBot][1] - 1) {
+                    return true;
+                }
+            } else if (botDurection[currentBot] == "D") {
+                if (playerBody[i][0] == headPosition[currentBot][0] && playerBody[i][1] == headPosition[currentBot][1] + 1) {
+                    return true;
+                }
+            }
+        }
+        if (botDurection[currentBot] == "R") {
+            if (playerhead[0] == headPosition[currentBot][0] + 1 && playerhead[1] == headPosition[currentBot][1]) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "L") {
+            if (playerhead[0] == headPosition[currentBot][0] - 1 && playerhead[1] == headPosition[currentBot][1]) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "U") {
+            if (playerhead[0] == headPosition[currentBot][0] && playerhead[1] == headPosition[currentBot][1] - 1) {
+                return true;
+            }
+        } else if (botDurection[currentBot] == "D") {
+            if (playerhead[0] == headPosition[currentBot][0] && playerhead[1] == headPosition[currentBot][1] + 1) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // change durection of bot
+    function botChangeDurection(botDurection, changeDurection, botHead) {
+        if (botDurection == "R") {
+            if (changeDurection == "R" && botHead[1] != totalFieldHeight - 1) {
+                return "D";
+            } else if (changeDurection == "L" && botHead[1] != 0) {
+                return "U";
+            } else {
+                return botDurection;
+            }
+        } else if (botDurection == "L") {
+            if (changeDurection == "R" && botHead[1] != 0) {
+                return "U";
+            } else if (changeDurection == "L" && botHead[1] != totalFieldHeight - 1) {
+                return "D";
+            } else {
+                return botDurection;
+            }
+        } else if (botDurection == "U") {
+            if (changeDurection == "R" && botHead[0] != totalFieldWidth - 1) {
+                return "R";
+            } else if (changeDurection == "L" && botHead[0] != 0) {
+                return "L";
+            } else {
+                return botDurection;
+            }
+        } else if (botDurection == "D") {
+            if (changeDurection == "R" && botHead[0] != 0) {
+                return "L";
+            } else if (changeDurection == "L" && botHead[0] != totalFieldWidth - 1) {
+                return "R";
+            } else {
+                return botDurection;
+            }
+        } else {
+            return botDurection;
+        }
+    }
+
+    // check if player hits bot
+    function playerDied(playerHead) {
+        // check if player hit bot one
+        for (let i = 0; i < botNumber; i++) {
+            // check if player hit any of the bots
+            for (let j = 0; j < botOnePosition.length; j++) {
+                if (botPosition[i][j][0] == playerHead[0] && botPosition[i][j][1] == playerHead[1]) {
+                    return true;
+                }
+            }
+            if (botHead[i][0] == playerHead[0] && botHead[i][1] == playerHead[1]) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+/*
+{
     // position of bots actual
     let botOnePosition = [];
     let botOneHead = [];
@@ -43,7 +617,7 @@ bot...
         let botColorOptions = [
             [`rgb(${204}, ${51}, ${255})`, `rgb(${230}, ${153}, ${255})`],
             [`rgb(${230}, ${184}, ${0})`, `rgb(${255}, ${204}, ${0})`],
-            [`rgb(${0}, ${230}, ${184})`, `rgb(${77}, ${255}, ${219})`],
+            [`rgb(${0}, ${230}, ${184})`, `rgb(${77}, ${255}, ${219})`]
         ];
 
         // randomize bot colors
@@ -1157,3 +1731,4 @@ bot...
         return false;
     }
 }
+*/
