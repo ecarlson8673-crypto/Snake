@@ -43,7 +43,7 @@ bot...
                 for (let j = 0; j < 3; j++) {
                     botPosition[i][j] = [];
 
-                    botPosition[i][j][0] = botHead[i][0] - j;
+                    botPosition[i][j][0] = botHead[i][0] - 1 - j;
                     botPosition[i][j][1] = botHead[i][1];
                 }
                 botDied[i] = false;
