@@ -58,7 +58,7 @@ bot...
                 resetBots(i);
                 return;
             }
-/*
+
             // move bot straight(S), right(R), left(L)
             let changeDurection = "S";
             let foodVisable = "None";
@@ -217,7 +217,7 @@ bot...
                     foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
                 }
             }
-*/
+
             // die if run into self
             botDied[i] = checkDie(botPosition, botHead, i, actualBodyPosition, [actualPortX, actualPortY]);
 
@@ -275,7 +275,7 @@ bot...
         }
         return false;
     }
-/*
+
     // check if bot is going to hit something if goes left
     function hitLeft(headPosition, botPosition, currentBot, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botNumber; i++) {
@@ -565,7 +565,7 @@ bot...
             return botDurection;
         }
     }
-*/
+
     // check if player hits bot
     function playerDied(playerHead) {
         // check if player hit bot
