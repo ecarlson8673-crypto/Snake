@@ -54,6 +54,7 @@ bot...
     // move bots
     function moveBots(actualPortX, actualPortY) {
         for (let i = 0; i < botNumber; i++) {
+/*
             if (botDied[i] == true) {
                 resetBots(i);
                 return;
@@ -219,7 +220,7 @@ bot...
 
             // die if run into self
             botDied[i] = checkDie(botPosition, botHead, i, actualBodyPosition, [actualPortX, actualPortY]);
-
+*/
             // show head if on screen
             showBot(botHead[i], botPosition[i], botColor[i], actualPortX, actualPortY);
         }
@@ -241,7 +242,7 @@ bot...
             document.getElementById(`multi${position}`).style.backgroundColor = color[0];
         }
     }
-
+/*
     // check if the bots die
     function checkDie(bodyPosition, headPosition, currentBot, playerPosition, playerHead) {
         for (let i = 0; i < botNumber; i++) {
@@ -564,7 +565,7 @@ bot...
             return botDurection;
         }
     }
-
+*/
     // check if player hits bot
     function playerDied(playerHead) {
         // check if player hit bot
