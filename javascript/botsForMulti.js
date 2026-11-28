@@ -70,7 +70,8 @@ bot...
             }
             // check if bot is going to hit itself going straight
             //let straightDie = hitStraight(botPosition, botHead,i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
-            
+            let straightDie = false;
+
             // check if turning will kill bot
             let rightDie = hitRight(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
             let leftDie = hitLeft(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
