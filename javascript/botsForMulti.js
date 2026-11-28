@@ -72,10 +72,10 @@ bot...
             let straightDie = hitStraight(botPosition, botHead,i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
 
             // check if turning will kill bot
-            //let rightDie = hitRight(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
-            let rightDie = false;
-            let leftDie = hitLeft(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
-            
+            let rightDie = hitRight(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
+            //let leftDie = hitLeft(botHead, botPosition, i, botDurection, [actualPortX, actualPortY], actualBodyPosition);
+            let leftDie = false;
+
             {
                 // avoid walls if needed
                 if (botHead[i][0] == totalFieldWidth - 1 && botDurection[i] == "R") {
@@ -278,6 +278,7 @@ bot...
     }
 
     // check if bot is going to hit something if goes left
+    /*
     function hitLeft(headPosition, botPosition, currentBot, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botNumber; i++) {
             // check if hit left bot
@@ -361,9 +362,8 @@ bot...
 
         return false;
     }
-
+*/
     // check if bot is going to hit something if goes right
-    /*
     function hitRight(headPosition, botPosition, currentBot, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botNumber; i++) {
             for (let j = 0; j < botPosition[currentBot].length; j++) {
@@ -445,7 +445,7 @@ bot...
 
         return false;
     }
-*/
+
     // check if bot is going to hit something if goes straight
     function hitStraight(botPosition, headPosition, currentBot, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botNumber; i++) {
