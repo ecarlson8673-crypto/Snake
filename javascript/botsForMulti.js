@@ -29,7 +29,7 @@ bot...
     // reset and set bot variables
     function resetBots(resetDied = "none") {
         for (let i = 0; i < botNumber; i++) {
-            if (reset == "none" || reset == i) {
+            if (resetDied == "none" || resetDied == i) {
                 // set durection of bots
                 botDurection[i] = "R";
 
