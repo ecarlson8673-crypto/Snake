@@ -14,7 +14,10 @@ bot...
     let botColor = [
         [`rgb(${204}, ${51}, ${255})`, `rgb(${230}, ${153}, ${255})`],
         [`rgb(${230}, ${184}, ${0})`, `rgb(${255}, ${204}, ${0})`],
-        [`rgb(${0}, ${230}, ${184})`, `rgb(${77}, ${255}, ${219})`]
+        [`rgb(${0}, ${230}, ${184})`, `rgb(${77}, ${255}, ${219})`],
+        [`rgb(${117}, ${117}, ${163})`, `rgb(${82}, ${82}, ${122})`],
+        [`rgb(${131}, ${48}, ${89})`, `rgb(${102}, ${0}, ${51})`],
+        [`rgb(${255}, ${255}, ${102})`, `rgb(${219}, ${219}, ${87})`]
     ];
 
     // the durection of the bots
@@ -24,25 +27,27 @@ bot...
     let botDied = [];
 
     // reset and set bot variables
-    function resetBots() {
+    function resetBots(resetDied = "none") {
         for (let i = 0; i < botNumber; i++) {
-            // set durection of bots
-            botDurection[i] = "R";
+            if (reset == "none" || reset == i) {
+                // set durection of bots
+                botDurection[i] = "R";
 
-            // position head
-            let x = Math.floor(Math.random() * (totalFieldWidth - 3)) + 3;
-            let y = Math.floor(Math.random() * (totalFieldHeight - 3)) + 3;
-            botHead[i] = [x, y];
+                // position head
+                let x = Math.floor(Math.random() * (totalFieldWidth - 3)) + 3;
+                let y = Math.floor(Math.random() * (totalFieldHeight - 3)) + 3;
+                botHead[i] = [x, y];
 
-            botPosition[i] = [];
-            // position body
-            for (let j = 0; j < 3; j++) {
-                botPosition[i][j] = [];
+                botPosition[i] = [];
+                // position body
+                for (let j = 0; j < 3; j++) {
+                    botPosition[i][j] = [];
 
-                botPosition[i][j][0] = botHead[i][0];
-                botPosition[i][j][1] = botHead[i][1];
+                    botPosition[i][j][0] = botHead[i][0];
+                    botPosition[i][j][1] = botHead[i][1];
+                }
+                botDied[i] = false;
             }
-            botDied[i] = false;
         }
     }
 
@@ -50,7 +55,7 @@ bot...
     function moveBots(actualPortX, actualPortY) {
         for (let i = 0; i < botNumber; i++) {
             if (botDied[i] == true) {
-                resetOne();
+                resetBots();
                 return;
             }
             // move bot straight(S), right(R), left(L)
@@ -166,7 +171,7 @@ bot...
                         } else if (foodPosition[foodVisable][0] < botHead[i][0] && leftDie == false) {
                             changeDurection = "L";
                         }
-                    } else if (botOneDurection == "D") {
+                    } else if (botDurection[i] == "D") {
                         if (foodPosition[foodVisable][0] > botHead[i][0] && leftDie == false) {
                             changeDurection = "L";
                         } else if (foodPosition[foodVisable][0] < botHead[i][0] && rightDie == false) {
@@ -562,10 +567,10 @@ bot...
 
     // check if player hits bot
     function playerDied(playerHead) {
-        // check if player hit bot one
+        // check if player hit bot
         for (let i = 0; i < botNumber; i++) {
             // check if player hit any of the bots
-            for (let j = 0; j < botOnePosition.length; j++) {
+            for (let j = 0; j < botPosition[i].length; j++) {
                 if (botPosition[i][j][0] == playerHead[0] && botPosition[i][j][1] == playerHead[1]) {
                     return true;
                 }
