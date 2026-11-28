@@ -196,7 +196,7 @@ bot...
             // change durection of bot if needed
             botDurection[i] = botChangeDurection(botDurection[i], changeDurection, botHead[i]);
 
-            botDurection[i] = "D";
+            //botDurection[i] = "D";
 
             // move bot
             botPosition[i].splice(0, 1);
@@ -380,7 +380,7 @@ bot...
                         return true;
                     }
                 } else if (botDurection[currentBot] == "D") {
-                    if (botPosition[i][j][0] == headPosition[currnetBot][0] - 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
+                    if (botPosition[i][j][0] == headPosition[currentBot][0] - 1 && botPosition[i][j][1] == headPosition[currentBot][1]) {
                         return true;
                     }
                 }
