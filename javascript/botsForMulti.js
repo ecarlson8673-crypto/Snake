@@ -55,7 +55,7 @@ bot...
     function moveBots(actualPortX, actualPortY) {
         for (let i = 0; i < botNumber; i++) {
             if (botDied[i] == true) {
-                resetBots();
+                resetBots(i);
                 return;
             }
             // move bot straight(S), right(R), left(L)
