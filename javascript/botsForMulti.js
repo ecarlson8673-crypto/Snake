@@ -27,7 +27,7 @@ bot...
     let botDied = [];
 
     // reset and set bot variables
-    function resetBots(resetDied == "none") {
+    function resetBots(resetDied = "none") {
         for (let i = 0; i < botNumber; i++) {
             if (resetDied == "none" || resetDied == i) {
                 // set durection of bots
