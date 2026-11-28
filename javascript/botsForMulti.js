@@ -54,11 +54,11 @@ bot...
     // move bots
     function moveBots(actualPortX, actualPortY) {
         for (let i = 0; i < botNumber; i++) {
-/*
             if (botDied[i] == true) {
                 resetBots(i);
                 return;
             }
+/*
             // move bot straight(S), right(R), left(L)
             let changeDurection = "S";
             let foodVisable = "None";
@@ -217,10 +217,10 @@ bot...
                     foodPosition[foodVisable][1] = Math.floor(Math.random() * totalFieldHeight);
                 }
             }
-
+*/
             // die if run into self
             botDied[i] = checkDie(botPosition, botHead, i, actualBodyPosition, [actualPortX, actualPortY]);
-*/
+
             // show head if on screen
             showBot(botHead[i], botPosition[i], botColor[i], actualPortX, actualPortY);
         }
@@ -242,7 +242,7 @@ bot...
             document.getElementById(`multi${position}`).style.backgroundColor = color[0];
         }
     }
-/*
+
     // check if the bots die
     function checkDie(bodyPosition, headPosition, currentBot, playerPosition, playerHead) {
         for (let i = 0; i < botNumber; i++) {
@@ -275,7 +275,7 @@ bot...
         }
         return false;
     }
-
+/*
     // check if bot is going to hit something if goes left
     function hitLeft(headPosition, botPosition, currentBot, botDurection, playerhead, playerBody) {
         for (let i = 0; i < botNumber; i++) {
